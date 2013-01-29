@@ -1,0 +1,20 @@
+<level>
+  <entity name="Text" uid="0">
+    <FlxText uid="2012842496">
+      <text>Lorem Ipsum</text>
+      <textSize>50</textSize>
+      <alignment>center</alignment>
+      <color>4294967295</color>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <font>helvetica</font>
+      <x>27.39124</x>
+      <y>188.3029</y>
+      <width>751.7974</width>
+      <height>215.9347</height>
+      <depth>1</depth>
+    </FlxText>
+    <NewDay uid="1162937728" />
+    <UISquelcher uid="2105558272" />
+  </entity>
+</level>

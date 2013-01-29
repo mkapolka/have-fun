@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<conditional test="id cynic">
+		<conditional test="coffee no_coffee">
+			<topic name="greeting">
+				<response>"Don't talk to me without a %coffee, scrublord."</response>
+				<options>coffee, Sheesh|bye</options>
+			</topic>
+			
+			<topic name="coffee">
+				<response>"Get the %app and buy a %coffee before you talk to me. We're both missing out on points."</response>
+				<options>app, Okay|bye</options>
+			</topic>
+			
+			<topic name="app">
+				<response>"'Coffee Life', it's the Starbucks game. You get points for drinking coffee and talking to people. Just get it already."</response>
+				<options>Okay|bye</options>
+				<result>[coffee getappquest]</result>
+			</topic>
+			
+			<topic name="default">
+				<response>"Get the %app and buy a %coffee. You're wasting my time."</response>
+				<options>#input, bye</options>
+			</topic>
+		<else>
+			<conditional test="data cynic_day == 0">
+				<conditional test="coffee talked_today cynic">
+					<topic name="greeting">
+						<response>"We don't need to talk anymore. We already got our %points."</response>
+						<options>points</options>
+					</topic>
+				<else>
+					<topic name="greeting">
+						<response>"Howdy stranger! Golly gee gosh it sure is swell to 'bond with someone over a cup of coffee!' Don't you just love to help your fellow Coffee Lifer get %points?"</response>
+						<options>coffee, points</options>
+						<result>[coffee talk cynic]</result>
+					</topic>
+				</else>
+				</conditional>
+				
+				<topic name="points">
+					<response>"I'll level with you. I'm just here for the points. I'm not really a big coffee drinker and I don't like talking to people much, but this is one of the few places that's really generous with their %Fun."</response>
+					<options>fun</options>
+					<result>[data cynic_progress = 1]</result>
+				</topic>
+			</conditional>
+			
+			<topic name="points">
+				<response>"I'll level with you. I'm just here for the points. I'm not really a big coffee drinker and I don't like talking to people much, but this is one of the few places that's really generous with their %Fun."</response>
+				<options>fun</options>
+			</topic>
+			
+			<topic name="fun">
+				<response>"Bigger name places tend to have more Fun to spare. App makers have to pay Facebook for every Fun point they give out in order to make sure Fun retains its value. It's basically just a marketing gimmick- people are very willing to go somewhere if they can get some Fun out of it. Case in point, really."</response>
+			</topic>
+			
+			<conditional test="data cynic_day == 1">
+				<topic name="greeting">
+					<response>"Hey. I don't have too much time to talk today, I'm afraid. I'm trying to beat my %high %score. Let's just %trade points and call it a day."</response>
+					<options>high score|high_score, trade</options>
+				</topic>
+				
+				<topic name="high_score">
+					<response>"You know how every day it tells you how much Fun you earned? Well, I haven't been able to beat my high score in a while. Generally these games give you less Fun as you progress, which is total bullshit. So I've got to scour the city looking for a hotfix for this broken game."</response>
+					<options>trade</options>
+					<result>[data cynic_progress = 1]</result>
+				</topic>
+				
+				<topic name="trade">
+					<response>"You say what you need to get points and I'll say what I need. A lot of companies will give you points if their app overhears you mention their brand name in conversation. Recently I've been working on getting some loyalty points for some %fashion companies."</response>
+					<options>fashion, high score|high_score</options>
+					<result>[data cynic_progress = 1]</result>
+				</topic>
+				
+				<topic name="fashion">
+					<response>"Just say this: %Gucci %Gucci %Louie %Louie %Fendi %Fendi %Prada" While she rattles of this list of companies her smartphone lets out a series of chirps that announce her earning a bundle of points.</response>
+				</topic>
+			</conditional>
+			
+			<conditional test="data cynic_day == 2">
+				<topic name="greeting">
+					<response>"Have I ever told you about the time I got banned from the %smoking game?"</response>
+					<options>smoking</options>
+					<result>[data cynic_progress = 1]</result>
+				</topic>
+				
+				<topic name="smoking">
+					<response>"Yeah, the NIH made a game that's supposed to encourage you to quit smoking. It gives you Fun based on how many cigarettes you haven't smoked since you started playing. I invented this technique in which you smoke a whole bunch really fast, then stop. The game thinks that you're a pack a day smoker and gives you tons of points every day, and when you want to speed it up again you just start smoking for another day."</response>
+					<options>technique</options>
+				</topic>
+				
+				<topic name="technique">
+					<response>"I called it 'riding the wave'. It earned me tons and tons of points, but it's really hard to pull off. You have to keep yourself in a constant state of nicotine withdrawal. I ended up getting banned from the game for it. They considered it an exploit. I was a little relieved when it happened, to be honest. Being in a state of constantly going cold turkey was making me really jumpy."</response>
+				</topic>
+			</conditional>
+			
+			<conditional test="data cynic_day == 3">
+				<topic name="greeting">
+					<response>"Hey, would you mind coming with me to the %Karma %Club and giving me some upvotes?"</response>
+					<options>Karma Club|club, upvotes</options>
+					<result>[data cynic_progress = 1]</result>
+				</topic>
+				
+				<topic name="club">
+					<response>"When you go to this place you have to get their app to get through the door, and once you're in anyone can up or downvote you. It's a really good way to get points as long as you can keep your votes in the %positive."</response>
+					<options>positive</options>
+				</topic>
+				
+				<topic name="positive">
+					<response>"The people there are very easy to please. Just make sure that youre clothes are relatively up to date and you're wearing the right brands."</response>
+				</topic>
+			</conditional>
+			
+			<conditional test="data club_visited > 0">
+				<topic name="club">
+					<response>"So, did you upvote me?"</response>
+					<options>yes|yes_upvote, no|no_upvote</options>
+				</topic>
+				
+				<topic name="yes_upvote">
+					<response>"Great, thanks a lot!"</response>
+				</topic>
+				
+				<topic name="no_upvote">
+					<response>"What the heck? Why wouldn't you upvote me? What did you have to lose? That doesn't make any sense!"</response>
+				</topic>
+			
+			<else>
+				<topic name="club">
+					<response>Oh yeah, the %Karma %Club. Did your conversation app tell you to ask me about that? It's cool, I get points for referrals anyway. Take this bookmark- that'll help you find the way to it. When you go make sure that you're looking cool- people will rate you based on how cool you look, and they can be pretty brutal."</response>
+					<result>[addlocation club]</result>
+				</topic>
+			</else>
+			</conditional>
+			
+			<conditional test="data cynic_day == 4">
+				<topic name="greeting">
+					<response>"Y'know, I'm thinking of taking a %break from games."</response>
+					<options>break</options>
+				</topic>
+				
+				<topic name="break">
+					<response>"I just don't get much of a kick out of them anymore. I'm not levelling up as quickly as I used to, I haven't beat my high score in quite some time now, and most days I find myself doing things I don't care about just to get some %Fun. I just think I need to get off Facebook for a while. Read some %books or something."</response>
+					<options>books</options>
+				</topic>
+				
+				<topic name="books">
+					<response>"Books are great. They're like little games themselves. What page you're on is like your score."</response>
+				</topic>
+			</conditional>
+			
+			<topic name="coffee">
+				<response>She takes on a melodramatic tone. "Heeeeey pardner, what kind of coffee did you get? Do you think it's maybe a #last_coffee because that sure sounds like it would be great! Yep I'll bet you got a #last_coffee ! Well, what is it pardner? What did you get?"</response>
+				<options>coffee|recital_type_coffee, mocha|recital_type_mocha, latte|recital_type_latte</options>
+			</topic>
+			
+			<conditional test="coffee recital_correct">
+				<topic name="recital_response">
+					<response>"Hey, that's correct. That's what you got. Good job. Good job remembering those few words. Really, that's just really fantastic for you."</response>
+					<result>[fun += 20]</result>
+				</topic>
+			<else>
+				<topic name="recital_response">
+					<response>"What the fuck, man? Don't you know how this game goes? All you had to do was say you got a #last_coffee . Then you get points. It's not hard. Jeez."</response>
+					<options>sorry|bye</options>
+				</topic>
+			</else>
+			</conditional>
+
+			
+			<topic name="default">
+				<response>"Yeah, cool, okay."</response>
+				<options>bye</options>
+			</topic>
+		</else><!--No coffee-->
+		</conditional>
+		
+		<topic name="input_default">
+			<response>"Yeah, yeah, you're real clever. You know the reason conversation topics get suggested is because they're sponsored. And if they're sponsored, they probably provide %Fun. Don't bother wasting your time asking about stuff that isn't worth any %points."</response>
+			<options>fun, points</options>
+		</topic>
+	</conditional>
+	
+	<conditional test="id cynic_club">
+		<topic name="greeting">
+			<response>Julie is here, dancing and schmoozing for points. She sees you and waves hello but is clearly preoccupied.</response>
+			<options>upvote, downvote, leave|bye</options>
+			<result>[setportrait 4][maskperson cynic]</result>
+		</topic>
+		
+		<topic name="upvote">
+			<response>You give her an upvote.</response>
+			<options>leave|bye</options>
+			<result>[fun += 50]</result>
+		</topic>
+		
+		<topic name="downvote">
+			<response>You give her a downvote.</response>
+			<options>leave|bye</options>
+			<result>[fun += 50]</result>
+		</topic>
+
+		<topic name="input_default">
+			<response>She is too preoccupied to notice."</response>
+			<options>upvote, downvote, leave|bye</options>
+		</topic>
+	</conditional>
+</dialog>

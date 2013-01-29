@@ -1,0 +1,398 @@
+<data>
+	<people>
+		<person>
+			<id>player</id>
+			<name>Jeux Calvaire</name>
+			<type>player</type>
+			<portrait_id>1</portrait_id>
+			<money>1000</money>
+			<fun>0</fun>
+			<fun_level>1</fun_level>
+			<fun_tnl>100</fun_tnl>
+			<fun_gap>200</fun_gap>
+			<items>
+			</items>
+			<clothing>
+				<clothing>
+					<name>Purple Flannel Shirt</name>
+					<description>This is your favorite shirt</description>
+					<id>pfs</id>
+					<slot>0</slot>
+					<texture>0</texture>
+				</clothing>
+				
+				<clothing>
+					<name>Blown Out Jeans</name>
+					<description>These are you favorite jeans</description>
+					<id>boj</id>
+					<slot>1</slot>
+					<texture>55</texture>
+				</clothing>
+			</clothing>
+			
+			<wardrobe>
+			</wardrobe>
+		</person>
+		
+		<person>
+			<id>mailman</id>
+			<name>Jack the Mailman</name>
+			<type>unique</type>
+			<portrait_id>2</portrait_id>
+			<rapport>0</rapport>
+			
+			<fun_level>10</fun_level>
+		</person>
+		
+		<person>
+			<id>barista</id>
+			<name>Barista</name>
+			<type>unique</type>
+			<portrait_id>3</portrait_id>
+			<suggest_topics>false</suggest_topics>
+			<rapport>0</rapport>
+			
+			<fun_level>20</fun_level>
+		</person>
+		
+		<person>
+			<id>cynic</id>
+			<name>Julie Meadows</name>
+			<type>unique</type>
+			<portrait_id>4</portrait_id>
+			<rapport>0</rapport>
+			
+			<fun_level>33</fun_level>
+			
+			<default_convo>coffee, club, bye</default_convo>
+			<disabled_convo>shirt, pants, walking, yoga</disabled_convo>
+			
+			<clothing>
+				<clothing>
+					<name>Red Polka Dots</name>
+					<description></description>
+					<slot>0</slot>
+					<texture>10</texture>
+				</clothing>
+				
+				<clothing>
+					<name>Anthropologie Skirt</name>
+					<description></description>
+					<slot>1</slot>
+					<texture>38</texture>
+				</clothing>
+			</clothing>
+		</person>
+		
+		<person>
+			<id>bro</id>
+			<name>Chad Bigmore</name>
+			<type>unique</type>
+			<portrait_id>5</portrait_id>
+			<rapport>0</rapport>
+			
+			<fun_level>25</fun_level>
+			
+			<default_convo>coffee, lifting, bye</default_convo>
+			
+			<clothing>
+				<clothing>
+					<name>Ralph Lauren Polo (Pink)</name>
+					<description></description>
+					<slot>0</slot>
+					<texture>41</texture>
+				</clothing>
+				
+				<clothing>
+					<name>Old Navy Cargo Shorts</name>
+					<description></description>
+					<slot>1</slot>
+					<texture>61</texture>
+				</clothing>
+			</clothing>
+		</person>
+		
+		<person>
+			<id>naive</id>
+			<name>Linda Sweet</name>
+			<type>unique</type>
+			<portrait_id>10</portrait_id>
+			<rapport>0</rapport>
+			
+			<fun_level>14</fun_level>
+			
+			<default_convo>coffee, walking, fun</default_convo>
+			<disabled_convo>shirt, pants, yoga</disabled_convo>
+			
+			<clothing>
+				<clothing>
+					<name>Gap Knit Pullover</name>
+					<description></description>
+					<slot>0</slot>
+					<texture>36</texture>
+				</clothing>
+				
+				<clothing>
+					<name>Target Slacks</name>
+					<description></description>
+					<slot>1</slot>
+					<texture>61</texture>
+				</clothing>
+			</clothing>
+		</person>
+		
+		<person>
+			<id>hacker</id>
+			<name>???</name>
+			<type>unique</type>
+			<portrait_id>0</portrait_id>
+			
+			<default_convo>coffee, shirt, pants, walking, yoga, bye</default_convo>
+		</person>
+		
+		<person>
+			<id>barista_2</id>
+			<name>Catherine Melbourne</name>
+			<type>unique</type>
+			<portrait_id>0</portrait_id>
+		</person>
+	</people>
+	
+	<clothing_brands>Ralph Lauren, Gap, Target, Old Navy, Anthropologie</clothing_brands>
+	<clothing_adjectives>Hip, Spring, Sleek, Cool, Chic, Fall, Winter, Summer, Comfy, Stylish, Fun, Peppy, Somber, Zippy</clothing_adjectives>
+	<shirt_names>Shirt, Top, Tee, Sweater, Polo, Sweatshirt, Jacket</shirt_names>
+	<pants_names>Pants, Jeans, Slacks</pants_names>
+	
+	<naive_upper_clothing_slots>0, 1, 2, 3, 4, 5, 6, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39</naive_upper_clothing_slots>
+	<naive_lower_clothing_slots>50, 51, 53, 54, 56, 57, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69</naive_lower_clothing_slots>
+	<bro_upper_clothing_slots>30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 0, 2</bro_upper_clothing_slots>
+	<bro_lower_clothing_slots>50, 51, 52, 53, 54, 55, 56, 57, 58, 59</bro_lower_clothing_slots>
+	<cynic_upper_clothing_slots>10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 40, 41, 42, 43, 44, 45, 46, 47, 48</cynic_upper_clothing_slots>
+	<cynic_lower_clothing_slots>6, 20, 21, 22, 23, 24, 26</cynic_lower_clothing_slots>
+	
+	<first_names>
+		<male>John, Jack, Frank, Mark, Cody, Michael, Cory, Mits, Nick, Joe</male>
+		<female>Jane, Jill, Fiona, Mary, Tamara, Susan</female>
+	</first_names>
+	
+	<last_names>
+		Doe, Stomper, Flugzeug, Bondo, Tutenheim, Dylan
+	</last_names>
+	
+	<upper_clothing_slots>0, 1, 2, 3, 4, 5, 6, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49</upper_clothing_slots>
+	<lower_clothing_slots>50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69</lower_clothing_slots>
+	
+	<!--
+		TERMS
+	-->
+	
+	<topics>
+		fun, routine, coffee, news
+	</topics>
+	
+	<!-- MISC DATA -->
+	<met_deodorant>0</met_deodorant>
+	<dove_loyalty>0</dove_loyalty>
+	<secret_loyalty>0</secret_loyalty>
+	<next_dove_award>10</next_dove_award>
+	<next_secret_award>100</next_secret_award>
+	<last_deodorant>neither</last_deodorant>
+	<last_deodorant_date>-1</last_deodorant_date>
+	<wakeup_points>0</wakeup_points>
+	
+	<fun_today>0</fun_today>
+	<fun_high_score>0</fun_high_score>
+	
+	<!--
+	Main Character Progression Data
+	"id_day" is a marker that determines what information and triggers that person is going to tell you
+	"id_progress" is a flag that determines whether or not that person will progress in their storyline the next time you talk to them
+	One question: Should I make it so that the characters only progress when you talk to them (easier, makes the game go on longer) or should they progress
+	regardless (more realistic)
+	-->
+	<naive_day>0</naive_day>
+	<naive_progress>0</naive_progress>
+	
+	<bro_day>0</bro_day>
+	<bro_progress>0</bro_progress>
+	
+	<cynic_day>0</cynic_day>
+	<cynic_progress>0</cynic_progress>
+	
+	<hacker_day>0</hacker_day>
+	<hacker_progress>0</hacker_progress>
+	
+	<has_smartphone>0</has_smartphone>
+	<has_coffee>0</has_coffee>
+	<date>0</date>
+	
+	<club_visited>0</club_visited>
+	
+	<packages>
+		
+	</packages>
+	
+	<sleep_fun_streak>0</sleep_fun_streak>
+	
+	<!---- Location Data -->
+	<known_locations>
+		<location>home</location>
+		<location>starbucks</location>
+	</known_locations>
+	
+	<!-- These places are unlocked through gameplay -->
+	<unknown_locations>
+		<location>morts</location>
+		<location>gym</location>
+		<location>club</location>
+	</unknown_locations>
+	
+	<current_location>home</current_location>
+	
+	<!-- Active App Data -->
+	<!-- These are the apps the player actually has access to -->
+	<apps>
+		<app>
+			<id>quests</id>
+			<name>Quests</name>
+			<quests>
+				<quest>
+					<id>quest_welcome</id>
+					<name>Welcome to Google Quests!</name>
+					<complete>1</complete>
+				</quest>
+				
+				<quest>
+					<id>quest_deodorant_start</id>
+					<name>Beware Stankus</name>
+					<complete>0</complete>
+				</quest>
+			</quests>
+		</app>
+		
+		<app>
+			<id>maps</id>
+			<name>Google Maps</name>
+		</app>
+		
+		<app>
+			<id>amazon</id>
+			<name>Amazon</name>
+		</app>
+		
+	</apps>
+	<!-- Default App Data -->
+	<!-- This is where the game pulls the apps from when it adds them to the player's collection -->
+	<app_data>
+		<app>
+			<id>mail</id>
+			<name>Mail</name>
+			<emails>
+				<email>
+					<id>greetings_email</id>
+					<name>Welcome to Google Mail!</name>
+					<read>0</read>
+				</email>
+			</emails>
+		</app>
+		
+		<app>
+			<id>coffee</id>
+			<points>0</points>
+			<last_coffee>0</last_coffee>
+			<nextrank>3</nextrank>
+			<prevrank>0</prevrank>
+			<nextgap>5</nextgap>
+			<routine_bonus>0</routine_bonus>
+			<rank>0</rank>
+			<name>Coffee Life</name>
+			<talkies>
+				<naive>-1</naive>
+				<cynic>-1</cynic>
+				<bro>-1</bro>
+				<hacker>-1</hacker>
+			</talkies>
+		</app>
+		
+		<app>
+			<id>walking</id>
+			<name>Walk A Day</name>
+			<points>0</points>
+			<nextbonus>1000</nextbonus>
+			<nextgap>1500</nextgap>
+		</app>
+		
+		<app>
+			<id>foursquare</id>
+			<points>0</points>
+			<mentor>none</mentor>
+			<checked_in>
+				<home>-1</home>
+				<starbucks>-1</starbucks>
+				<gym>-1</gym>
+				<club>-1</club>
+			</checked_in>
+			<name>FourSquare</name>
+			
+			<location_points>
+				<home>
+					<bro>0</bro>
+					<cynic>0</cynic>
+					<player>0</player>
+				</home>
+				
+				<starbucks>
+					<bro>0</bro>
+					<cynic>20</cynic>
+					<player>0</player>
+				</starbucks>
+				
+				<gym>
+					<bro>20</bro>
+					<player>0</player>
+				</gym>
+				
+				<club>
+					<player>0</player>
+				</club>
+			</location_points>
+			
+			<patron_points>0</patron_points>
+		</app>
+		
+		<app>
+			<id>gym</id>
+			<name>Gym</name>
+			
+			<points>0</points>
+			<tnl>10</tnl>
+			<ntnl>10</ntnl>
+			<ptnl>0</ptnl>
+			<rank>0</rank>
+			<streak>0</streak>
+			<lastvisited>-1</lastvisited>
+			
+			<tone>1</tone>
+			<bulk>1</bulk>
+			<strength>1</strength>
+		</app>
+		
+	</app_data>
+	
+	<!-- Clothing information - what's in your closet -->
+	
+	
+	<!--
+		ITEM TEMPLATES
+	-->
+	<items>
+		<item>
+			<id>item_coffee</id>
+			<name>Starbuck's Coffee</name>
+		</item>
+		<item>
+			<id>mort_coffee</id>
+			<name>Mort's Coffee</name>
+		</item>
+	</items>
+</data>

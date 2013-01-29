@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<keywords>
+		<keyword>
+			<topic>greeting</topic>
+			<words>hello, hi, what's up</words>
+		</keyword>
+		
+		<keyword>
+			<topic>bye</topic>
+			<words>bye, goodbye, see ya, peace out, later, leave, close, quit, ignore, exit</words>
+		</keyword>
+	</keywords>
+	
+	<topic name="default">
+		<response>Something bad happened. This should never be what is displayed.</response>
+		<options>bye, #input</options>
+	</topic>
+	
+	<topic name="bye">
+		<response></response>
+		<options></options>
+		<result>[closedialog]</result>
+	</topic>
+	
+	<topic name="interjection_continue">
+		<result>[interjection_continue]</result>
+	</topic>
+	
+	<conditional test="id bathroom">
+		<conditional test="hassmartphone">
+			<conditional test="deodorant used_deodorant_today">
+				<conditional test="data last_deodorant == dove">
+					<topic name="greeting">
+						<response>As you enter the bathroom the two deodorant sticks light up to greet you. The Dove brand deodorant addresses you first. "Thanks again for choosing Dove today! Come back tomorrow to get more points and have more %fun!"</response>
+						<options>continue|pitch_2</options>
+						<result>[setname Dove][setportrait 6][maskperson player]</result>
+					</topic>
+					
+					<topic name="pitch_2">
+						<response>"We'll forgive you for choosing Dove today. Tomorrow you'll have another chance to use Secret brand deodorant and discover our superior quality."</response>
+						<options>leave|bye</options>
+						<result>[setname Secret][setportrait 7]</result>
+					</topic>
+				</conditional>
+				
+				<conditional test="data last_deodorant == secret">
+					<topic name="greeting">
+						<response>As you enter the bathroom the two deodorant sticks light up to greet you. The Secret brand deodorant addresses you first. "Thank you so much for choosing to make Secret brand deodorant a part of your life today! Be sure to come back tomorrow to start another %fun filled day with Secret!"</response>
+						<options>continue|pitch_2</options>
+						<result>[setname Secret][setportrait 7]</result>
+					</topic>
+					
+					<topic name="pitch_2">
+						<response>"It's alright that you didn't choose Dove today. Tomorrow you will have another chance to make the right decision and choose Dove instead."</response>
+						<options>leave|bye</options>
+						<result>[setname Dove][setportrait 6]</result>
+					</topic>
+				</conditional>
+			<else>
+				<conditional test="data met_deodorant == 0">				
+					<topic name="greeting">
+						<response>You enter the bathroom. The other day you received two sample bars of deodorant in the mail. As you enter the room they detect your presence and light up.</response>
+						<options>next|deodorant_1</options>
+						<result>[maskperson player]</result>
+					</topic>
+					
+					<topic name="deodorant_1">
+						<response>"Dove roll-on deodorant provides you with the long lasting protection you'll need to make it through your day of fun! Plus, for every day you use Dove, you'll get 10 Fun points!</response>
+						<options>continue|deodorant_2</options>
+						<result>[setname Dove][setportrait 6]</result>
+					</topic>
+					
+					<topic name="deodorant_2">
+						<response>"But," the other stick pipes in, "if you choose Secret brand deodorant, you'll earn an initial bonus of 100 Fun!"</response>
+						<options>continue|deodorant_3</options>
+						<result>[setname Secret][setportrait 7]</result>
+					</topic>
+					
+					<topic name="deodorant_3">
+						<response>Which deodorant will you use?</response>
+						<options>Dove|use_dove, Secret|use_secret, neither|use_neither</options>
+						<result>[setname  ][setportrait 8][data met_deodorant = 1]</result>
+					</topic>
+				</conditional>
+				
+				<conditional test="data met_deodorant == 1">
+					<conditional test="data last_deodorant == neither">
+						<topic name="greeting">
+							<response>You enter the bathroom. As you approach your deodorants they become animated again.</response>
+							<options>continue|deodorant_2</options>
+							<result>[setportrait 0][maskperson player]</result>
+						</topic>
+						
+						<topic name="deodorant_2">
+							<response>"You're back! Are you ready to try Dove brand deodorant? Remember, you'll get 10 Fun every time you choose Dove!"</response>
+							<options>continue|deodorant_3</options>
+							<result>[setname Dove][setportrait 6]</result>
+						</topic>
+						
+						<topic name="deodorant_3">
+							<response>"But if you want long lasting protection and a 100 Fun bonus, you'll choose Secret brand deodorant!"</response>
+							<options>continue|deodorant_4</options>
+							<result>[setname Secret][setportrait 7]</result>
+						</topic>
+						
+						<topic name="deodorant_4">
+							<response>Which deodorant will you use?</response>
+							<options>dove|use_dove, secret|use_secret, neither|use_neither</options>
+							<result>[setname  ][setportrait 8]</result>
+						</topic>
+					</conditional>
+					
+					<conditional test="data last_deodorant == dove">
+						<topic name="greeting">
+							<response>"Welcome back! Ready to start your day right with Dove? Remember, every time you choose Dove you'll gain #next_dove_award Fun!"</response>
+							<options>continue|deodorant_2</options>
+							<result>[setname Dove][setportrait 6][maskperson player]</result>
+						</topic>
+						
+						<topic name="deodorant_2">
+							<response>"It's not too late to try Secret brand deodorant! If you choose Secret today, you'll get a #next_secret_award Fun conversion bonus!"</response>
+							<options>continue|deodorant_choose</options>
+							<result>[setname Secret][setportrait 7]</result>
+						</topic>
+						
+						<topic name="agonize">
+							<response>You agonize over the decision. The Dove stick takes on a slightly panicked tone and says, "Having trouble deciding? Don't forget all the %Fun we've had together in the past! Why don't I sweeten the pot a bit- if you choose Dove today, you'll get #next_dove_award Fun! Now that's the way to start your day off right!" </response>
+							<options>continue|agonize_2</options>
+							<result>[setname Dove][setportrait 6][deodorant agonize][rebuild]</result>
+						</topic>
+						
+						<topic name="agonize_2">
+							<response>The Secret brand deodorant stick scoffs. "Wow. Well, that was awkward. I don't normally like to stoop to that level, but it looks like I have no choice. I'll give you #next_secret_award points for choosing Secret today."</response>
+							<options>continue|deodorant_choose</options>
+							<result>[setname Secret][setportrait 7]</result>
+						</topic>
+						
+						<topic name="deodorant_choose">
+							<response>Which deodorant will you use?</response>
+							<options>Dove|use_dove, Secret|use_secret, agonize, neither|bye</options>
+							<result>[setname  ][setportrait 8]</result>
+						</topic>
+					</conditional>
+					
+					<conditional test="data last_deodorant == secret">
+						<topic name="greeting">
+							<response>"Welcome back! Ready to start your day right with Secret? Remember, every time you choose Secret you'll gain #next_secret_award Fun!"</response>
+							<options>continue|deodorant_2</options>
+							<result>[setname Secret][setportrait 7][maskperson player]</result>
+						</topic>
+						
+						<topic name="deodorant_2">
+							<response>"It's not too late to try Dove brand deodorant! If you choose Dove today, you'll get a #next_dove_award Fun conversion bonus!"</response>
+							<options>continue|deodorant_choose</options>
+							<result>[setname Dove][setportrait 6]</result>
+						</topic>
+						
+						<topic name="agonize">
+							<response>You agonize over the decision. The Secret brand deodorant perks up. "Have you forgotten so quickly all the Fun we've had together? You can't possibly think that Dove brand deodorant will give you the long lasting protection you'll need to party like that, do you? Listen, if you choose Secret today, I'll give you #next_secret_award Fun."</response>
+							<options>continue|agonize_2</options>
+							<result>[setname Secret][setportrait 7][deodorant agonize][rebuild]</result>
+						</topic>
+						
+						<topic name="agonize_2">
+							<response>The Dove brand deodorant looks shocked. "Can you believe what Secret is saying? That bitch! Do you really want to stay loyal to a brand like that? If you switch to Dove now I can give you #next_dove_award Fun, and you won't have to deal with someone as toxic as her."</response>
+							<options>continue|deodorant_choose</options>
+							<result>[setname Dove][setportrait 6]</result>
+						</topic>
+						
+						<topic name="deodorant_choose">
+							<response>Which deodorant will you use?</response>
+							<options>Dove|use_dove, Secret|use_secret, agonize, neither|bye</options>
+							<result>[setname  ][setportrait 8]</result>
+						</topic>
+					</conditional>
+				</conditional>
+				
+				<topic name="use_dove">
+					<response>As you use the deodorant you can hear it thanking you profusely from your armpit. The silouette on the Secret brand deodorant slouches in disappointment. You gain #next_dove_award Fun.</response>
+					<options>leave</options>
+					<result>[setname Dove][setportrait 6][deodorant use_dove]</result>
+				</topic>
+				
+				<topic name="use_secret">
+					<response>As you use the deodorant you can hear it thanking you profusely from your armpit. The once delighted face on the Dove brand deodorant stick turns away in disappointment. You gain #next_secret_award Fun.</response>
+					<options>leave</options>
+					<result>[setname Secret][setportrait 7][deodorant use_secret]</result>
+				</topic>
+				
+				<topic name="use_neither">
+					<response></response>
+					<options>bye</options>
+					<result>[data last_deodorant = neither][closedialog]</result>
+				</topic>
+			</else>
+			</conditional>
+			
+		<else>
+			<topic name="greeting">
+				<response>You enter your bathroom. Among your uninteresting toiletries are two sample sticks of deodorant from rival deodorant manufacturers. Their labels remind you to return when you have a smartphone and can participate in their reward programs.</response>
+				<options>leave</options>
+			</topic>
+		</else>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id dresser">
+		<conditional test="no_clothes">
+			<topic name="greeting">
+				<response>This is your dresser. It is empty.</response>
+				<options>#clothing, leave|bye</options>
+				<result>[setportrait 0]</result>
+			</topic>
+		<else>
+			<topic name="greeting">
+				<response>This is your dresser. Select an item of clothing.</response>
+				<options>#clothing, leave|bye</options>
+				<result>[setportrait 0]</result>
+			</topic>
+		</else>
+		</conditional>
+		
+		<topic name="info">
+			<response>This is a #clothing_name . It's #clothing_age days old.</response>
+			<options>wear, ditch|remove, back|greeting</options>
+			<result>[maskperson player][setportrait 9]</result>
+		</topic>
+		
+		<topic name="wear">
+			<response>You put on the #clothing_name</response>
+			<options>back|greeting</options>
+			<result>[wear][maskperson player]</result>
+		</topic>
+		
+		<topic name="remove">
+			<response>You throw away the #clothing_name</response>
+			<options>back|greeting</options>
+			<result>[ditch]</result>
+		</topic>
+	</conditional>
+	
+	<conditional test="id bed">
+		<topic name="default">
+			<response>This is your bed, where you sleep.</response>
+			<options>Sleep, Don't|bye</options>
+		</topic>
+		
+		<conditional test="data has_smartphone == 1">
+			<topic name="sleep">
+				<response></response>
+				<result>[opendialog default goodnight Siri][query goodnight_21][fade]</result>
+			</topic>
+		<else>
+			<topic name="sleep">
+				<result>[sleep][closedialog]</result>
+			</topic>
+		</else>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id club_dancers">
+		<topic name="greeting">
+			<response>There is a throng of dancers here. They are all busy dancing to their own music and rating each other on their smartphones.</response>
+			<options>upvote, downvote, okay|bye</options>
+		</topic>
+		
+		<topic name="upvote">
+			<response>You upvote a few people who you think look cool.</response>
+			<options>okay|bye</options>
+			<result>[fun += 150]</result>
+		</topic>
+		
+		<topic name="downvote">
+			<response>You downvote a few people who you think are uncool.</response>
+			<options>okay|bye</options>
+			<result>[fun += 150]</result>
+		</topic>
+	</conditional>
+	
+	<conditional test="id goodnight">
+		<topic name="default">
+			<response>"Well, it's that time of night again. Stores are closing, bars are announcing last call, and all the good people in the world are finding their way back to bed. You should head back as well."</response>
+			<options>Go Home|goodnight_2</options>
+			<result>[setportrait 1][setskin smartphone][setname Siri][hidegoodbye]</result>
+		</topic>
+		
+		<topic name="goodnight_2">
+			<response>You head home and get ready for bed.</response>
+			<options>continue|goodnight_21</options>
+			<result>[setportrait 0][fade]</result>
+		</topic>
+		
+		<conditional test="beat_high_score">
+			<topic name="goodnight_21">
+				<response>"Well, it looks like it's that time of day again. Today you earned #fun_today Fun! You beat your high score! Congratulations. It must have been a very fun day today."</response>
+				<options>continue|goodnight_3</options>
+				<result>[setportrait 1][stopclock]</result>
+			</topic>
+		<else>
+			<topic name="goodnight_21">
+				<response>"Well, it looks like it's that time of day again. Today you earned #fun_today Fun. That wasn't enough to beat your high score, I'm afraid. Your high score is #high_score Fun. Maybe you will have more fun tomorrow."</response>
+				<options>continue|goodnight_3</options>
+				<result>[setportrait 1][stopclock]</result>
+			</topic>
+		</else>
+		</conditional>
+		
+		<topic name="goodnight_3">
+			<response>Siri's voice softens to a coo. "Today certainly was an interesting day, wasn't it?  Did you have %fun today?"</response>
+			<options>yes|gn_fun, no|gn_nofun</options>
+			<result>[setportrait 1][stopclock]</result>
+		</topic>
+		
+		<topic name="sleep">
+			<response>You close your eyes and go to sleep. Good-night, dear friend. Good-night, dear friend...</response>
+			<result>[sleep]</result>
+		</topic>
+		
+		<topic name="gn_fun">
+			<response>"That's good. Now get some rest. You'll need all the energy points you can muster, because tomorrow is going to be another fun-filled day. Good-night, dear friend. Good-night."</response>
+			<options>good night siri|sleep</options>
+			<result>[sleep_hadfun]</result>
+		</topic>
+		
+		<topic name="gn_nofun">
+			<response>"That's terrible! I'm so sorry to hear that. You know, if you have more %fun, you'll have more %Fun. Well, rest up. You'll need all the energy points you can muster, because tomorrow is going to be another fun-filled day. Good-night, dear friend. Good-night."</response>
+			<options>good night siri|sleep</options>
+			<result>[sleep_nofun]</result>
+		</topic>
+	</conditional>
+	
+	<!-- Using id door for the mailman for now :/ -->
+	<conditional test="id door">
+		
+		<!--<topic name="greeting">
+			<response>You feel you should set a course with your new smartphone.</response>
+			<options>bye</options>
+		</topic>-->
+		
+		<topic name="greeting">
+			<response></response>
+			<result>[opendialog smartphone][query maps]</result>
+		</topic>
+		
+		<!--<conditional test="nosmartphone">-->
+		<conditional test="mailman">
+			<topic name="default">
+				<response>"Hmm, I don't know anything about that."</response>
+				<options>see you later|open_package</options>
+			</topic>
+			
+			<topic name="greeting">
+				<response>"Good morning. Got some mail for ya. %Sign %here please."</response>
+				<options>sign here</options>
+				<result>[connect sign here sign][setportrait 2][setname Jack the Mailman]</result>
+			</topic>
+			
+			<topic name="stamps">
+				<response>"Yeah, I know it's ridiculous, but that's one of the things they've got us doing for %points now."</response>
+				<options>see you later|open_package, daughter, points, #input</options>
+			</topic>
+			
+			<topic name="daughter">
+				<response>"She's turning 10 soon. Wants her own smartphone for her birthday. I don't know how I feel about that- seems a bit young to me, but my wife thinks it's time."</response>
+				<options>see you later|open_package, stamps, points, #input</options>
+			</topic>
+			
+			<topic name="points">
+				<response>"They're everywhere. %Points for getting up, %points for putting on your shoes, %points for brushing your teeth. You can't take a dump without %points coming out of your ass. Ehr, pardon my french."</response>
+				<options>see you later|open_package, stamps, daughter, #input</options>
+			</topic>
+			
+			<conditional test="nosmartphone">
+				<topic name="sign">
+					<response>"There ya go. I, uh, I hate to do this, but do you need any %stamps or anything? My %daughter's birthday is coming up and I'm super close to levelling up."</response>
+					<options>sure, nah</options>
+					<result>[connect sure buy_stamp][connect nah no_buy_stamp]</result>
+				</topic>
+				
+				<topic name="buy_stamp">
+					<response>"Oh, great, thanks so much!" He hands you a small packet of %stamps. On each stamp the smiling face of Jane McGonigal stares back at you. You hear muffled fanfare from the smartphone in the mailman's pocket. "Well, I guess I'd best be on my way. Thanks again."</response>
+					<options>open the package, #input</options>
+					<result>[connect open the package open_package][additem stamp][removemoney 100][connect bye open_package]</result>
+				</topic>
+				
+				<topic name="no_buy_stamp">
+					<response>He sighs. "Yeah, no one really mails anything anymore, huh? Well, I'll see you around."</response>
+					<options>open the package</options>
+					<result>[connect open the package open_package]</result>
+				</topic>
+			<else>
+				<topic name="sign">
+					<response>"Great. Have a good day."</response>
+					<options>open the package|open_package</options>
+				</topic>
+			</else>
+			</conditional>
+			
+			
+			<conditional test="data has_smartphone == 1">
+			<else>
+				<topic name="open_package">
+					<response>You tear open the package. Inside there is a smartphone. Looks like you've finally decided to get with the times.</response>
+					<options>turn it on</options>
+					<result>[setportrait 0][setname ???][connect turn it on tio]</result>
+				</topic>
+				
+				<topic name="tio">
+					<response>You boot it up. You are greeted with an eerily unthreatening digital secretary. "Hello. Welcome to the first day of the rest of your life. My name is Siri". She is the culmination of decades of research in behavioral science. The magnum opus of the over 500 behavioral engineers at Apple.</response>
+					<options>howdy</options>
+					<result>[setportrait 1][setname Siri][connect howdy siri_greet][setskin smartphone][givesmartphone][hidegoodbye][connect bye bye_fix]</result>
+				</topic>
+				
+				<topic name="bye_fix">
+					<result>[closedialog]</result>
+				</topic>
+				
+				<topic name="siri_greet">
+					<response>"I can help you with many things. I come pre-loaded with several apps to make your life more fun!"</response>
+					<options>Such As?|sg2</options>
+				</topic>
+				
+				<topic name="sg2">
+					<response></response>
+					<result>[opendialog smartphone][query help]</result>
+				</topic>
+			</else>
+				<topic name="open_package">
+					<response>It's a package from Amazon. It looks like your #clothes_ordered has arrived!</response>
+					<options>cool|closedialog</options>
+					<result>[showportrait 0][setname  ][givepackages]</result>
+				</topic>
+				
+				<topic name="closedialog">
+					<result>[closedialog]</result>
+				</topic>
+			</conditional>
+			
+		</conditional>
+	</conditional>
+	
+	<!--
+		CAFE DIALOGS
+	-->
+	
+	<conditional test="id cafe_advert">
+		<conditional test="noapp coffee">
+			<topic name="default">
+				<response>There's an advertisement here for "Coffee Life", the cafe's app. At the bottom of the poster is a QR code.</response>
+				<options>Scan the code, Ignore</options>
+				<result>[connect Scan the code scan]</result>
+			</topic>
+			
+			<topic name="scan">
+				<response>You scan the code and download the app.</response>
+				<options>Neat|bye</options>
+				<result>[addapp coffee][completequest quest_get_coffee_app][givequest quest_buy_coffee Your First Coffee]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="hasapp coffee">
+			<topic name="default">
+				<response>There's an advertisement here for "Coffee Life", the cafe's app. You already have this app.</response>
+				<options>Leave</options>
+			</topic>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id barista">
+		<topic name="input_default">
+			<response>"Oh, I, uh, haven't thought about that actually. People don't %talk to me very much when I'm on the job."</response>
+			<options>coffee, bye</options>
+		</topic>
+		
+		<topic name="talk">
+			<response>"Starbucks pays to make sure that the Conversation Starter app doesn't suggest any unproductive chit-chat when you're talking to the baristas. I mean, I get it, but it gets pretty dull around here. Sometimes my mind %wanders into some pretty strange places."</response>
+			<options>coffee, coffee, bye</options>
+		</topic>
+		
+		<topic name="wanders">
+			<response>"This one time I thought  about how cool it would be to be like a living toy like in toy story, but instead of doing whatever dumb shit they do in that movie when the kid goes out of the room, they'd just sit around smoking %weed. Like, little anime dolls smokin %weed and getting high, how cool would that be?"</response>
+			<options>coffee, coffee, coffee, coffee, coffee, coffee</options>
+		</topic>
+		
+		<topic name="weed">
+			<response>"And I wonder, like, if one of those animated toys was a vibrator, would the other toys think that was weird? Do toys have a sense of the social mores that make a vibrator a weird thing to have around? Would they share their weed with it?"</response>
+			<options>bye, bye, bye, bye</options>
+		</topic>
+		
+		<conditional test="hasapp coffee">
+			<topic name="greeting">
+				<response>Welcome to Starbucks! What can I get you?</response>
+				<options>Coffee, Mocha, Latte, Bye, #input</options>
+			</topic>
+			
+			<topic name="coffee">
+				<response></response>
+				<result>[query type_coffee]</result>
+			</topic>
+			
+			<topic name="mocha">
+				<response></response>
+				<result>[query type_mocha]</result>
+			</topic>
+			
+			<topic name="latte">
+				<response></response>
+				<result>[query type_latte]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="noapp coffee">
+			<topic name="greeting">
+				<response>"Hey there stranger! I can't help but notice you don't have the "Coffee Life" app. You should totally check it out. You can get points and %fun for drinking %coffee and it's super fun! Anyway what can I get you?"</response>
+				<options>App, Bye</options>
+			</topic>
+			
+			<topic name="fun">
+				<response></response>
+			</topic>
+			
+			<topic name="app">
+				<response>"You can download it from the poster over there on the wall."</response>
+				<options>Neat|bye</options>
+				<result>[coffee getappquest]</result>
+			</topic>
+			
+			<topic name="coffee">
+				<response>"D- don't you want to get the %app first? You'll have a lot more %fun if you do!"</response>
+				<options>app, fun, Yes|type_coffee, no|greeting</options>
+			</topic>
+			
+			<topic name="mocha">
+				<response>"D- don't you want to get the %app first? You'll have a lot more %fun if you do!"</response>
+				<options>app, fun, Yes|type_mocha, no|greeting</options>
+			</topic>
+			
+			<topic name="latte">
+				<response>"D- don't you want to get the %app first? You'll have a lot more %fun if you do!"</response>
+				<options>app, fun, Yes|type_latte, no|greeting</options>
+			</topic>
+		</conditional>
+		
+		<topic name="type_coffee">
+			<response></response>
+			<result>[coffee settype coffee][rebuild][query flavor_prompt]</result>
+		</topic>
+		
+		<topic name="type_mocha">
+			<response></response>
+			<result>[coffee settype mocha][rebuild][query flavor_prompt]</result>
+		</topic>
+		
+		<topic name="type_latte">
+			<response></response>
+			<result>[coffee settype latte][rebuild][query flavor_prompt]</result>
+		</topic>
+		
+		<conditional test="coffee coffee_type coffee">
+			<topic name="flavor_prompt">
+				<response>"Sure thing. Which blend of coffee do you want?"</response>
+				<options>Turkish Blend|flavor_light, Puerto Rican Melody|flavor_medium, French Roast|flavor_heavy</options>
+			</topic>
+			
+			<topic name="flavor_light">
+				<response></response>
+				<result>[coffee setflavor Turkish Blend][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_medium">
+				<response></response>
+				<result>[coffee setflavor Puerto Rican Melody][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_heavy">
+				<response></response>
+				<result>[coffee setflavor French Roast][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="extra_prompt">
+				<response>"Cream or sugar?"</response>
+				<options>cream|extra_cream, sugar|extra_sugar, cream and sugar|extra_both, neither|extra_neither</options>
+			</topic>
+			
+			<topic name="extra_cream">
+				<response></response>
+				<result>[coffee setextra with cream][query size_prompt]</result>
+			</topic>
+			
+			<topic name="extra_sugar">
+				<response></response>
+				<result>[coffee setextra with sugar][query size_prompt]</result>
+			</topic>
+			
+			<topic name="extra_both">
+				<response></response>
+				<result>[coffee setextra with cream and sugar][query size_prompt]</result>
+			</topic>
+			
+			<topic name="extra_neither">
+				<response></response>
+				<result>[coffee setextra black][query size_prompt]</result>
+			</topic>
+		</conditional> <!-- Type == Coffee -->
+		
+		<conditional test="coffee coffee_type mocha">
+			<topic name="flavor_prompt">
+				<response>"Okie doke. Any flavoring in that?"</response>
+				<options>Vanilla|flavor_vanilla, Raspberry|flavor_raspberry, Blueberry|flavor_blueberry, Pumpkin|flavor_pumpkin, None|flavor_none</options>
+			</topic>
+			
+			<topic name="flavor_vanilla">
+				<response></response>
+				<result>[coffee setflavor vanilla][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_raspberry">
+				<response></response>
+				<result>[coffee setflavor raspberry][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_blueberry">
+				<response></response>
+				<result>[coffee setflavor blueberry][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_pumpkin">
+				<response></response>
+				<result>[coffee setflavor pumpkin][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_none">
+				<response></response>
+				<result>[coffee setflavor  ][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="extra_prompt">
+				<response>"Do you want whipped cream on that?"</response>
+				<options>yes|extra_whip, no|extra_nowhip</options>
+			</topic>
+			
+			<topic name="extra_whip">
+				<response></response>
+				<result>[coffee setextra with whip][query size_prompt]</result>
+			</topic>
+			
+			<topic name="extra_nowhip">
+				<response></response>
+				<result>[coffee setextra without whip][query size_prompt]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="coffee coffee_type latte">
+			<topic name="flavor_prompt">
+				<response>"Alrighty. Any flavoring in that?"</response>
+				<options>Vanilla|flavor_vanilla, ginger|flavor_raspberry, Nutmeg|flavor_blueberry, Pumpkin|flavor_pumpkin, None|flavor_none</options>
+			</topic>
+			
+			<topic name="flavor_vanilla">
+				<response></response>
+				<result>[coffee setflavor vanilla][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_raspberry">
+				<response></response>
+				<result>[coffee setflavor ginger][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_blueberry">
+				<response></response>
+				<result>[coffee setflavor nutmeg][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_pumpkin">
+				<response></response>
+				<result>[coffee setflavor pumpkin][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="flavor_none">
+				<response></response>
+				<result>[coffee setflavor  ][query extra_prompt]</result>
+			</topic>
+			
+			<topic name="extra_prompt">
+				<response>"Do you want that made with soy?"</response>
+				<options>yes|extra_whip, no|extra_nowhip</options>
+			</topic>
+			
+			<topic name="extra_whip">
+				<response></response>
+				<result>[coffee setextra (soy)][query size_prompt]</result>
+			</topic>
+			
+			<topic name="extra_nowhip">
+				<response></response>
+				<result>[coffee setextra  ][query size_prompt]</result>
+			</topic>
+		</conditional>
+		
+		<topic name="size_prompt">
+			<response>"What size?"</response>
+			<options>small|size_small, medium|size_medium, large|size_large</options>
+		</topic>
+		
+		<topic name="size_small">
+			<response></response>
+			<result>[coffee setsize small][query coffee_buy]</result>
+		</topic>
+		
+		<topic name="size_medium">
+			<response></response>
+			<result>[coffee setsize medium][query coffee_buy]</result>
+		</topic>
+		
+		<topic name="size_large">
+			<response></response>
+			<result>[coffee setsize large][query coffee_buy]</result>
+		</topic>
+		
+		<topic name="coffee_buy">
+			<response>"So that'll be a #current_coffee right?"</response>
+			<options>yes|coffee_buy_confirm, no|greeting</options>
+		</topic>
+		
+		<topic name="coffee_buy_confirm">
+			<response>"Alright, that'll be $4. Have a good day!"</response>
+			<options>thanks|bye</options>
+			<result>[coffee buycoffee]</result>
+		</topic>
+	</conditional><!--barista-->
+	
+	<!--
+		SECOND CAFE PEOPLE
+	-->
+	
+	<conditional test="id barista_2">
+		<topic name="default">
+			<response>I'm afraid I can't help you with that.</response>
+			<options>#input, bye</options>
+		</topic>
+		
+		<topic name="greeting">
+			<response>"Hey there, welcome to Mort's! What can I get you?"</response>
+			<options>#input, coffee, bye</options>
+		</topic>
+		
+		<topic name="starbucks">
+			<response>"Sheesh, Starbucks. They're running us out of business. I mean, they've always been doing that, but ever since they got serious about these %game things it's become a million times worse."</response>
+			<options>game, order|greeting</options>
+		</topic>
+		
+		<topic name="game">
+			<response>"I don't see what the big deal is. Everything they sell is awful. No amount of points and mechanics and god knows what else is going to change that. Once the novelty wears out people will come to their senses, I'm sure. There's always demand for good %coffee. "</response>
+			<options>coffee, bye</options>
+		</topic>
+		
+		<topic name="coffee">
+			<response>"That'll be three dollars."</response>
+			<options>Okay|buy_coffee, nevermind|greeting, bye</options>
+		</topic>
+		
+		<conditional test="$ >= 300">
+			<topic name="buy_coffee">
+				<response>"Here you go. Have a good day!"</response>
+				<options>taste the coffee|drink</options>
+				<result>[additem mort_coffee][data has_coffee = 1]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="$ !> 300">
+			<topic name="buy_coffee">
+				<response>"Looks like you don't have enough money. Sorry about that!"</response>
+				<options>Dang|greeting</options>
+			</topic>
+		</conditional>
+		
+		<topic name="drink">
+			<response>You drink the coffee. It's the best coffee ever. The coffee takes you to another world. It destroys everything you thought you knew about coffee and rebuilds it in the image of an immortal coffee god.</response>
+			<options>Neat|bye</options>
+		</topic>
+	</conditional>
+	
+	<conditional test="id hacker">
+		<topic name="input_default">
+			<response>"Hmm, I've never thought about that."</response>
+			<options>bye</options>
+		</topic>
+		
+		<topic name="default">
+			<response>"I'm not interested in talking about your spoon-fed nonsense."</response>
+			<options>coffee, starbucks, bye</options>
+		</topic>
+		
+		<topic name="greeting">
+			<response>The man ignores you.</response>
+			<options>coffee, starbucks, bye</options>
+		</topic>
+		
+		<topic name="name">
+			<response>He lights up. "Yeah, I figured out how to disable name broadcasting. Check this out."</response>
+			<options>check it out, bye</options>
+			<result>[addrapport 1][rebuild]</result>
+		</topic>
+		
+		<topic name="check it out">
+			<response>"I can make it display whatever name I want. Turns out it uses an ad-hoc system for this kind of data so as not to clog up the wireless frequencies."</response>
+			<options>neat, bye</options>
+			<result>[setname Rupert Murdoch]</result>
+		</topic>
+		
+		<topic name="neat">
+			<response>"It is neat. I'm pretty cool. Sorry if I was cold before. Most people you talk to just spout talking points."</response>
+			<options>it's cool|greeting, bye</options>
+			<result>[setname ???]</result>
+		</topic>
+		
+		<conditional test="rapport > 0">
+			<topic name="greeting">
+				<response>"Hey, what's up?"</response>
+				<options>coffee, starbucks, bye</options>
+			</topic>
+			<topic name="coffee">
+				<response>"The coffee here is amazing. I can't fathom why it doesn't get more business."</response>
+				<options>Starbucks, bye</options>
+			</topic>
+			
+			<topic name="starbucks">
+				<response>"Sheesh, that fucking place. I swear the only reason people go there anymore is because their %game is so addictive."</response>
+				<options>game, bye</options>
+			</topic>
+			
+			<topic name="game">
+				<response>"Starbucks spends more money keeping their game up to date with the latest behavioral science research then they do making their coffee any good."</response>
+				<options>bye</options>
+			</topic>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id gym_poster">
+		<topic name="greeting">
+			<response>There is a poster on the wall here. It reads, "Please download app to access equipment."</response>
+			<options>Download App|download</options>
+		</topic>
+		
+		<topic name="download">
+			<response>You download the app and sign up for a gym membership.</response>
+			<result>[addapp gym][addquest quest_gym_work_out Do You Even Lift?]</result>
+			<options>neat|bye</options>
+		</topic>
+	</conditional>
+	
+	<conditional test="id gym_bench">
+		<conditional test="hasapp gym">
+			<topic name="default">
+				<response>Here is the bench press station. The weights are locked up based on your "Strength" attribute.</response>
+				<options>#weights</options>
+			</topic>
+			
+			<topic name="weights_low">
+				<response>You do lifts for a while. It's really easy. Your smartphone beeps at you, "You're never going to feel the burn at this rate, bro! Turn it up!"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout strength][advancetime 30]</result>
+			</topic>
+			
+			<topic name="weights_med">
+				<response>You do lifts for a while. It feels just about right. Your smartphone beeps at you, "Nice dog keep lifting like that and you'll be lookin bulked out in no time!"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout strength][advancetime 30]</result>
+			</topic>
+			
+			<topic name="weights_high">
+				<response>You start to do lifts but the weight is way too heavy so you stop. Your smartphone beeps at you, "What the heck schnauzer? You quittin on me? Huh? Not awesome kiddo! Why'd you even come in today if you weren't going to give it your 100%%? Huh?" The app's chiding sends you into a minor guilt spiral. You wallow for a bit.</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][advancetime 30]</result>
+			</topic>
+			
+			<topic name="workout">
+				<response>You do lifts for a while. Totally juiced out bro.</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout strength][advancetime 30]</result>
+			</topic>
+			
+			<topic name="finish_workout">
+				<result>[unfade][closedialog]</result>
+			</topic>
+		
+		<else>
+			<topic name="default">
+				<response>This station is equipped with digital locks that will not open if you do not have the gym app.</response>
+				<options>leave|bye</options>
+			</topic>
+		</else>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id gym_bells">
+		<conditional test="hasapp gym">
+			<topic name="default">
+				<response>Here are the dumbells. The weights are locked up based on your "Bulk" attribute. The higher bulk stat you have the heavier weights you can access.</response>
+				<options>#bells</options>
+			</topic>
+			
+			<topic name="weights_low">
+				<response>You lift weights for a while. It's alright but it's not really much of a challenge. Your phone beeps at you, "Hey, maybe try pushing yourself and not wimping out maybe??"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout bulk][advancetime 30]</result>
+			</topic>
+			
+			<topic name="weights_med">
+				<response>You lift weights for a while. It feels great. Your smartphone beeps at you, "Fuck yeah dude lift that shit bronto burt"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout bulk][advancetime 30]</result>
+			</topic>
+			
+			<topic name="weights_high">
+				<response>You can't actually lift these weights, they're too heavy. Your smartphone beeps at you, "Aw wuts that the widdow baby can't wift the weights a boo hoo hoo."</response>
+				<options>swear at it|swear_at_phone, finish|finish_workout</options>
+				<result>[fade][advancetime 30]</result>
+			</topic>
+			
+			<topic name="swear_at_phone">
+				<response>You call the phone some nasty names. It replies, "Yeah what the fuck you gonna do about it huh? I'm a phone smart one roflmao"</response>
+				<options>finish|finish_workout</options>
+			</topic>
+			
+			<topic name="workout">
+				<response>You lift weights for a while. You feel fantastic.</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout bulk][advancetime 30]</result>
+			</topic>
+			
+			<topic name="finish_workout">
+				<result>[unfade][closedialog]</result>
+			</topic>
+		
+		<else>
+			<topic name="default">
+				<response>This station is equipped with digital locks that will not open if you do not have the gym app.</response>
+				<options>leave|bye</options>
+			</topic>
+		</else>
+		</conditional>
+	</conditional>
+	
+	<conditional test="id gym_mill">
+		<conditional test="hasapp gym">
+			<topic name="default">
+				<response>This is the treadmill. The speeds are disallowed based on your "Tone" attribute. As your Tone stat increases you will be able to set the treadmill to higher speeds.</response>
+				<options>#treadmill</options>
+			</topic>
+			
+			<topic name="mill_low">
+				<response>You walk on the treadmill for a while but it's moving more slowly than you would walk normally. It doesn't challenge you at all. Your smartphone beeps at you, "Oh yeah you must think you're real cool, huh? Cheating on your workout by going on the treadmill all slow? Yeah, I can see you. I see everything. I'm god."</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout tone][advancetime 30][walking walkinstant]</result>
+			</topic>
+			
+			<topic name="mill_med">
+				<response>You take a nice long jog on the treadmill and work up a sweat. Your smartphone beeps at you, "Runiiiiing, Sick, I love it!"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade][gym workout tone][advancetime 30][walking walkinstant]</result>
+			</topic>
+			
+			<topic name="mill_high">
+				<response>As the machine builds up speed you find that you can't keep up. It's moving too fast. You get tossed off of the machine and lose you balance slightly. Your phone beeps at you, "What the heck was that? Couldn't keep up? Maybe try a little harder next time, scrub!"</response>
+				<options>finish|finish_workout</options>
+				<result>[fade]</result>
+			</topic>
+			
+			<topic name="workout">
+				<response>You jog for a while. Feel the burn!</response>
+				<options>finish|finish_workout</options> 
+				<result>[fade][gym workout tone][advancetime 30]</result>
+			</topic>
+			
+			<topic name="finish_workout">
+				<result>[unfade][closedialog]</result>
+			</topic>
+		
+		<else>
+			<topic name="default">
+				<response>This station will not turn on if you do not have the gym app.</response>
+				<options>leave|bye</options>
+			</topic>
+		</else>
+		</conditional>
+	</conditional>
+	
+	<!-- Coffee Recital -->
+	<topic name="recital_type_coffee">
+		<response></response>
+		<result>[coffee settype coffee][rebuild][query recital_flavor_prompt]</result>
+	</topic>
+	
+	<topic name="recital_type_mocha">
+		<response></response>
+		<result>[coffee settype mocha][rebuild][query recital_flavor_prompt]</result>
+	</topic>
+	
+	<topic name="recital_type_latte">
+		<response></response>
+		<result>[coffee settype latte][rebuild][query recital_flavor_prompt]</result>
+	</topic>
+	
+	<conditional test="coffee coffee_type coffee">
+		<topic name="recital_flavor_prompt">
+			<response>"What kind of coffee?"</response>
+			<options>Turkish Blend|recital_flavor_light, Puerto Rican Melody|recital_flavor_medium, French Roast|recital_flavor_heavy, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_flavor_light">
+			<response></response>
+			<result>[coffee setflavor Turkish Blend][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_medium">
+			<response></response>
+			<result>[coffee setflavor Puerto Rican Melody][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_heavy">
+			<response></response>
+			<result>[coffee setflavor French Roast][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_prompt">
+			<response>"a #current_flavor coffee with ...?"</response>
+			<options>with cream|recital_extra_cream, with sugar|recital_extra_sugar, with cream and sugar|recital_extra_both, with neither|recital_extra_neither, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_extra_cream">
+			<response></response>
+			<result>[coffee setextra with cream][query recital_size_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_sugar">
+			<response></response>
+			<result>[coffee setextra with sugar][query recital_size_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_both">
+			<response></response>
+			<result>[coffee setextra with cream and sugar][query recital_size_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_neither">
+			<response></response>
+			<result>[coffee setextra , black][query recital_size_prompt]</result>
+		</topic>
+	</conditional> <!-- Type == Coffee -->
+	
+	<conditional test="coffee coffee_type mocha">
+		<topic name="recital_flavor_prompt">
+			<response>"What kind of mocha?"</response>
+			<options>Vanilla|recital_flavor_vanilla, Raspberry|recital_flavor_raspberry, Blueberry|recital_flavor_blueberry, Pumpkin|recital_flavor_pumpkin, None|recital_flavor_none, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_flavor_vanilla">
+			<response></response>
+			<result>[coffee setflavor vanilla][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_raspberry">
+			<response></response>
+			<result>[coffee setflavor raspberry][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_blueberry">
+			<response></response>
+			<result>[coffee setflavor blueberry][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_pumpkin">
+			<response></response>
+			<result>[coffee setflavor pumpkin][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_none">
+			<response></response>
+			<result>[coffee setflavor  ][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_prompt">
+			<response>"a #current_flavor mocha with...?"</response>
+			<options>Whipped Cream|recital_extra_whip, No Whipped Cream|recital_extra_nowhip, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_extra_whip">
+			<response></response>
+			<result>[coffee setextra with whip][query recital_size_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_nowhip">
+			<response></response>
+			<result>[coffee setextra without whip][query recital_size_prompt]</result>
+		</topic>
+	</conditional>
+	
+	<conditional test="coffee coffee_type latte">
+		<topic name="recital_flavor_prompt">
+			<response>"What kind of latte?"</response>
+			<options>Vanilla|recital_flavor_vanilla, ginger|recital_flavor_raspberry, Nutmeg|recital_flavor_blueberry, Pumpkin|recital_flavor_pumpkin, None|recital_flavor_none, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_flavor_vanilla">
+			<response></response>
+			<result>[coffee setflavor vanilla][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_raspberry">
+			<response></response>
+			<result>[coffee setflavor ginger][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_blueberry">
+			<response></response>
+			<result>[coffee setflavor nutmeg][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_pumpkin">
+			<response></response>
+			<result>[coffee setflavor pumpkin][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_flavor_none">
+			<response></response>
+			<result>[coffee setflavor  ][query recital_extra_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_prompt">
+			<response>"Did you get that #current_flavor latte with soy?"</response>
+			<options>yes|recital_extra_whip, no|recital_extra_nowhip, #nodefault</options>
+		</topic>
+		
+		<topic name="recital_extra_whip">
+			<response></response>
+			<result>[coffee setextra (soy)][query recital_size_prompt]</result>
+		</topic>
+		
+		<topic name="recital_extra_nowhip">
+			<response></response>
+			<result>[coffee setextra  ][query recital_size_prompt]</result>
+		</topic>
+	</conditional>
+	
+	<topic name="recital_size_prompt">
+		<response>"a #current_flavor #current_type #current_extra , eh? What size?"</response>
+		<options>small|recital_size_small, medium|recital_size_medium, large|recital_size_large, #nodefault</options>
+	</topic>
+	
+	<topic name="recital_size_small">
+		<response></response>
+		<result>[coffee setsize small][query recital_response]</result>
+	</topic>
+	
+	<topic name="recital_size_medium">
+		<response></response>
+		<result>[coffee setsize medium][query recital_response]</result>
+	</topic>
+	
+	<topic name="recital_size_large">
+		<response></response>
+		<result>[coffee setsize large][query recital_response]</result>
+	</topic>
+</dialog>

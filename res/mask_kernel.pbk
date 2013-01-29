@@ -1,0 +1,76 @@
+<languageVersion : 1.0;>
+
+kernel mask_kernel
+<   namespace : "com.marek.pixelbender";
+    vendor : "Marek Kapolka";
+    version : 1;
+>
+{
+    input image4 src;
+    input image4 mask;
+    
+    parameter int maskWidth;
+    parameter int maskHeight;
+    
+    parameter pixel4 color1;
+    parameter pixel4 color2;
+    parameter pixel4 color3;
+    parameter pixel4 color4;
+    
+    parameter int mask1;
+    parameter int mask2;
+    parameter int mask3;
+    parameter int mask4;
+    
+    output pixel4 dst;
+
+    pixel4 getMaskPixel(int index, float2 srcLocation)
+    {
+        int2 maskLocation = int2(srcLocation.x, srcLocation.y);
+        /*if (maskLocation.x > maskWidth)
+        {
+            maskLocation.x -= maskWidth * int(maskLocation.x / maskWidth);
+        }*/
+        while (maskLocation.x > maskWidth)
+        {
+            maskLocation.x -= maskWidth;
+        }
+        
+        while (maskLocation.y > maskHeight)
+        {
+            maskLocation.y -= maskHeight;
+        }
+        
+        /*if (maskLocation.y > maskHeight)
+        {
+            maskLocation.y -= maskHeight * int(maskLocation.y / maskHeight);
+        }*/
+        float2 loc = float2(maskLocation.x, maskLocation.y);
+        return sampleNearest(mask, loc);
+    }
+
+    void
+    evaluatePixel()
+    {
+        dst = sampleNearest(src,outCoord());
+        
+        if (dst == color1)
+        {
+            dst = getMaskPixel(mask1, outCoord());
+        } else 
+        if (dst == color2)
+        {
+            dst = getMaskPixel(mask2, outCoord());
+        } else 
+        if (dst == color3)
+        {
+            dst = getMaskPixel(mask3, outCoord());
+        } else 
+        if (dst == color4)
+        {
+            dst = getMaskPixel(mask4, outCoord());
+        }
+    }
+    
+   
+}

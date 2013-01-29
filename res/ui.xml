@@ -1,0 +1,1512 @@
+<level>
+  <entity name="SmartQuestIcon" uid="0">
+    <Button uid="1872392192">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <UIScrollFactor uid="683660608" />
+    <SmartphoneDialogInitiator uid="1032052352">
+      <partnerType>Default</partnerType>
+      <partnerName>Smartphone</partnerName>
+      <partnerPortraitID>1</partnerPortraitID>
+      <initialTopic>quests</initialTopic>
+      <trigger>up</trigger>
+      <dialogPartnerID>smartphone</dialogPartnerID>
+    </SmartphoneDialogInitiator>
+    <Squelchable uid="2081350656" />
+    <QuestIcon uid="913105536" />
+    <AnimatedFlxSprite uid="1520345472">
+      <animations>
+        <entry>old 0</entry>
+        <entry>new 1</entry>
+      </animations>
+      <spriteWidth>64</spriteWidth>
+      <spriteHeight>64</spriteHeight>
+      <reverseSprite>False</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>False</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>old</startingAnimation>
+      <spriteID>ui_quest_icon</spriteID>
+      <color>4294967295</color>
+      <solid>False</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>0</scrollfactor_x>
+      <scrollfactor_y>0</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>715.1523</x>
+      <y>524.7712</y>
+      <depth>199</depth>
+      <width>64</width>
+      <height>64</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="636249920">
+      <bridges>
+        <entry>new new</entry>
+        <entry>old old</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <Bounce uid="1221105536">
+      <distance>16</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+    <Sound uid="271221280">
+      <trigger>over</trigger>
+      <sound>over</sound>
+    </Sound>
+    <Sound uid="1310259328">
+      <trigger>down</trigger>
+      <sound>down</sound>
+    </Sound>
+  </entity>
+  <entity name="Timer" uid="1">
+    <FlxSprite uid="1540542848">
+      <spriteID>ui_time_bg</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>0</scrollfactor_x>
+      <scrollfactor_y>0</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>325</x>
+      <y>-8.412415</y>
+      <depth>500</depth>
+      <width>150</width>
+      <height>30</height>
+    </FlxSprite>
+    <Countdown uid="1130007936" />
+    <entity name="Text">
+      <FlxText uid="1544255360">
+        <text>Lorem Ipsum</text>
+        <textSize>15</textSize>
+        <alignment>center</alignment>
+        <color>4278190080</color>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <font>helvetica</font>
+        <x>332.4355</x>
+        <y>0.09426308</y>
+        <width>135.7927</width>
+        <height>18.48175</height>
+        <depth>501</depth>
+      </FlxText>
+    </entity>
+  </entity>
+  <entity name="ProgressBarSpawner" uid="2">
+    <FlxObject uid="59193096">
+      <solid>False</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>0</scrollfactor_x>
+      <scrollfactor_y>0</scrollfactor_y>
+      <x>9.887772</x>
+      <y>587.7935</y>
+      <width>10</width>
+      <height>10</height>
+      <depth>202.7188</depth>
+    </FlxObject>
+    <TaggedObject uid="1505824128">
+      <tagID>progressSpawner</tagID>
+    </TaggedObject>
+  </entity>
+  <entity name="SmartphoneIcon" uid="3">
+    <FlxSprite uid="1930767872">
+      <spriteID>smartphone_icon</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>0</scrollfactor_x>
+      <scrollfactor_y>0</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>646.2484</x>
+      <y>524.7712</y>
+      <depth>199</depth>
+      <width>64</width>
+      <height>64</height>
+    </FlxSprite>
+    <Button uid="636075584">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <SmartphoneButton uid="885584000" />
+    <UIScrollFactor uid="2031399936" />
+    <SmartphoneDialogInitiator uid="593339712">
+      <partnerType>Default</partnerType>
+      <partnerName>Smartphone</partnerName>
+      <partnerPortraitID>1</partnerPortraitID>
+      <initialTopic>
+      </initialTopic>
+      <trigger>up</trigger>
+      <dialogPartnerID>smartphone</dialogPartnerID>
+    </SmartphoneDialogInitiator>
+    <TaggedObject uid="16051714">
+      <tagID>SmartphoneDialogButton</tagID>
+    </TaggedObject>
+    <Relay uid="932317824">
+      <target>1872392192</target>
+      <relays>
+        <entry>show show</entry>
+        <entry>hide hide</entry>
+        <entry>enable enable</entry>
+        <entry>disable disable</entry>
+      </relays>
+    </Relay>
+    <Sound uid="1642890752">
+      <trigger>over</trigger>
+      <sound>over</sound>
+    </Sound>
+    <Sound uid="122149648">
+      <trigger>down</trigger>
+      <sound>down</sound>
+    </Sound>
+  </entity>
+  <entity name="Mouse" uid="4">
+    <FlxText uid="1162801792">
+      <text>donka doo balls</text>
+      <textSize>20</textSize>
+      <alignment>center</alignment>
+      <color>4278190080</color>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <font>helvetica</font>
+      <x>165.8812</x>
+      <y>-66.20496</y>
+      <width>179.4739</width>
+      <height>31.22308</height>
+      <depth>201</depth>
+    </FlxText>
+    <Cursor uid="1831661312">
+      <clickMessage>click</clickMessage>
+      <releaseMessage>release</releaseMessage>
+      <anchor>mouse</anchor>
+    </Cursor>
+    <Anchor uid="1895526656">
+      <id>mouse</id>
+      <xOffset>0.5029019</xOffset>
+      <yOffset>1.095374</yOffset>
+    </Anchor>
+    <TaggedObject uid="437763392">
+      <tagID>Mouse</tagID>
+    </TaggedObject>
+    <AS2Cursor uid="877914752" />
+    <entity name="DialogOptionSprite">
+      <FlxSprite uid="556480320">
+        <spriteID>option_bg</spriteID>
+        <color>4294967295</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>160.1012</x>
+        <y>-63.87612</y>
+        <depth>200</depth>
+        <width>189.0586</width>
+        <height>38.28123</height>
+      </FlxSprite>
+      <Cursor uid="738121280">
+        <clickMessage>click</clickMessage>
+        <releaseMessage>release</releaseMessage>
+        <anchor>mouse</anchor>
+      </Cursor>
+      <Anchor uid="1841520128">
+        <id>mouse</id>
+        <xOffset>0.5079787</xOffset>
+        <yOffset>1.019685</yOffset>
+      </Anchor>
+    </entity>
+  </entity>
+  <entity name="DialogManager" uid="5">
+    <DialogManager uid="1238073984" />
+    <OnStartTrigger uid="530976576">
+      <message>hide</message>
+    </OnStartTrigger>
+    <OnStartTrigger uid="370108192">
+      <message>disable</message>
+    </OnStartTrigger>
+    <TaggedObject uid="134653968">
+      <tagID>Dialog</tagID>
+    </TaggedObject>
+    <Relay uid="440058432">
+      <target>1930767872</target>
+      <relays>
+        <entry>close_dialog enable</entry>
+        <entry>open_dialog disable</entry>
+        <entry>close_dialog show</entry>
+        <entry>open_dialog hide</entry>
+      </relays>
+    </Relay>
+    <UIScrollFactor uid="332249632" />
+    <Sound uid="1243247744">
+      <trigger>open_dialog</trigger>
+      <sound>smartphone</sound>
+    </Sound>
+    <entity name="DialogBox">
+      <DialogBox uid="881723776" />
+      <AnimatedClose uid="164311568">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AS2FlxText uid="1562007936">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>left</alignment>
+        <color>4278190080</color>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <font>helvetica</font>
+        <x>366.1385</x>
+        <y>32.96935</y>
+        <width>392.3716</width>
+        <height>202.4784</height>
+        <depth>302.7188</depth>
+      </AS2FlxText>
+      <entity name="DialogOption">
+        <AnimatedClose uid="499142976">
+          <direction>Right</direction>
+        </AnimatedClose>
+        <AnimatedFlxSprite uid="666424640">
+          <animations>
+            <entry>nosmartphone 0</entry>
+            <entry>smartphone 1</entry>
+          </animations>
+          <spriteWidth>480</spriteWidth>
+          <spriteHeight>227</spriteHeight>
+          <reverseSprite>True</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>True</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>nosmartphone</startingAnimation>
+          <spriteID>ui_smartphone_dialog</spriteID>
+          <color>4294967295</color>
+          <solid>True</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>308.1683</x>
+          <y>20.70853</y>
+          <depth>301.7188</depth>
+          <width>480</width>
+          <height>227</height>
+        </AnimatedFlxSprite>
+        <AnimationMessageBridge uid="1453561728">
+          <bridges>
+            <entry>nosmartphone nosmartphone</entry>
+            <entry>smartphone smartphone</entry>
+          </bridges>
+        </AnimationMessageBridge>
+      </entity>
+    </entity>
+    <entity name="DialogInput">
+      <FlxSprite uid="328047904">
+        <spriteID>ui_input_bubble</spriteID>
+        <color>4278190080</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>329.5059</x>
+        <y>534.9958</y>
+        <depth>300</depth>
+        <width>464</width>
+        <height>68</height>
+      </FlxSprite>
+      <ColorTrigger uid="1251689856">
+        <triggers>
+          <entry>over 4294967295</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4294967295</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="1990543360">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="1166297728">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <Sound uid="1775512576">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="1361758592">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <CenterVertically uid="1057617280" />
+        <EchoToParent uid="1867016448">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <TextInput uid="1225232000">
+          <textColor>4278190080</textColor>
+          <textSize>20</textSize>
+          <font>helvetica</font>
+          <textAlignment>center</textAlignment>
+          <focusTrigger>up</focusTrigger>
+        </TextInput>
+        <FlxObject uid="945838720">
+          <solid>False</solid>
+          <immovable>False</immovable>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <x>338.4453</x>
+          <y>549.2723</y>
+          <width>429.78</width>
+          <height>34</height>
+          <depth>301</depth>
+        </FlxObject>
+        <DialogInput uid="774010432" />
+        <AnimatedClose uid="711363648">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="1477594240">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="1410656384">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="466653248">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="404164672">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>559.9318</x>
+        <y>255.7136</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1297308800">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="1795988480">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="333434400">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="623875648">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>565.9708</x>
+          <y>266.2574</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="857780352">
+          <offset>1</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="847243136">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="1603764864">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="1464083328">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="338876960">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="1510450048">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="868127360">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="836472448">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>343.2982</x>
+        <y>337.6019</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1143910016">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="2126897152">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="639374400">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="941580672">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>349.3372</x>
+          <y>348.1458</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="594317120">
+          <offset>2</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="558208576">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="2120989696">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="930979712">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="35158532">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="11523073">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="2040224256">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="1276535936">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>559.9318</x>
+        <y>337.6019</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1231330176">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="1792596224">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="1597225344">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="1194504832">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>565.9708</x>
+          <y>348.1458</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="1699915008">
+          <offset>3</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="1365568384">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="670784064">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="597542208">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="256907808">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="615565632">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="441504320">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="1062496640">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>559.9318</x>
+        <y>419.6542</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1773865216">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="1977328640">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="280421152">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="45620228">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>565.9708</x>
+          <y>430.1981</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="1806253824">
+          <offset>5</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="2091009792">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="2119330304">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="1446479488">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="856153728">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="28830724">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="2055215872">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="1944940800">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>343.2982</x>
+        <y>422.6279</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="558641984">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="1925740032">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="1031074432">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="1304444544">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>349.3372</x>
+          <y>433.1718</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="260015392">
+          <offset>4</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="1643297280">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="1430361984">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="585915712">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogOptionSprite">
+      <ColorTrigger uid="1680673024">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="1833250560">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="203598112">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="404630592">
+        <animations>
+          <entry>bubble 0</entry>
+          <entry>smartphone 1</entry>
+        </animations>
+        <spriteWidth>216</spriteWidth>
+        <spriteHeight>74</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_option_bubbles</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>343.2982</x>
+        <y>255.7136</y>
+        <depth>300</depth>
+        <width>216</width>
+        <height>74</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="318378528">
+        <bridges>
+          <entry>nosmartphone bubble</entry>
+          <entry>smartphone smartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="1080133248">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="1186179968">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="1069942400">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>349.3372</x>
+          <y>266.2574</y>
+          <width>197.0992</width>
+          <height>37</height>
+          <depth>301</depth>
+        </FlxText>
+        <DialogOption uid="1631003136">
+          <offset>0</offset>
+          <trigger>up</trigger>
+        </DialogOption>
+        <ColorTrigger uid="64548616">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="1790229504">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="662510144">
+          <direction>Right</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="GoodbyeOption">
+      <ColorTrigger uid="277002272">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292201574</entry>
+          <entry>up 4278190080</entry>
+          <entry>disabled 4294967295</entry>
+          <entry>enabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <Button uid="149981712">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <AnimatedClose uid="35368964">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="684362304">
+        <animations>
+          <entry>smartphone 0</entry>
+          <entry>nosmartphone 1</entry>
+        </animations>
+        <spriteWidth>200</spriteWidth>
+        <spriteHeight>30</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_goodbye_option</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>449.7061</x>
+        <y>504.3265</y>
+        <depth>300</depth>
+        <width>200</width>
+        <height>30</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="619090240">
+        <bridges>
+          <entry>smartphone smartphone</entry>
+          <entry>nosmartphone nosmartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Sound uid="524088896">
+        <trigger>over</trigger>
+        <sound>over</sound>
+      </Sound>
+      <Sound uid="787329600">
+        <trigger>down</trigger>
+        <sound>down</sound>
+      </Sound>
+      <entity name="DialogOptionText">
+        <FlxText uid="421320512">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>455.2977</x>
+          <y>506.3274</y>
+          <width>182.4993</width>
+          <height>15</height>
+          <depth>301</depth>
+        </FlxText>
+        <ColorTrigger uid="1893167104">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278190080</entry>
+          </triggers>
+        </ColorTrigger>
+        <EchoToParent uid="1852403968">
+          <messages>
+            <entry>hide</entry>
+            <entry>show</entry>
+            <entry>enable</entry>
+            <entry>disable</entry>
+          </messages>
+        </EchoToParent>
+        <AnimatedClose uid="2021445888">
+          <direction>Right</direction>
+        </AnimatedClose>
+        <GoodbyeOption uid="124033808" />
+      </entity>
+    </entity>
+    <entity name="NameBox">
+      <FlxSprite uid="1074339456">
+        <spriteID>option_bg</spriteID>
+        <color>4294967295</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>40.77885</x>
+        <y>481.2838</y>
+        <depth>305</depth>
+        <width>220.646</width>
+        <height>40</height>
+      </FlxSprite>
+      <AnimatedClose uid="2010192640">
+        <direction>Left</direction>
+      </AnimatedClose>
+      <entity name="NameBoxText">
+        <FlxText uid="617801792">
+          <text>Lorem Ipsum</text>
+          <textSize>20</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>40.77885</x>
+          <y>491.2838</y>
+          <width>220.646</width>
+          <height>20</height>
+          <depth>306</depth>
+        </FlxText>
+        <DialogName uid="1588784256" />
+        <CenterVertically uid="1404736640" />
+        <AnimatedClose uid="1474197888">
+          <direction>Left</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="DialogPortrait">
+      <AnimatedFlxSprite uid="185964560">
+        <animations />
+        <spriteWidth>400</spriteWidth>
+        <spriteHeight>600</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>
+        </startingAnimation>
+        <spriteID>dialog_portraits</spriteID>
+        <color>4294967295</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>0</x>
+        <y>0</y>
+        <depth>298.5</depth>
+        <width>400</width>
+        <height>600</height>
+      </AnimatedFlxSprite>
+      <DialogPortrait uid="1177557376" />
+      <AnimatedClose uid="1363385984">
+        <direction>Left</direction>
+      </AnimatedClose>
+      <Mask uid="136431888">
+        <maskSprite>test_pattern</maskSprite>
+        <colors>
+          <entry>4294901760</entry>
+          <entry>4278190335</entry>
+          <entry>4278255360</entry>
+        </colors>
+        <masks>
+          <entry>0</entry>
+          <entry>0</entry>
+          <entry>0</entry>
+        </masks>
+        <maskWidth>100</maskWidth>
+        <maskHeight>100</maskHeight>
+      </Mask>
+    </entity>
+    <entity name="LevelBox">
+      <FlxSprite uid="1564964992">
+        <spriteID>option_bg</spriteID>
+        <color>4294967295</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>57.92912</x>
+        <y>524.317</y>
+        <depth>305</depth>
+        <width>186.3454</width>
+        <height>55.625</height>
+      </FlxSprite>
+      <AnimatedClose uid="166976016">
+        <direction>Left</direction>
+      </AnimatedClose>
+      <LevelText uid="1736250368" />
+      <entity name="FlxSprite">
+        <AnimatedFlxSprite uid="640021824">
+          <animations>
+            <entry>default 1</entry>
+          </animations>
+          <spriteWidth>50</spriteWidth>
+          <spriteHeight>50</spriteHeight>
+          <reverseSprite>False</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>False</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>default</startingAnimation>
+          <spriteID>ui_icons</spriteID>
+          <color>4294967295</color>
+          <solid>True</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>0</scrollfactor_x>
+          <scrollfactor_y>0</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>67.75687</x>
+          <y>527.55</y>
+          <depth>306</depth>
+          <width>50</width>
+          <height>50</height>
+        </AnimatedFlxSprite>
+        <AnimatedClose uid="1368633216">
+          <direction>Left</direction>
+        </AnimatedClose>
+      </entity>
+      <entity name="Text">
+        <FlxText uid="1203484288">
+          <text>&lt;Level&gt;</text>
+          <textSize>30</textSize>
+          <alignment>center</alignment>
+          <color>4278190080</color>
+          <scrollfactor_x>0</scrollfactor_x>
+          <scrollfactor_y>0</scrollfactor_y>
+          <font>helvetica</font>
+          <x>121.9424</x>
+          <y>529.8795</y>
+          <width>113.3795</width>
+          <height>44.5</height>
+          <depth>306</depth>
+        </FlxText>
+        <CenterVertically uid="771008320" />
+        <AnimatedClose uid="535090752">
+          <direction>Left</direction>
+        </AnimatedClose>
+      </entity>
+    </entity>
+    <entity name="PortraitBackground">
+      <FlxSprite uid="1113108864">
+        <spriteID>ui_dialog_background</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>0</x>
+        <y>0</y>
+        <depth>298</depth>
+        <width>300</width>
+        <height>600</height>
+      </FlxSprite>
+      <AnimatedClose uid="301107488">
+        <direction>Left</direction>
+      </AnimatedClose>
+    </entity>
+    <entity name="RightArrow">
+      <AnimatedClose uid="149217808">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="1411650688">
+        <animations>
+          <entry>smartphone 0</entry>
+          <entry>nosmartphone 1</entry>
+        </animations>
+        <spriteWidth>30</spriteWidth>
+        <spriteHeight>30</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>False</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_left_arrow</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>False</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>726.8517</x>
+        <y>506.942</y>
+        <depth>600</depth>
+        <width>30</width>
+        <height>30</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1917302272">
+        <bridges>
+          <entry>smartphone smartphone</entry>
+          <entry>nosmartphone nosmartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Button uid="685791808">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="605092928">
+        <triggers>
+          <entry>over 4289111718</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292197428</entry>
+          <entry>up 4289111718</entry>
+          <entry>enabled 4294967295</entry>
+          <entry>disabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <DialogOptionOffset uid="675242048">
+        <trigger>up</trigger>
+        <numOptions>6</numOptions>
+      </DialogOptionOffset>
+    </entity>
+    <entity name="LeftArrow">
+      <AnimatedClose uid="1687571200">
+        <direction>Right</direction>
+      </AnimatedClose>
+      <AnimatedFlxSprite uid="1784270080">
+        <animations>
+          <entry>smartphone 0</entry>
+          <entry>nosmartphone 1</entry>
+        </animations>
+        <spriteWidth>30</spriteWidth>
+        <spriteHeight>30</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <frameRate>30</frameRate>
+        <loop>False</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <acceleration_x>0</acceleration_x>
+        <acceleration_y>0</acceleration_y>
+        <startingAnimation>smartphone</startingAnimation>
+        <spriteID>ui_right_arrow</spriteID>
+        <color>4294967295</color>
+        <solid>False</solid>
+        <immovable>False</immovable>
+        <visible>False</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>349.5172</x>
+        <y>506.942</y>
+        <depth>600</depth>
+        <width>30</width>
+        <height>30</height>
+      </AnimatedFlxSprite>
+      <AnimationMessageBridge uid="1128046208">
+        <bridges>
+          <entry>smartphone smartphone</entry>
+          <entry>nosmartphone nosmartphone</entry>
+        </bridges>
+      </AnimationMessageBridge>
+      <Button uid="722559808">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="446016064">
+        <triggers>
+          <entry>over 4289572269</entry>
+          <entry>out 4294967295</entry>
+          <entry>down 4292197428</entry>
+          <entry>up 4289572269</entry>
+          <entry>enabled 4294967295</entry>
+          <entry>disabled 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <DialogOptionOffset uid="1676896000">
+        <trigger>up</trigger>
+        <numOptions>-6</numOptions>
+      </DialogOptionOffset>
+    </entity>
+    <entity name="Shade">
+      <FlxSprite uid="1728527616">
+        <spriteID>ui_black</spriteID>
+        <color>0</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>0</scrollfactor_x>
+        <scrollfactor_y>0</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>0</x>
+        <y>0</y>
+        <depth>298</depth>
+        <width>800</width>
+        <height>600</height>
+      </FlxSprite>
+    </entity>
+    <entity name="SmartphoneBackground">
+      <FlxSprite uid="1258186112">
+        <spriteID>ui_smartphone</spriteID>
+        <color>4294967295</color>
+        <solid>True</solid>
+        <immovable>False</immovable>
+        <visible>True</visible>
+        <unique>False</unique>
+        <scrollfactor_x>1</scrollfactor_x>
+        <scrollfactor_y>1</scrollfactor_y>
+        <velocity_x>0</velocity_x>
+        <velocity_y>0</velocity_y>
+        <x>320.8026</x>
+        <y>-7.257111</y>
+        <depth>299</depth>
+        <width>473</width>
+        <height>650</height>
+      </FlxSprite>
+      <Relay uid="1137568640">
+        <target>1258186112</target>
+        <relays>
+          <entry>nosmartphone hide</entry>
+          <entry>smartphone show</entry>
+        </relays>
+      </Relay>
+      <AnimatedClose uid="896694144">
+        <direction>Right</direction>
+      </AnimatedClose>
+    </entity>
+  </entity>
+</level>

@@ -1,0 +1,1141 @@
+<level>
+  <entity name="Character" uid="0">
+    <AnimatedFlxSprite uid="1997058048">
+      <animations>
+        <entry>stand 1</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>5</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>stand</startingAnimation>
+      <spriteID>characters</spriteID>
+      <color>4293824656</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>2025.205</x>
+      <y>157.3556</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="815683712">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <Anchor uid="1318095488">
+      <id>base</id>
+      <xOffset>-0.1836627</xOffset>
+      <yOffset>0.977277</yOffset>
+    </Anchor>
+    <Character uid="571620672">
+      <personID>cynic</personID>
+    </Character>
+    <ActableObject uid="569255744">
+      <interactionType>Talk</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Talk To</mouseOverName>
+      <actionPointAnchor>base</actionPointAnchor>
+    </ActableObject>
+    <AS2DialogInitiator uid="1681733376">
+      <partnerType>Default</partnerType>
+      <partnerName>Julie Meadows</partnerName>
+      <partnerPortraitID>2</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>cynic_club</dialogPartnerID>
+    </AS2DialogInitiator>
+    <PersonMask uid="1906367488" />
+  </entity>
+  <entity name="FlxSprite" uid="1">
+    <AnimatedFlxSprite uid="1908681728">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>200.6096</x>
+      <y>75.79373</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="927282048" />
+    <Bounce uid="706374208">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="2">
+    <AnimatedFlxSprite uid="2109924864">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>256.8172</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="890539392" />
+    <Bounce uid="54618632">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="3">
+    <FlxSprite uid="393120288">
+      <spriteID>light</spriteID>
+      <color>2698181535</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>228.9608</x>
+      <y>-303.7687</y>
+      <depth>10.5</depth>
+      <width>1024</width>
+      <height>550</height>
+    </FlxSprite>
+    <ClubLight uid="1341838208" />
+  </entity>
+  <entity name="FlxSprite" uid="4">
+    <FlxSprite uid="613924672">
+      <spriteID>light</spriteID>
+      <color>2694839291</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1618.379</x>
+      <y>-303.7687</y>
+      <depth>2</depth>
+      <width>1024</width>
+      <height>550</height>
+    </FlxSprite>
+    <ClubLight uid="1509952384" />
+  </entity>
+  <entity name="FlxSprite" uid="5">
+    <FlxSprite uid="366952224">
+      <spriteID>light</spriteID>
+      <color>2694819579</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1215.897</x>
+      <y>-284.5071</y>
+      <depth>10.5</depth>
+      <width>1024</width>
+      <height>550</height>
+    </FlxSprite>
+    <ClubLight uid="1244392576" />
+  </entity>
+  <entity name="FlxSprite" uid="6">
+    <FlxSprite uid="1775426048">
+      <spriteID>light</spriteID>
+      <color>2700845027</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>629.3015</x>
+      <y>-314.4714</y>
+      <depth>20</depth>
+      <width>1024</width>
+      <height>550</height>
+    </FlxSprite>
+    <ClubLight uid="2109609728" />
+  </entity>
+  <entity name="FlxSprite" uid="7">
+    <AnimatedFlxSprite uid="1343384704">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1079.216</x>
+      <y>103.1448</y>
+      <depth>13</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="694010176" />
+    <Bounce uid="424823872">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="8">
+    <AnimatedFlxSprite uid="1461596032">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1247.976</x>
+      <y>103.1448</y>
+      <depth>13</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1040510080" />
+    <Bounce uid="1975303424">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="9">
+    <AnimatedFlxSprite uid="1328204672">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1408.182</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="955892352" />
+    <Bounce uid="319245600">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="10">
+    <AnimatedFlxSprite uid="1463158656">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>997.0557</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="2117477376" />
+    <Bounce uid="1632782080">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="11">
+    <AnimatedFlxSprite uid="1282723712">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>758.2925</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1265058432" />
+    <Bounce uid="227173920">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="12">
+    <AnimatedFlxSprite uid="1953398528">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1526.871</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1754686464" />
+    <Bounce uid="595614528">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="13">
+    <AnimatedFlxSprite uid="884307072">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1635.812</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="738065472" />
+    <Bounce uid="2046018560">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="14">
+    <AnimatedFlxSprite uid="868848000">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1572.927</x>
+      <y>103.1448</y>
+      <depth>13</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="626298688" />
+    <Bounce uid="1435662976">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="15">
+    <AnimatedFlxSprite uid="2071990272">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1752.844</x>
+      <y>103.1448</y>
+      <depth>13</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="683116864" />
+    <Bounce uid="1074889088">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="16">
+    <AnimatedFlxSprite uid="1568950400">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1210.274</x>
+      <y>52.87881</y>
+      <depth>5</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1473100672" />
+    <Bounce uid="1470265216">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="17">
+    <AnimatedFlxSprite uid="1941420800">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1318.379</x>
+      <y>94.16873</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="50456584" />
+    <Bounce uid="581072448">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="18">
+    <AnimatedFlxSprite uid="580471872">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>1138.462</x>
+      <y>94.16873</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1465147264" />
+    <Bounce uid="1784893440">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="19">
+    <AnimatedFlxSprite uid="2083892480">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>422.1921</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="692885312" />
+    <Bounce uid="1670623744">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="20">
+    <AnimatedFlxSprite uid="1897981696">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>602.1091</x>
+      <y>94.16873</y>
+      <depth>11</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1074523520" />
+    <Bounce uid="1670588672">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="21">
+    <AnimatedFlxSprite uid="286422816">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>966.8898</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="494803520" />
+    <Bounce uid="450409024">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="22">
+    <AnimatedFlxSprite uid="32903940">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>872.8048</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1928309248" />
+    <Bounce uid="1941423104">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="23">
+    <AnimatedFlxSprite uid="1743887104">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>763.8643</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="567537728" />
+    <Bounce uid="1829327104">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="24">
+    <AnimatedFlxSprite uid="93366792">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>501.4165</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1689834496" />
+    <Bounce uid="123407376">
+      <distance>100</distance>
+      <speed>1</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="FlxSprite" uid="25">
+    <AnimatedFlxSprite uid="609606976">
+      <animations />
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>30</frameRate>
+      <loop>True</loop>
+      <drag_x>0</drag_x>
+      <drag_y>0</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>dancers</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>321.4995</x>
+      <y>42.99966</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <Dancer uid="1347777664" />
+    <Bounce uid="1226078080">
+      <distance>50</distance>
+      <speed>2</speed>
+      <offset>0</offset>
+    </Bounce>
+  </entity>
+  <entity name="Walkable" uid="26">
+    <Button uid="1874427648">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="1190504576">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="762925376">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>39.74617</x>
+      <y>474.6478</y>
+      <width>168.287</width>
+      <height>131.101</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="Talkable" uid="27">
+    <ActableObject uid="1105089664">
+      <interactionType>Examine</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Dancers</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1211091840">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>218.6105</x>
+      <y>127.6096</y>
+      <width>1701.858</width>
+      <height>264.9725</height>
+      <depth>20</depth>
+    </FlxObject>
+    <Button uid="132697872">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="149159696">
+      <id>action</id>
+      <xOffset>0.4972767</xOffset>
+      <yOffset>1.544291</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1345209472">
+      <partnerType>Default</partnerType>
+      <partnerName>Dancers</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>club_dancers</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Door" uid="28">
+    <ActableObject uid="1580184960">
+      <interactionType>Smartphone</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Leave</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="162665744">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>21.72432</x>
+      <y>110.0941</y>
+      <width>170.2964</width>
+      <height>411.309</height>
+      <depth>0.6</depth>
+    </FlxObject>
+    <Anchor uid="1648798464">
+      <id>action</id>
+      <xOffset>0.9707294</xOffset>
+      <yOffset>0.9877797</yOffset>
+    </Anchor>
+    <SmartphoneDialogInitiator uid="50964488">
+      <partnerType>Default</partnerType>
+      <partnerName>Smartphone</partnerName>
+      <partnerPortraitID>1</partnerPortraitID>
+      <initialTopic>maps</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>smartphone</dialogPartnerID>
+    </SmartphoneDialogInitiator>
+  </entity>
+  <entity name="Walkable" uid="29">
+    <Button uid="344117536">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="302459936">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="827254400">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>205.4384</x>
+      <y>388.0314</y>
+      <width>1923.279</width>
+      <height>218.5017</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="Player" uid="30">
+    <AnimatedFlxSprite uid="501045056">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+        <entry>holdstand 5</entry>
+        <entry>holdwalk 6 7 fr 4</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>4</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker_mask</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>213.4442</x>
+      <y>152.9489</y>
+      <depth>50</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="1836945408">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+        <entry>action use</entry>
+        <entry>phone phone</entry>
+        <entry>holdstand holdstand</entry>
+        <entry>holdwalk holdwalk</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <CameraFollow uid="1778254848" />
+    <Anchor uid="14244098">
+      <id>base</id>
+      <xOffset>0.5170571</xOffset>
+      <yOffset>0.9778526</yOffset>
+    </Anchor>
+    <TaggedObject uid="241042208">
+      <tagID>Player</tagID>
+    </TaggedObject>
+    <CharacterNavigation uid="42543108">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <PlayerController uid="221507872" />
+    <Character uid="1703367936">
+      <personID>player</personID>
+    </Character>
+    <PersonMask uid="691395392" />
+    <CafeAnimation uid="2108653824" />
+  </entity>
+  <entity name="Background" uid="31">
+    <FlxSprite uid="564091968">
+      <spriteID>club_background</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>2400</width>
+      <height>600</height>
+    </FlxSprite>
+    <WorldBounds uid="1513600896">
+      <cameraBounds>True</cameraBounds>
+      <worldBounds>True</worldBounds>
+      <x>0</x>
+      <y>0</y>
+      <width>2400</width>
+      <height>600</height>
+    </WorldBounds>
+    <WalkingEntrance uid="1878131456" />
+    <ClubJudgement uid="1020495488" />
+  </entity>
+</level>

@@ -1,0 +1,37 @@
+<level>
+  <entity name="FlxSprite" uid="0">
+    <FlxSprite uid="1316234112">
+      <spriteID>test_mask</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+	  <unique>True</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>177.9949</x>
+      <y>59.57367</y>
+      <depth>10</depth>
+      <width>400</width>
+      <height>400</height>
+    </FlxSprite>
+    <Mask uid="914026368">
+      <maskSprite>test_pattern</maskSprite>
+      <colors>
+        <entry>4294901760</entry>
+        <entry>4278255360</entry>
+        <entry>4278190335</entry>
+      </colors>
+      <masks>
+        <entry>0</entry>
+        <entry>1</entry>
+        <entry>2</entry>
+      </masks>
+      <maskWidth>100</maskWidth>
+      <maskHeight>100</maskHeight>
+    </Mask>
+    <UISquelcher uid="323970336" />
+  </entity>
+</level>

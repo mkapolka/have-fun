@@ -1,0 +1,37 @@
+<level>
+  <entity name="FlxSprite" uid="0">
+    <FlxSprite uid="1971024640">
+      <spriteID>title</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>20</depth>
+      <width>800</width>
+      <height>600</height>
+    </FlxSprite>
+    <UISquelcher uid="507611968" />
+    <Button uid="1398971264">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <ChangeRoom uid="1827172096">
+      <transitionType>Fade</transitionType>
+      <trigger>down</trigger>
+      <room>alarm_clock</room>
+      <entrance>
+      </entrance>
+    </ChangeRoom>
+  </entity>
+</level>

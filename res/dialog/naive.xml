@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<!-- Linda Sweet- The Naive Woman -->
+	<conditional test="id naive">
+		<topic name="fun">
+			<response>"Isn't everything so much %fun now? When I was younger you had %fun and then you had the real world, and they were separate. Now everywhere you turn there's a new game to play! Just %walking down the street is a game. It's nice, sometimes, to be distracted from %things ..."</response>
+			<options>things, walking</options>
+		</topic>
+		
+		<topic name="coffee">
+			<response>"I come here every day to get my daily soy pumpkin mocha and talk to people. My %routine bonus is through the roof!"</response>
+			<options>routine</options>
+		</topic>
+		
+		<conditional test="hasapp walking">
+			<topic name="walking">
+				<response>"Oh! You got the app, nice job!"</response>
+			</topic>
+		<else>
+			<topic name="walking">
+				<response>"You know, I used to not like walking, but now there's this app that monitors how far you walk. Well, there are tons of them obviously- but my favorite is the one from the Department of Health. You can even get tax breaks if you walk when you'd otherwise be driving. Here, I'll send you on a %quest to download it."</response>
+				<result>[addquest quest_get_walking_app Let's Go For A Walk!]</result>
+			</topic>
+		</else>
+		</conditional>
+		
+		<topic name="routine">
+			<response>"I get more points for getting the same thing every day. Sometimes I think it'd be nice to try something different, but I'd hate to see those points go to waste. Well, you know what they say, 'Take Comfort In Rituals!' Ha ha ha"</response>
+		</topic>
+		
+		<topic name="default">
+			<result>[query input_default]</result>
+		</topic>
+		
+		<topic name="input_default">
+			<response>"That... could be %fun, I guess." She loses interest and starts playing with her phone.</response>
+			<options>#input, fun</options>
+		</topic>
+		
+		<topic name="coffee_points">
+			<response>"Those are the points you get for playing Coffee Life. As you get more points you climb up the coffee %ranks and earn %Fun ."</response>
+			<options>rank, fun</options>
+		</topic>
+		
+		<!-- Main Storyline Conversations -->
+		
+		<!-- Day 1 -->
+		<conditional test="data naive_day == 0">
+			<topic name="things">
+				<response>"Well, I don't mean to be unfun, but my dad is pretty sick. I try to %visit him as much as I can, but it's always awkard. I don't know what to %say to him."</response>
+				<options>visit, say, bye</options>
+				<result>[data naive_progress = 1]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="data naive_day >= 0">
+			<topic name="visit">
+				<response>"There's this %hospice care %app at the hospital we have my dad in. It helps you schedule visits and gives you %points for doing so. It doesn't tell you what to %say when you get in there, though."</response>
+				<options>say, things, app|hospice_points, bye</options>
+				<result>[connect app hospice_points][connect points hospice_points]</result>
+			</topic>
+			
+			<topic name="hospice_points">
+				<response>"Yeah, the %hospice app has points, levelling up, leaderboards, you know, the usual. I guess it's to be expected nowadays, but it's still jarring to watch a nurse change your father's colostomy bag and then get 100 Fun for being such a good sport. You're supposed to keep it secret out of respect, but everyone knows about it."</response>
+				<options>say, visit, fun, bye</options>
+				<result>[connect fun fun_2]</result>
+			</topic>
+			
+			<topic name="fun_2">
+				<response>"I never really thought about Fun before this whole thing started. It makes sense for the most part- games are supposed to be fun, right? So you should get Fun for playing them. But now every app needs to give you Fun or else people won't use it, and sometimes it just doesn't make sense."</response>
+				<options>visit, say, app|hospice_points, bye</options>
+			</topic>
+			
+			<topic name="say">
+				<response>"Well, I mean, you know how it is, right? What do you say to someone in that situation? That Conversation Starter app doesn't help, of course. It doesn't really know anything about us- just the keywords. Besides, my dad hates it, and he can tell when someone's using it."</response>
+				<options>visit, hospice, bye</options>
+			</topic>
+			
+			<topic name="hospice">
+				<response>"He's a little more than 'pretty sick', I guess." She looks away and begins fiddling with her phone.</response>
+				<options>visit, say, app|hospice_points, bye</options>
+			</topic>
+		</conditional>
+		
+		
+		<!-- Day 2 -->
+		<conditional test="data naive_day == 1">
+			<topic name="things">
+				<response>"You know what that %hospice app told me today? It said that my %brother loves my dad more than I do! It actually said that! All because he's higher on the %leaderboard than me. He was gloating about it, too, said he 'always knew'. I can't even tell if he was joking."</response>
+				<options>brother, leaderboard</options>
+				<result>[data naive_progress = 1]</result>
+			</topic>
+			
+			<conditional test="coffee has_coffee">
+				<topic name="greeting">
+					<response>"You would not believe the %things the hospice app told me today."</response>
+					<options>things</options>
+					<result>[coffee talk naive]</result>
+				</topic>
+				
+			<else>
+				<topic name="greeting">
+					<response>"Hey. You're on your way to get a %coffee, right?" She raises her eyebrows at you and smiles expectantly.</response>
+					<options>coffee, things</options>
+				</topic>
+			</else>
+			</conditional>
+		</conditional>
+		
+		<conditional test="data naive_day >= 1">
+			<topic name="brother">
+				<response>"My %brother is really %competitive , so of course he's all about the app's %leaderboard. It's nice, I guess, that it gets him going to see dad so much, but he's really annoying about it. You know how people are when they're sarcastic, but not really?"</response>
+				<options>leaderboard, competitive</options>
+			</topic>
+			
+			<topic name="leaderboard">
+				<response>"It turns out my %brother has twice as many %points as I do in that hospice app. I don't know how he does it- it's not like he visits dad more often than I do. I honestly think he might be %cheating."</response>
+				<options>points, competitive, cheating</options>
+				<result>[connect points hospice_points]</result>
+			</topic>
+			
+			<topic name="cheating">
+				<response>"No, what am I saying? That's ridiculous, isn't it? No one would cheat at some misguided hospital game, right? Maybe there's some way for dad to give out points. What if my %brother is gaming my dad? I should really go check up on them."</response>
+				<options>brother, leaderboard, competitive</options>
+			</topic>
+			
+			<topic name="competitive">
+				<response>"When we were younger my mom would bribe us with candies to get us to clean our rooms. Whoever got their room cleaned the fastest would get the candy. My brother always won- he would get really into it, toys and sheets flying everywhere. I was never cleaning my room for the candy, I just valued having a clean room."</response>
+				<options>brother, leaderboard, cheating</options>
+			</topic>
+		</conditional>
+		
+		<!-- Day 3 -->
+		<conditional test="data naive_day == 2">
+			<conditional test="coffee has_coffee">
+				<topic name="greeting">
+					<response>"Do you mind if I vent on you today? It was a %fiasco"</response>
+					<options>fiasco</options>
+				</topic>
+				
+			<else>
+				<topic name="greeting">
+					<response>Linda sighs. "Christ. What a day. Are you going to get a %coffee? I need to tell you about what happened. It was a %fiasco."</response>
+					<options>fiasco</options>
+				</topic>
+			</else>
+			</conditional>
+			
+			<topic name="fiasco">
+				<response>"So my %mom wanted to get us all %together to go see my dad. I can't tell if it was her idea or if it was the app %nagging her to do it."</response>
+				<options>nagging, mom, together</options>
+				<result>[data naive_progress = 1]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="data naive_day >= 2">
+			<topic name="nagging">
+				<response>"The app gives you bonus points if you go and visit your relatives as a %family. It doesn't bug me about it much but I think the app knows something about my %mom that would make her react better to its haranguing."</response>
+				<options>mom, together, family</options>
+				<result>[connect family together]</result>
+			</topic>
+			
+			<topic name="mom">
+				<response>"My mom has been rather shaken up by all this, obviously. We've never been the most tight knit family, but there was always the understanding that we'd mature and catch up eventually. I guess she feels responsible for bringing us all %together. After she left she told me that she felt like a great %weight had been lifted from her shoulders."</response>
+				<options>together, nagging, weight</options>
+			</topic>
+			
+			<topic name="weight">
+				<response>"Apparently that game had been nagging her to get the family together for days. She called it an 'Epic Struggle'"</response>
+				<options>mom, nagging, together</options>
+			</topic>
+			
+			<topic name="together">
+				<response>"My brother almost didn't come- if we all come together we all get the same number of points. It was a zero sum move for him. I had to explain that if mom and I went without him we'd get more points. Really, once we got there it wasn't any more painful than usual, but getting there was so %surreal."</response>
+				<options>brother, surreal, mom</options>
+			</topic>
+			
+			<topic name="surreal">
+				<response>"Every part of my dad's care has been mediated by this app- it suggests when we go, who to bring, all that. It knows our schedules really well, so for the most part we just go along with it. It's almost like the app is a member of the family.</response>
+				<options>together, mom, nagging</options>
+			</topic>
+		</conditional>
+		
+		<!-- Day 4 is at the bottom- Linda is in a fugue state then, doesn't respond to normal prompts -->
+		
+		<conditional test="data naive_day == 3">
+			<topic name="greeting">
+				<response>Linda is desperately toying with her phone, lost in thought.</response>
+				<result>[setid naive_fugue][rebuild]</result>
+			</topic>
+		</conditional>
+		
+		<!-- Day 5 -->
+		
+		<conditional test="data naive_day == 4">
+			<topic name="greeting">
+				<response>"Hey. I think I'm hanging in there. Up to anything %interesting today?"</response>
+			</topic>
+			
+			<topic name="interesting">
+				<response>Julie's glances at her phone as it vibrates. She stops mid sentence, staring at the phone with a dead disbelief. She casually drops the phone on the ground and walks out the door, leaving a deep crack down the center of the phone's screen.</response>
+				<result>[addquest quest_naive_dead_dad Send Your Condolences][exit naive][data naive_day = 5]</result>
+				<options>leave|bye, #nodefault</options>
+			</topic>
+		</conditional>
+		
+		<conditional test="hasapp coffee">
+			<!-- >Has App</!-->			
+			
+			<!-- Chatting about rank -->
+			<conditional test="coffee rank > 2">
+				<topic name="rank">
+					<response>"Right now I'm just a Coffee Fiend, but someday I hope to be a Coffee Addict. That's the highest rank, Caffeine Addict. You're a #coffee_rank_title , right? That's amazing! You're progressing so fast."</response>
+					<options>coffee</options>
+				</topic>
+				
+			<else>
+				<topic name="rank">
+					<response>"Right now I'm just a Coffee Fiend, but someday I hope to be a Caffeine Addict. That's the highest rank, Caffeiene Addict. You're a #coffee_rank_title , right? Sounds like you've got quite a ways to go.</response>
+					<options>coffee</options>
+				</topic>
+			</else>
+			</conditional>
+			
+			<!-- All the coffee app based greetings are only for if you haven't been acquainted with naive first -->
+			<conditional test="data naive_day == 0">
+				<conditional test="coffee no_coffee">
+					<!-- Has app but no coffee -->				
+					<topic name="greeting">
+						<response>"You got the app! That's great! Now if you get a %coffee and we chat we'll both get %fun and %coffee %points!"</response>
+						<options>fun, coffee, coffee points|coffee_points</options>
+					</topic>
+				<else>
+					<!-- Has app and coffee -->
+					<conditional test="coffee talked_today naive">
+						<topic name="greeting">
+							<response>"Oh, hi again. You know we don't need to keep talking if you don't want to. We already got our %Coffee %Points for talking today."</response>
+							<options>#input</options>
+						</topic>
+					<else>
+						<topic name="greeting">
+							<response>"Ooh, great, you got a coffee! It's so much %fun to talk over a nice cup of coffee!" Your smartphones bloop in unison, announcing your gained %Coffee %Points</response>
+							<options>coffee, fun, coffee points|coffee_points</options>
+							<result>[addrapport 1][coffee talk naive][rebuild]</result>
+						</topic>
+					</else>
+					</conditional>
+					
+					<topic name="coffee">
+						<response>"Ooh, what did you get?"</response>
+						<options>coffee|recital_type_coffee, mocha|recital_type_mocha, latte|recital_type_latte</options>
+					</topic>
+					
+					<conditional test="coffee recital_correct">
+						<topic name="recital_response">
+							<response>"Yum, that sounds great. I just got my %usual soy pumpkin mocha."</response>
+							<options>usual|routine</options>
+							<result>[fun += 20]</result>
+						</topic>
+					<else>
+						<topic name="recital_response">
+							<response>"Ohp! I gotcha! That was actually a test. I can see on my screen what you got, but if you had correctly remembered it you would have gotten points! See, what you actually got was a #last_coffee . Better luck next time!"</response>
+						</topic>
+					</else>
+					</conditional>
+					
+				</else>
+				</conditional>
+			</conditional>
+		<else>
+			<!-->No App</!-->
+			
+			<topic name="rank">
+				<response>"Right now I'm just a Coffee Fiend, but someday I hope to be a Caffeine Addict. When you get the app you start out as a Brew Newbie, but you gain points really fast when you start, so don't worry about looking like a newbie for too long!"</response>
+				<options>coffee, app</options>
+			</topic>
+			
+			<topic name="app">
+				<response>"You can get it from that sign over on the wall near the barista." Your phone hears her say this and automatically generates a quest to find the poster in question.</response>
+				<result>[coffee getappquest]</result>
+			</topic>
+			
+			<conditional test="coffee no_coffee">
+				<!-- No App and No Coffee -->
+				<conditional test="data naive_day == 0">
+					<topic name="greeting">
+						<response>"Hey, I'd love to chat, but you should get a %coffee first! We'll get more points if we both have %coffee!"</response>
+						<options>coffee</options>
+					</topic>
+				</conditional>
+				
+				<topic name="default">
+					<response>"Get the Coffee Life %app and some %coffee first!"</response>
+					<options>#input, app, coffee</options>
+				</topic>
+				
+				<topic name="coffee">
+					<response>"Yeah, they have this great %game here, and if you talk to people over a cup of coffee then you can get points and stuff."</response>
+					<options>game|app</options>
+				</topic>
+			<else>
+				<!-- No app but has coffee -->
+				
+			</else> <!-- No Coffee -->
+			</conditional><!-- no coffee -->
+		</else><!--No app -->
+		</conditional> <!-- has app Coffee -->
+	</conditional><!-- id naive -->
+	
+	<conditional test="id naive_fugue">
+		<topic name="default">
+			<result>[query greeting]</result>
+		</topic>
+		
+		<topic name="greeting">
+			<response>Linda is desperately toying with her phone, distracted.</response>
+			<options>things|break</options>
+		</topic>
+		
+		<topic name="break">
+			<response>She jumps. "Oh, Hey. Jeez. I'm sorry, I didn't see you there. I'm trying to distract myself myself. To be honest I'm pretty shaken up about what happened %today."</response>
+			<options>today</options>
+			<result>[data naive_progress = 1]</result>
+		</topic>
+		
+		<topic name="today">
+			<response>"My %dad had a heart attack while we were visiting. He's recovered now, I guess, as much as you can in the condition he's in. I guess this is pretty much %home stretch."</response>
+			<options>dad, home</options>
+		</topic>
+		
+		<topic name="home">
+			<response>"The only thing I could think of while he was lying there was how glad I'd be if this was all over. I hated myself for thinking that, and that hatred only made me want it to end sooner. All the while my phone was vibrating in my pocket. It's Fun by the second when your loved one is flatlining. Watching bars go up comforts some people."</response>
+			<options>dad, today</options>
+		</topic>
+		
+		<topic name="dad">
+			<response>"My dad hated all of this %game bullshit. He was very hands off in a lot of ways- he'd let you make your own mistakes and accept the consequences. If you had some kind of responsibility he wouldn't remind you to do it, or even help you figure it out really. I mean he never even told me to how to take care of my %goldfish."</response>
+			<options>game, fish, home</options>
+			<result>[connect fish goldfish]</result>
+		</topic>
+		
+		<topic name="fish">
+			<response>"It had a pet goldfish when I was young, and for some reason I assumed that they just ate the mold that grows on the inside of their fishbowls, so I never fed it. My dad knew I wasn't feeding it, I mean I didn't even have any fish food."</response>
+			<options>dad, game, home</options>
+		</topic>
+		
+		<topic name="game">
+			<response>"We all know that this hospice game is playing us- even my dad, but no one seems to think that's strange at all. Mom said to play along, for his sake, but he would have hated it! He would hate it, I mean. Does hate it.</response>
+			<options>fish, dad, home</options>
+		</topic>
+	</conditional>
+</dialog>

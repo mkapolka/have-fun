@@ -1,0 +1,5 @@
+<dialog>
+	<conditional test="item smartphone">
+		
+	</conditional>
+</dialog>

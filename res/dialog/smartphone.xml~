@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<conditional test="id smartphone">
+		<topic name="default">
+			<response>Choose an app</response>
+			<options>#apps, help, restart</options>
+			<result>[setdefault]</result>
+		</topic>
+		
+		<topic name="restart">
+			<response>Would you like to restart the game?</response>
+			<options>yes|yes_restart, no|default</options>
+		</topic>
+		
+		<topic name="yes_restart">
+			<response></response>
+			<result>[closedialog][room title fade]</result>
+		</topic>
+		
+		<topic name="help">
+			<response>"Which of my features would you like to know about?"</response>
+			<options>maps|help_maps, conversation|help_conversation, fun|help_fun, time|help_time, I'm done|help_done</options>
+		</topic>
+		
+		<topic name="help_fun">
+			<response>"Make Life Fun Again! With this version of our mobile operating system we are proud to announce our integration with Facebook's "%Fun" Meta Scoring system. The "%Fun" scoring system ties all of your favorite activities together to turn your life into one big game."</response>
+			<options>back|help</options>
+		</topic>
+		
+		<topic name="help_time">
+			<response>"It's 'Time' for a change. Here at Apple, we've done extensive User Experience research into every nook and cranny of the human psyche, and in doing so we discovered that time is quite simply poorly designed. Whoops. Think about it: What makes 5:30 different from 5:31? It's 8:14 right now. Is that Good or Bad? What a headache, who needs it?"</response>
+			<options>tell me more!|help_t2, back|help</options>
+		</topic>
+		
+		<topic name="help_t2">
+			<response>"Instead, we've reimagined time. Now, instead of counting round and round time counts down from the moment you wake up to the time you should go to sleep. You can see a handy readout of what time it is up at the top of your Heads Up Display. Simple."</response>
+			<options>back|help</options>
+		</topic>
+		
+		<topic name="help_conversation">
+			<response>"Never be at a loss for words again! The Conversation Starter App will automatically provide you with topics for conversation based on trending Twitter topics, location-based sponsored keywords, and your own personal discussion habits!"</response>
+			<options>tell me more!|help_c2, back|help</options>
+		</topic>
+		
+		<topic name="help_c2">
+			<response>"When you're talking to someone, keep an eye out for %gold %words. Those are potential conversation topics."</response>
+			<options>neat!|help</options>
+		</topic>
+		
+		<topic name="help_maps">
+			<response>"Not sure how to get where you're going? The Google Maps App will give you directions to wherever you want to go, provided you have that location bookmarked."</response>
+			<options>back|help</options>
+		</topic>
+		
+		<topic name="help_done">
+			<response>"If you ever need me, I'll be right here in your pocket!" (Click on the smartphone icon in the lower left to open your smartphone)</response>
+			<options>wait|help, bye</options>
+		</topic>
+		
+		<topic name="inventory">
+			<response>You currently have #money and the following items:</response>
+			<options>#items, Main Menu</options>
+			<result>[connect Main Menu default][connect back inventory]</result>
+		</topic>
+		
+		<topic name="mail">
+			<response>Please choose an email to read.</response>
+			<options>#maillist, Main Menu|default</options>
+			<result>[setmail]</result>
+		</topic>
+		
+		<topic name="mail_delete">
+			<response>Message Deleted.</response>
+			<options>#maillist, Main Menu|default</options>
+		</topic>
+		
+		<topic name="greetings_email">
+			<response>Thanks for choosing Google Mail! Please accept this gift of 100 Fun.</response>
+			<options>#mailoptions, back|mail</options>
+			<result>[fun += 100]</result>
+		</topic>
+		
+		<topic name="maps">
+			<response>Welcome to Google Maps! Where would you like to go?</response>
+			<options>#locations, Main Menu</options>
+			<result>[interject smartphone_houseleave_nag]</result>
+		</topic>
+		
+		<topic name="houseleave_nag_deodorant">
+			<response>Hey, you haven't put on any deodorant today! Are you really thinking about leaving the house like that?</response>
+			<options>no|bye, yes|interjection_continue</options>
+		</topic>
+		
+		<topic name="houseleave_nag_clothes">
+			<response>You're not thinking of going out dressed like that are you? Those are the same clothes you wore yesterday. Anyone with a proper %Fashion app will be able to tell straight away.</response>
+			<options>yes|interjection_continue, no|bye, fashion|housenag_fashion</options>
+		</topic>
+		
+		<topic name="housenag_fashion">
+			<response>Many Fashion apps track what your friends have been wearing. If you wear the same thing too often you'll look like a fool! You don't want that, do you? If you don't have enough clothes, try getting more via the Amazon app!</response>
+			<options>leave|bye</options>
+		</topic>
+		
+		<topic name="houseleave_nag_clotheslame">
+			<response>The clothes you're wearing are looking a bit out of date. Are you sure you wouldn't rather wearing something cooler? You can buy new clothes using the Amazon app, if you need them.</response>
+			<options>no|bye, yes|interjection_continue</options>
+		</topic>
+		
+		<conditional test="location != home">
+			<topic name="home">
+				<response>Here are the directions to your house.</response>
+				<options>go|home_confirm, maps</options>
+			</topic>
+			
+			<topic name="home_confirm">
+				<response></response>
+				<result>[closedialog][room home fade][walking walk]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="location != starbucks">
+			<topic name="starbucks">
+				<response>Here are the directions to the nearest Starbucks.</response>
+				<options>go there|cafe_confirm, Back</options>
+				<result>[connect Back maps]</result>
+			</topic>
+			
+			<topic name="cafe_confirm">
+				<response></response>
+				<result>[closedialog][room starbucks fade][walking walk]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="location != morts">
+			<topic name="morts">
+				<response>Here are the directions to Mort's</response>
+				<options>go there, Back</options>
+				<result>[connect Back maps][connect go there cafe_2_confirm]</result>
+			</topic>
+			
+			<topic name="cafe_2_confirm">
+				<response></response>
+				<result>[closedialog][room cafe_2 fade][walking walk]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="location != gym">
+			<topic name="gym">
+				<response>Here are the directions to the Gym</response>
+				<options>go there|gym_confirm, back|maps</options>
+			</topic>
+			
+			<topic name="gym_confirm">
+				<response></response>
+				<result>[closedialog][room gym fade][walking walk]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="location != club">
+			<topic name="club">
+				<response>Here are the directions to the Club</response>
+				<options>go there|club_confirm, back|maps</options>
+			</topic>
+			
+			<topic name="club_confirm">
+				<response></response>
+				<result>[closedialog][room club fade][walking walk]</result>
+			</topic>
+		</conditional>
+		
+		<!--
+			APPS
+		-->
+		
+		<topic name="coffee_status">
+			<response>You have #coffee_points coffee points! That makes you a Rank #coffee_rank #coffee_rank_title !</response>
+			<options>back|coffee</options>
+		</topic>
+		
+		<conditional test="coffee has_coffee">
+				<topic name="coffee">
+					<response>Looks like you're enjoying a nice hot Starbucks coffee. That's great! Why not share your love of Starbucks coffee and have a nice chit-chat with other Starbucks patrons?</response>
+					<options>status|coffee_status, Main Menu|default</options>
+				</topic>
+			
+			<else>
+				<topic name="coffee">
+					<response>You haven't bought a coffee today yet? You must be jonesing bad! Talk to the Barista, he'll hook you up!</response>
+					<options>status|coffee_status, Main Menu|default</options>
+				</topic>
+			</else>
+		</conditional>
+		
+		<conditional test="foursquare is_mayor">
+			<topic name="foursquare">
+				<response>Thanks for using foursquare! It looks like you're at #fs_location . You are the mayor here. Would you like to %check %in?</response>
+				<options>Check In|check_in, Main Menu|default</options>
+			</topic>
+		<else>
+			<topic name="foursquare">
+				<response>Thanks for using foursquare! It looks like you're at #fs_location . #fs_mayor is the mayor here. Would you like to %check %in?</response>
+				<options>Check In|check_in, Main Menu|default</options>
+			</topic>
+		</else>
+		</conditional>
+		
+		
+		<topic name="foursquare_status">
+			<resposne></resposne>
+			<options>Back|foursquare</options>
+		</topic>
+		
+		<conditional test="foursquare checked_in_today">
+			<topic name="check_in">
+				<response>You already checked in today. Come back tomorrow for more %fun!</response>
+				<options>Back|foursquare</options>
+			</topic>
+		<else>
+			<topic name="check_in">
+				<response>Thanks for checking in! You earned #fs_fun fun and #fs_points foursquare points!</response>
+				<options>continue|foursquare</options>
+				<result>[foursquare check_in][rebuild]</result>
+			</topic>	
+		</else>
+		</conditional>
+		
+		<topic name="quests">
+			<response>Here are the quests you are currently on.</response>
+			<options>#quest_list, Main Menu|default</options>
+			<result>[touch_questlist]</result>
+		</topic>
+		
+		<topic name="walking">
+			<response>While using the "Walk A Day" App you have walked a total of #walking_currentpoints meters. Thank you for doing your part in helping keep pollution in check and keep the American populace healthy.</response>
+			<options>Main Menu|default</options>
+		</topic>
+		
+		<topic name="amazon">
+			<response>Welcome to Amazon! We've prepared some very special deals just for you! Which deal would you like to see?</response>
+			<options>shirt|amazon_shirt, pants|amazon_pants, Main Menu|default</options>
+		</topic>
+		
+		<topic name="amazon_shirt">
+			<response>Check out this lovely #upper_offer_name . Just the thing you need for your collection!</response>
+			<options>buy|amazon_shirt_buy, back|amazon</options>
+			<result>[setportrait 11][amazon setmask upper]</result>
+		</topic>
+		
+		<topic name="amazon_pants">
+			<response>You'll be sure to turn heads in these lovely #lower_offer_name ! Buy now and get an extra 10%% Fun!</response>
+			<options>buy|amazon_pants_buy, back|amazon</options>
+			<result>[setportrait 12][amazon setmask lower]</result>
+		</topic>
+		
+		<topic name="amazon_shirt_buy">
+			<response>Purchase successful! Your order will be delivered shortly.</response>
+			<options>back|amazon</options>
+			<result>[setportrait 1][amazon buy_upper][fun += 50]</result>
+		</topic>
+		
+		<topic name="amazon_pants_buy">
+			<response>Purchase successful! Your order will be delivered shortly.</response>
+			<options>back|amazon</options>
+			<result>[setportrait 1][amazon buy_lower][fun += 50]</result>
+		</topic>
+		
+		<!--
+			QUESTS
+		-->
+		
+		<topic name="quest_welcome">
+			<response>Welcome to Google Quests! This app is designed to integrate your email client, your to-do list, and your favorite role playing game, Life! As you are given quests they'll show up in this app. Be sure to check back when you complete them for fantastic rewards!</response>
+			<options>#quest, back|quests</options>
+			<result>[completequest quest_welcome]</result>
+		</topic>
+		
+		<topic name="quest_welcome_complete">
+			<response>Great job, you've completed the quest! That's all there is to it! Now go forth and start Questing!</response>
+			<options>back|quests</options>
+			<result>[removequest quest_welcome][fun += 100]</result>
+		</topic>
+		
+		<topic name="quest_get_coffee_app">
+			<response>You've heard that "Coffee Life", the official Starbucks game, is a lot of fun. See if you can find a link to download the game in a Starbucks near you!</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_get_coffee_app_complete">
+			<response>Congratulations! You successfully found the Coffee Life App! Why not celebrate with a nice hot coffee?</response>
+			<options>back|quests</options>
+			<result>[fun += 50][addpoints 5][removequest quest_get_coffee_app]</result>
+		</topic>
+		
+		<topic name="quest_buy_coffee">
+			<response>Now that you've downloaded the Coffee Life app you can start earning coffee points and climb the coffee loving ranks! The first step in your journey is to buy a delicious Starbucks coffee. Are you up for the challenge of deciding which tantalizing flavor to choose?</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_buy_coffee_complete">
+			<response>Mmm, doesn't that hit the spot? Now that you have some coffee, why not have a chat with some of your fellow Coffee Lifers? It's tons of Fun to talk over a nice, hot cup of coffee!</response>
+			<options>back|quests</options>
+			<result>[fun += 50][coffee addpoints 5][removequest quest_buy_coffee][givequest quest_coffee_talk Talk to a Fellow Lifer]</result>
+		</topic>
+		
+		<topic name="quest_coffee_talk">
+			<response>When you talk with your fellow Coffee Lifers over a hot cup of coffee you will gain Fun and Coffee Points! Go on, don't be shy, introduce yourself!</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_coffee_talk_complete">
+			<response>That wasn't so bad, was it?</response>
+			<options>back|quests</options>
+			<result>[fun += 50][coffee addpoints 5][removequest quest_coffee_talk]</result>
+		</topic>
+		
+		<topic name="quest_get_walking_app">
+			<response>You have been invited to download "Walk A Day", the fun and healthy app designed to make walking more entertaining! All you need to do to get started is %download the app!</response>
+			<options>#quest, Download|quest_download_walking_app, back|quests</options>
+		</topic>
+		
+		<topic name="quest_download_walking_app">
+			<response>You successfully downloaded the "Walk A Day" App! To get started just start walking! The more you walk the more fun you'll have!</response>
+			<options>back|quests</options>
+			<result>[fun += 25][addapp walking][removequest quest_get_walking_app][addquest quest_walking_milestone Get Walking!]</result>
+		</topic>
+		
+		<topic name="quest_walking_milestone">
+			<response>You've been walking for #walking_currentpoints meters. Great Job! Keep it up! If you can reach #walking_nmilestone miles walked you'll get a bonus!</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_walking_milestone_complete">
+			<response>On this day you have accomplished the great feat of walking #walking_pmilestone meters. For this, you are a true American. Keep up the good work, soldier. Signed, The President of the United States of America</response>
+			<options>back|quests</options>
+			<result>[fun += 100][removequest quest_walking_milestone][addquest quest_walking_milestone Get Walking!][walking completequest]</result>
+		</topic>
+		
+		<topic name="quest_foursquare_pledge_loyalty">
+			<response>You won't get very far in Foursquare on your own. In order to get lots of points you'll need to pledge your loyalty to a Patron. Ask around and see if anyone is looking for Vassals!"</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_foursquare_pledge_loyalty_complete">
+			<response>Now you're talking. In order to maintain good relations with your Patron, be sure to check in often and in many places.</response>
+			<options>back|quests</options>
+			<result>[fun += 200][removequest quest_foursquare_pledge_loyalty]</result>
+		</topic>
+		
+		<topic name="quest_foursquare_help_patron">
+			<response>It's time to fulfill your covenant with your Patron! To complete this quest, earn 20 points for your Patron.</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_foursquare_help_patron_complete">
+			<response>Good job! You've done a good thing for the #fs_patronname kingdom!</response>
+			<options>back|quests</options>
+			<result>[removequest quest_foursquare_help_patron][fun += 200]</result>
+		</topic>
+		
+		<topic name="quest_gym_work_out">
+			<response>Dang. Looks like you decided to join this gym just in time! Now that you've got the Gym app and membership you can unlock the workout devices. Why not work out a bit?</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_gym_work_out_complete">
+			<response>Hows that feel? Pretty good I'll bet. Remember to come back every day to stay in shape!</response>
+			<options>back|quests</options>
+			<result>[removequest quest_gym_work_out][gym next_rank_quest][addquest quest_gym_routine Work Out Everyday][fun += 200]</result>
+		</topic>
+		
+		<topic name="quest_gym_routine">
+			<response>Have you remembered to work out today?</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_gym_routine_complete">
+			<response>Tight!</response>
+			<options>back|quests</options>
+			<result>[removequest quest_gym_routine][fun += 100][addquest quest_gym_routine Work Out Everyday]</result>
+		</topic>
+		
+		<topic name="quest_gym_rank_up">
+			<response>You're looking pretty #gym_rank_name but I'll bet with perseverence you could get #gym_next_rank !</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_gym_rank_up_complete">
+			<response>Aw yeah, lookin #gym_rank_name !</response>
+			<options>back|quests</options>
+			<result>[removequest quest_gym_rank_up][fun += 250][gym next_rank_quest][rebuild]</result>
+		</topic>
+		
+		<topic name="quest_naive_dead_dad">
+			<response>Linda Sweet's Father, Frank Sweet, has passed away. Leave your condolences on his wall for 500 Fun!</response>
+			<options>leave condolences|condole, back|quests</options>
+		</topic>
+
+		<topic name="condole">
+			<response>You leave a heartfelt message for Frank's family.</response>
+			<options>back|quest_naive_dead_dad</options>
+			<result>[completequest quest_naive_dead_dad][removequest quest_naive_dead_dad][fun += 500]</result>
+		</topic>
+		
+		<topic name="quest_deodorant_start">
+			<response>Alas brave hero! You have been cursed by the evil Pit`Stankus and you are doomed to have SMELLY ARMPITS. That is, until you can slay the evil Pit`Stankus with the help of your faithful allies, Dove and Secret brand deodorants! Search for them in the hallowed halls of YOUR BATHROOM and beseech their aid in your quest!"</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_deodorant_start_complete">
+			<response>You have succeeded in your quest and slain the vile Pit`Stankus... FOR NOW! Who knows what fiendish schemes the foul beast is concocting even now!</response>
+			<options>back|quests</options>
+			<result>[removequest quest_deodorant_start][fun += 100][addquest quest_deodorant_loyalty Loyalty]</result>
+		</topic>
+		
+		<topic name="quest_deodorant_loyalty">
+			<response>Hero! The blight that is Pit`Stankus cannot be cured by the power of Fun alone! Nay, it will require that unbreakable bond that can hold fast in the face of the strongest storm. Yes, brave hero, I speak of course of the bond between a woman and her brand of deodorant. Go forth and prove your loyalty to your deodorant brand by amassing 3 Loyalty Points with that brand.</response>
+			<options>#quest, back|quests</options>
+		</topic>
+		
+		<topic name="quest_deodorant_loyalty_complete">
+			<response>A friendship has been forged this day, hero. A friendship that will be sung by the greatest poets for era to come!</response>
+			<result>[removequest quest_deodorant_loyalty][fun += 150]</result>
+		</topic>
+	</conditional>
+</dialog>

@@ -1,0 +1,70 @@
+###RESULTS###
+
+(DialogManager.as)
+[connect topic1 topic2]
+connects two topics so that when topic1 is queried, topic2 is returned (like keywords)
+
+[query topic]
+queries the given topic
+
+(AS2DialogManagerComponent.as)
+[opendialog type id [name] [portrait]]
+open a dialog with the specified partner
+**type = smartphone | character | default
+***which DialogPartner class to use
+**id = the id of the partner to use. usage of this changes depending on type. 
+***smartphone: not necessary, id, name, and portrait are configred via the SmartphoneDialogManager class
+***character: the id of the character to look up. name, portrait, etc are all taken from that lookup
+***default: set the id, name, portrait manually
+
+(AS2DialogPartner.as)
+
+[setname name]
+sets the name of the partner
+
+[closedialog]
+closes the dialog
+
+[room room_id]
+changes the room to the specified room id.
+make sure to call [closedialog] when you do this
+
+[addmoney amount]
+[removemoney amount]
+adds or remove money from the player
+
+[additem item_id]
+[removeitem item_id]
+adds or remove the specified item. The item ID is looked up from data.xml
+
+[addapp]
+adds the specified app
+
+[rebuild]
+re-builds the dialog partner. If you make a change that might change the way the partner's
+conditionals play out, call this
+
+[givesmartphone]
+gives the player the smartphone
+
+[setportrait portrait_id]
+sets the partner's portrait
+
+[addlocation location_id]
+
+##COFFEE RESULTS
+
+[coffee [result information]]
+In AS2DialogPartner.as, there is a line of code that looks to see if the first
+word of a result is "coffee", and if so pushes that request to CoffeeAppData.as
+
+(CoffeeAppData.as)
+
+[coffee addpoints n_points]
+[coffee removepoints n_points]
+adds or removes points
+
+[coffee buycoffee]
+sets the coffeeapp's last_coffee date to today
+
+###CONDITIONALS###

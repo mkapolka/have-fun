@@ -1,0 +1,380 @@
+<level>
+  <entity name="Mouse">
+    <FlxText uid="3">
+      <text>donka doo balls</text>
+      <textSize>20</textSize>
+      <alignment>center</alignment>
+      <color>4278190080</color>
+      <x>165.8812</x>
+      <y>-66.20496</y>
+      <width>179.4739</width>
+      <height>31.22308</height>
+      <depth>1204.563</depth>
+    </FlxText>
+    <Cursor uid="2">
+      <clickMessage>click</clickMessage>
+      <releaseMessage>release</releaseMessage>
+      <anchor>mouse</anchor>
+    </Cursor>
+    <Anchor uid="1">
+      <id>mouse</id>
+      <xOffset>90.25774</xOffset>
+      <yOffset>34.20097</yOffset>
+    </Anchor>
+    <TaggedObject uid="0">
+      <tagID>Mouse</tagID>
+    </TaggedObject>
+  </entity>
+  <entity name="DialogManager">
+    <DialogManager uid="6" />
+    <OnStartTrigger uid="5">
+      <message>hide</message>
+    </OnStartTrigger>
+    <entity name="DialogBox">
+      <FlxText uid="44">
+        <text>Lorem Ipsum</text>
+        <textSize>10</textSize>
+        <alignment>left</alignment>
+        <color>4294967295</color>
+        <x>334.7525</x>
+        <y>13.72722</y>
+        <width>434.8347</width>
+        <height>237.0322</height>
+        <depth>0</depth>
+      </FlxText>
+      <DialogBox uid="43" />
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="42">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>347.5032</x>
+        <y>269.0945</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="41">
+        <offset>0</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="40">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="39">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="38">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>347.5599</x>
+          <y>268.5935</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="37">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="18">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>347.5032</x>
+        <y>403.947</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="17">
+        <offset>2</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="16">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="15">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="14">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>347.5599</x>
+          <y>403.446</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="13">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="31">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>567.1544</x>
+        <y>269.0945</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="32">
+        <offset>3</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="33">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="34">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="35">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>567.2111</x>
+          <y>268.5935</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="36">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="7">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>567.1544</x>
+        <y>403.947</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="8">
+        <offset>5</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="9">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="10">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="11">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>567.2111</x>
+          <y>403.446</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="12">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="30">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>567.1544</x>
+        <y>337.097</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="29">
+        <offset>4</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="28">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="27">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="26">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>567.2111</x>
+          <y>336.596</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="25">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogOption">
+      <FlxText uid="19">
+        <text>Lorem Ipsum</text>
+        <textSize>20</textSize>
+        <alignment>center</alignment>
+        <color>4294967295</color>
+        <x>347.5032</x>
+        <y>337.097</y>
+        <width>193.2178</width>
+        <height>51.5166</height>
+        <depth>1</depth>
+      </FlxText>
+      <DialogOption uid="20">
+        <offset>1</offset>
+        <trigger>up</trigger>
+      </DialogOption>
+      <Button uid="21">
+        <overMessage>over</overMessage>
+        <outMessage>out</outMessage>
+        <downMessage>down</downMessage>
+        <upMessage>up</upMessage>
+        <enabledMessage>enabled</enabledMessage>
+        <disabledMessage>disabled</disabledMessage>
+      </Button>
+      <ColorTrigger uid="22">
+        <triggers>
+          <entry>over 4278190080</entry>
+          <entry>out 4294967295</entry>
+        </triggers>
+      </ColorTrigger>
+      <entity name="DialogOption">
+        <FlxSprite uid="23">
+          <spriteID>option_bg</spriteID>
+          <color>0</color>
+          <x>347.5599</x>
+          <y>336.596</y>
+          <depth>-1</depth>
+          <width>193.1044</width>
+          <height>52.51862</height>
+        </FlxSprite>
+        <ColorTrigger uid="24">
+          <triggers>
+            <entry>over 4294111986</entry>
+            <entry>out 196608</entry>
+            <entry>down 4292201574</entry>
+            <entry>up 4294111986</entry>
+            <entry>disabled 196608</entry>
+            <entry>enabled 196608</entry>
+          </triggers>
+        </ColorTrigger>
+      </entity>
+    </entity>
+    <entity name="DialogPortrait">
+      <AnimatedFlxSprite uid="4">
+        <animations />
+        <spriteWidth>300</spriteWidth>
+        <spriteHeight>600</spriteHeight>
+        <reverseSprite>False</reverseSprite>
+        <unique>False</unique>
+        <frameRate>30</frameRate>
+        <loop>True</loop>
+        <drag_x>0</drag_x>
+        <drag_y>0</drag_y>
+        <spriteID>dialog_portraits</spriteID>
+        <color>4294967295</color>
+        <x>0</x>
+        <y>0</y>
+        <depth>0</depth>
+        <width>300</width>
+        <height>600</height>
+      </AnimatedFlxSprite>
+    </entity>
+  </entity>
+</level>

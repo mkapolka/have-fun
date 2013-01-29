@@ -1,0 +1,285 @@
+<level>
+  <entity name="EntranceBed" uid="0">
+    <FlxObject uid="496685888">
+      <solid>False</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>519.4541</x>
+      <y>513.9705</y>
+      <width>10</width>
+      <height>10</height>
+      <depth>0.5</depth>
+    </FlxObject>
+    <RoomEntrance uid="1410996608">
+      <entranceName>bed</entranceName>
+    </RoomEntrance>
+  </entity>
+  <entity name="EntranceDoor" uid="1">
+    <FlxObject uid="1024432768">
+      <solid>False</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>191.7741</x>
+      <y>430.5814</y>
+      <width>10</width>
+      <height>10</height>
+      <depth>0.5</depth>
+    </FlxObject>
+    <RoomEntrance uid="527776320">
+      <entranceName>door</entranceName>
+    </RoomEntrance>
+  </entity>
+  <entity name="WalkableArea" uid="2">
+    <Button uid="2019327744">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="1516511360">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="2027984896">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>102.0964</x>
+      <y>408.2399</y>
+      <width>630.3492</width>
+      <height>198.2796</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="OutsideDoor" uid="3">
+    <ActableObject uid="1711702784">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Door</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="2106640896">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>117.4953</x>
+      <y>134.0171</y>
+      <width>158.9093</width>
+      <height>273.792</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="323234080">
+      <id>action</id>
+      <xOffset>0.5054613</xOffset>
+      <yOffset>1.040162</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1754491648">
+      <partnerType>Default</partnerType>
+      <partnerName>Door</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>door</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="BathroomDoor" uid="4">
+    <ActableObject uid="472144960">
+      <interactionType>Examine</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Bathroom</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="143272976">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>546.9305</x>
+      <y>134.0171</y>
+      <width>158.9093</width>
+      <height>273.792</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="615896384">
+      <id>action</id>
+      <xOffset>0.4338289</xOffset>
+      <yOffset>1.040162</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1766853888">
+      <partnerType>Default</partnerType>
+      <partnerName>
+      </partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>bathroom</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Bed" uid="5">
+    <ActableObject uid="502866496">
+      <interactionType>Examine</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Bed</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1471134848">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>431.8167</x>
+      <y>504.6564</y>
+      <width>376.0443</width>
+      <height>102.1938</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="560299072">
+      <id>action</id>
+      <xOffset>0.2658994</xOffset>
+      <yOffset>0.1893889</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="730196032">
+      <partnerType>Default</partnerType>
+      <partnerName>Bed</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>
+      </initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>bed</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Dresser" uid="6">
+    <ActableObject uid="626694464">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Dresser</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="573926976">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>299.8231</x>
+      <y>136.6925</y>
+      <width>235.0313</width>
+      <height>296.6192</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="1970069760">
+      <id>action</id>
+      <xOffset>0.1892646</xOffset>
+      <yOffset>1.040162</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="806357120">
+      <partnerType>Dresser</partnerType>
+      <partnerName>Dresser</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>dresser</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="FlxSprite" uid="7">
+    <FlxSprite uid="445177408">
+      <spriteID>room_background</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>800</width>
+      <height>600</height>
+    </FlxSprite>
+    <WalkingEntrance uid="314685472" />
+  </entity>
+  <entity name="Player" uid="8">
+    <AnimatedFlxSprite uid="731455296">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>4</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker_mask</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>290.6932</x>
+      <y>122.3367</y>
+      <depth>2</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="1713333248">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+        <entry>action use</entry>
+        <entry>phone phone</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <CameraFollow uid="1023357568" />
+    <Anchor uid="1949288448">
+      <id>base</id>
+      <xOffset>0.5170571</xOffset>
+      <yOffset>0.9778526</yOffset>
+    </Anchor>
+    <TaggedObject uid="193112336">
+      <tagID>Player</tagID>
+    </TaggedObject>
+    <CharacterNavigation uid="1563860352">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <PlayerController uid="1053414016" />
+    <Character uid="918886016">
+      <personID>player</personID>
+    </Character>
+    <PersonMask uid="1016828544" />
+  </entity>
+  <entity name="BackgroundImage" uid="9">
+    <WorldBounds uid="384366112">
+      <cameraBounds>True</cameraBounds>
+      <worldBounds>True</worldBounds>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+    </WorldBounds>
+  </entity>
+</level>

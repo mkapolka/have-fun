@@ -1,0 +1,344 @@
+<level>
+  <entity name="Talkable" uid="0">
+    <ActableObject uid="1722666752">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Treadmill</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="155308048">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>1217.816</x>
+      <y>316.8563</y>
+      <width>343.0981</width>
+      <height>227.9296</height>
+      <depth>2</depth>
+    </FlxObject>
+    <Button uid="968115328">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="1747396864">
+      <id>action</id>
+      <xOffset>-0.0221681</xOffset>
+      <yOffset>0.9894737</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1190184576">
+      <partnerType>Default</partnerType>
+      <partnerName>Dumbells</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>
+      </initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>gym_mill</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Talkable" uid="1">
+    <ActableObject uid="1439401600">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Dumbells</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="722441280">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>952.7032</x>
+      <y>271.4594</y>
+      <width>179.3977</width>
+      <height>227.9296</height>
+      <depth>2</depth>
+    </FlxObject>
+    <Button uid="1830121472">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="1790119424">
+      <id>action</id>
+      <xOffset>0.4913398</xOffset>
+      <yOffset>0.9894737</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="287375136">
+      <partnerType>Default</partnerType>
+      <partnerName>Dumbells</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>
+      </initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>gym_bells</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Talkable" uid="2">
+    <ActableObject uid="1944414976">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Bench Press</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="181655056">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>718.152</x>
+      <y>271.4594</y>
+      <width>179.3977</width>
+      <height>227.9296</height>
+      <depth>2</depth>
+    </FlxObject>
+    <Button uid="1419881600">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="1255713664">
+      <id>action</id>
+      <xOffset>-0.1835106</xOffset>
+      <yOffset>0.9894737</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1621945856">
+      <partnerType>Default</partnerType>
+      <partnerName>Bench Press</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>gym_bench</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Walkable" uid="3">
+    <Button uid="1725056768">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="1288718464">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="1080058496">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>604.1004</x>
+      <y>385.4482</y>
+      <width>898.8542</width>
+      <height>214.2297</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="Door" uid="4">
+    <ActableObject uid="24684290">
+      <interactionType>Smartphone</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Leave</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1063166592">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>123.2719</x>
+      <y>484.7663</y>
+      <width>412.8693</width>
+      <height>124.1598</height>
+      <depth>0.6</depth>
+    </FlxObject>
+    <Anchor uid="2090124800">
+      <id>action</id>
+      <xOffset>0.5054613</xOffset>
+      <yOffset>0.658668</yOffset>
+    </Anchor>
+    <SmartphoneDialogInitiator uid="1382559872">
+      <partnerType>Default</partnerType>
+      <partnerName>Smartphone</partnerName>
+      <partnerPortraitID>1</partnerPortraitID>
+      <initialTopic>maps</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>smartphone</dialogPartnerID>
+    </SmartphoneDialogInitiator>
+  </entity>
+  <entity name="Talkable" uid="5">
+    <ActableObject uid="1305301632">
+      <interactionType>Smartphone</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Poster</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="2057665792">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>316.6072</x>
+      <y>74.24621</y>
+      <width>132.8872</width>
+      <height>177.0328</height>
+      <depth>2</depth>
+    </FlxObject>
+    <Button uid="1613944832">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="2016359680">
+      <id>action</id>
+      <xOffset>0.5274461</xOffset>
+      <yOffset>2.227221</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1675125248">
+      <partnerType>Default</partnerType>
+      <partnerName>Poster</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>greeting</initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>gym_poster</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Walkable" uid="6">
+    <Button uid="1756535296">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="675190080">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="1162449024">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>63.81116</x>
+      <y>446.7749</y>
+      <width>667.3708</width>
+      <height>159.1452</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="Player" uid="7">
+    <AnimatedFlxSprite uid="1349409920">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+        <entry>holdstand 5</entry>
+        <entry>holdwalk 6 7 fr 4</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <frameRate>4</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker_mask</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>184.7487</x>
+      <y>115.0863</y>
+      <depth>1</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="305128992">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+        <entry>action use</entry>
+        <entry>phone phone</entry>
+        <entry>holdstand holdstand</entry>
+        <entry>holdwalk holdwalk</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <CameraFollow uid="665747776" />
+    <Anchor uid="1045661568">
+      <id>base</id>
+      <xOffset>0.5170571</xOffset>
+      <yOffset>0.9778526</yOffset>
+    </Anchor>
+    <TaggedObject uid="1473699456">
+      <tagID>Player</tagID>
+    </TaggedObject>
+    <CharacterNavigation uid="185564176">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <PlayerController uid="1918016512" />
+    <Character uid="2115827712">
+      <personID>player</personID>
+    </Character>
+    <PersonMask uid="1120147072" />
+    <CafeAnimation uid="1464051584" />
+  </entity>
+  <entity name="Background" uid="8">
+    <FlxSprite uid="137726480">
+      <spriteID>gym_background</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>1600</width>
+      <height>600</height>
+    </FlxSprite>
+    <WorldBounds uid="495219264">
+      <cameraBounds>True</cameraBounds>
+      <worldBounds>True</worldBounds>
+      <x>0</x>
+      <y>0</y>
+      <width>1600</width>
+      <height>600</height>
+    </WorldBounds>
+    <WalkingEntrance uid="1884067072" />
+  </entity>
+</level>

@@ -1,0 +1,178 @@
+<level>
+  <entity name="WalkableArea" uid="0">
+    <Button uid="1842529280">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="2051539968">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="238017824">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>431.6893</x>
+      <y>307.3158</y>
+      <width>324.4183</width>
+      <height>99.13989</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="BathroomDoor" uid="1">
+    <ActableObject uid="2101888768">
+      <interactionType>Examine</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Bathroom</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1302395520">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>638.8489</x>
+      <y>375.3765</y>
+      <width>158.9093</width>
+      <height>162.3539</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="306096416">
+      <id>action</id>
+      <xOffset>0.2750435</xOffset>
+      <yOffset>0.1520677</yOffset>
+    </Anchor>
+    <ChangeRoom uid="649848384">
+      <transitionType>None</transitionType>
+      <trigger>action</trigger>
+      <room>home</room>
+    </ChangeRoom>
+  </entity>
+  <entity name="Mirror" uid="2">
+    <ActableObject uid="2098753024">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Dresser</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1061274752">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>616.9638</x>
+      <y>93.87723</y>
+      <width>103.5974</width>
+      <height>102.8898</height>
+      <depth>1</depth>
+    </FlxObject>
+    <Anchor uid="1480648320">
+      <id>action</id>
+      <xOffset>0.5720071</xOffset>
+      <yOffset>2.424007</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="1624727552">
+      <partnerName>Mirror</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <initialTopic>
+      </initialTopic>
+      <trigger>action</trigger>
+      <dialogPartnerID>mirror</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="FlxSprite" uid="3">
+    <FlxSprite uid="504567616">
+      <spriteID>bathroom_background</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>800</width>
+      <height>600</height>
+    </FlxSprite>
+  </entity>
+  <entity name="Character" uid="4">
+    <AnimatedFlxSprite uid="1222642560">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <unique>False</unique>
+      <frameRate>4</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>605.4019</x>
+      <y>101.3142</y>
+      <depth>2</depth>
+      <width>150.0007</width>
+      <height>304.997</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="128982800">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+        <entry>action use</entry>
+        <entry>phone phone</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <CameraFollow uid="1104708224" />
+    <Anchor uid="2114746624">
+      <id>base</id>
+      <xOffset>0.5170571</xOffset>
+      <yOffset>0.9778527</yOffset>
+    </Anchor>
+    <TaggedObject uid="1879202560">
+      <tagID>Player</tagID>
+    </TaggedObject>
+    <CharacterNavigation uid="585648192">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <PlayerController uid="1116082560" />
+  </entity>
+  <entity name="BackgroundImage" uid="5">
+    <WorldBounds uid="1193527424">
+      <cameraBounds>True</cameraBounds>
+      <worldBounds>True</worldBounds>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>600</height>
+    </WorldBounds>
+  </entity>
+</level>

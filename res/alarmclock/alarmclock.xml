@@ -1,0 +1,329 @@
+<level>
+  <entity name="AlarmClock" uid="0">
+    <AlarmClock uid="1657299200" />
+    <UISquelcher uid="464736320" />
+    <entity name="ClockClick">
+      <Component uid="2052710656" />
+      <entity name="ClickSprite">
+        <FlxSprite uid="685569088">
+          <spriteID>clock_click</spriteID>
+          <color>4294967295</color>
+          <solid>True</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>67.10574</x>
+          <y>60.20313</y>
+          <depth>3</depth>
+          <width>640</width>
+          <height>480</height>
+        </FlxSprite>
+        <Sound uid="132483600">
+          <trigger>show</trigger>
+          <sound>wakeup</sound>
+        </Sound>
+      </entity>
+    </entity>
+    <entity name="ClockReadout">
+      <Component uid="69122824" />
+      <entity name="Dots">
+        <FlxSprite uid="82199048">
+          <spriteID>clock_dots</spriteID>
+          <color>4294967295</color>
+          <solid>True</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>407.2303</x>
+          <y>258.9533</y>
+          <depth>107.502</depth>
+          <width>16</width>
+          <height>94</height>
+        </FlxSprite>
+      </entity>
+      <entity name="Numeral_1">
+        <AnimatedFlxSprite uid="807134080">
+          <animations />
+          <spriteWidth>90</spriteWidth>
+          <spriteHeight>180</spriteHeight>
+          <reverseSprite>False</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>False</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>
+          </startingAnimation>
+          <spriteID>clock_numerals</spriteID>
+          <color>4294967295</color>
+          <solid>False</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>226.1345</x>
+          <y>215.9533</y>
+          <depth>107.502</depth>
+          <width>90</width>
+          <height>180</height>
+        </AnimatedFlxSprite>
+      </entity>
+      <entity name="Numeral_2">
+        <AnimatedFlxSprite uid="839808640">
+          <animations />
+          <spriteWidth>90</spriteWidth>
+          <spriteHeight>180</spriteHeight>
+          <reverseSprite>False</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>False</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>
+          </startingAnimation>
+          <spriteID>clock_numerals</spriteID>
+          <color>4294967295</color>
+          <solid>False</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>316.1214</x>
+          <y>215.9533</y>
+          <depth>107.502</depth>
+          <width>90</width>
+          <height>180</height>
+        </AnimatedFlxSprite>
+      </entity>
+      <entity name="Numeral_3">
+        <AnimatedFlxSprite uid="168872208">
+          <animations />
+          <spriteWidth>90</spriteWidth>
+          <spriteHeight>180</spriteHeight>
+          <reverseSprite>False</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>False</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>
+          </startingAnimation>
+          <spriteID>clock_numerals</spriteID>
+          <color>4294967295</color>
+          <solid>False</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>426.8134</x>
+          <y>215.9533</y>
+          <depth>107.502</depth>
+          <width>90</width>
+          <height>180</height>
+        </AnimatedFlxSprite>
+      </entity>
+      <entity name="Numeral_4">
+        <AnimatedFlxSprite uid="862052480">
+          <animations />
+          <spriteWidth>90</spriteWidth>
+          <spriteHeight>180</spriteHeight>
+          <reverseSprite>False</reverseSprite>
+          <frameRate>30</frameRate>
+          <loop>False</loop>
+          <drag_x>0</drag_x>
+          <drag_y>0</drag_y>
+          <acceleration_x>0</acceleration_x>
+          <acceleration_y>0</acceleration_y>
+          <startingAnimation>
+          </startingAnimation>
+          <spriteID>clock_numerals</spriteID>
+          <color>4294967295</color>
+          <solid>False</solid>
+          <immovable>False</immovable>
+          <visible>True</visible>
+          <unique>False</unique>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <velocity_x>0</velocity_x>
+          <velocity_y>0</velocity_y>
+          <x>516.8004</x>
+          <y>215.9533</y>
+          <depth>107.502</depth>
+          <width>90</width>
+          <height>180</height>
+        </AnimatedFlxSprite>
+      </entity>
+    </entity>
+    <entity name="ClockText">
+      <Component uid="1637936128" />
+      <entity name="ClockText">
+        <FlxText uid="1400926336">
+          <text>Lorem Ipsum</text>
+          <textSize>25</textSize>
+          <alignment>center</alignment>
+          <color>4278253816</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>190.3268</x>
+          <y>205.4575</y>
+          <width>441.3284</width>
+          <height>195.1198</height>
+          <depth>2</depth>
+        </FlxText>
+      </entity>
+      <entity name="NoButton">
+        <FlxText uid="1379624064">
+          <text>[No]</text>
+          <textSize>40</textSize>
+          <alignment>center</alignment>
+          <color>4294967295</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>444.3884</x>
+          <y>368.2984</y>
+          <width>132.2916</width>
+          <height>44.63373</height>
+          <depth>2</depth>
+        </FlxText>
+        <Button uid="2020311296">
+          <overMessage>over</overMessage>
+          <outMessage>out</outMessage>
+          <downMessage>down</downMessage>
+          <upMessage>up</upMessage>
+          <enabledMessage>enabled</enabledMessage>
+          <disabledMessage>disabled</disabledMessage>
+        </Button>
+        <ColorTrigger uid="694992960">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278254843</entry>
+            <entry>down 4278233087</entry>
+            <entry>up 4294967295</entry>
+            <entry>show 4278254843</entry>
+          </triggers>
+        </ColorTrigger>
+        <Relay uid="1725383424">
+          <target>1657299200</target>
+          <relays>
+            <entry>up no_pressed</entry>
+          </relays>
+        </Relay>
+      </entity>
+      <entity name="YesButton">
+        <FlxText uid="534469696">
+          <text>[Yes]</text>
+          <textSize>40</textSize>
+          <alignment>center</alignment>
+          <color>4294967295</color>
+          <scrollfactor_x>1</scrollfactor_x>
+          <scrollfactor_y>1</scrollfactor_y>
+          <font>helvetica</font>
+          <x>242.1168</x>
+          <y>368.2984</y>
+          <width>132.2916</width>
+          <height>44.63373</height>
+          <depth>2</depth>
+        </FlxText>
+        <Button uid="211773728">
+          <overMessage>over</overMessage>
+          <outMessage>out</outMessage>
+          <downMessage>down</downMessage>
+          <upMessage>up</upMessage>
+          <enabledMessage>enabled</enabledMessage>
+          <disabledMessage>disabled</disabledMessage>
+        </Button>
+        <ColorTrigger uid="2139801600">
+          <triggers>
+            <entry>over 4294967295</entry>
+            <entry>out 4278254843</entry>
+            <entry>down 4278233087</entry>
+            <entry>up 4294967295</entry>
+            <entry>show 4278254843</entry>
+            <entry>disable 1951552082</entry>
+            <entry>enable 4278254843</entry>
+          </triggers>
+        </ColorTrigger>
+        <Relay uid="1915239424">
+          <target>1657299200</target>
+          <relays>
+            <entry>up yes_pressed</entry>
+          </relays>
+        </Relay>
+      </entity>
+    </entity>
+  </entity>
+  <entity name="ClockBody" uid="1">
+    <FlxSprite uid="1996591872">
+      <spriteID>clock_body</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>71.90494</x>
+      <y>65.95331</y>
+      <depth>1</depth>
+      <width>640</width>
+      <height>480</height>
+    </FlxSprite>
+    <Button uid="1920814848">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Relay uid="1724362752">
+      <target>1657299200</target>
+      <relays>
+        <entry>down click</entry>
+      </relays>
+    </Relay>
+  </entity>
+  <entity name="BGSprite" uid="2">
+    <FlxSprite uid="1991947520">
+      <spriteID>clock_bg</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <unique>False</unique>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>800</width>
+      <height>600</height>
+    </FlxSprite>
+  </entity>
+</level>

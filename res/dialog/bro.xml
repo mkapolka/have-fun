@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dialog>
+	<conditional test="id bro">
+		<topic name="default">
+			<response>He loses interest and starts poking at his phone. "Yeah, no, for sure."</response>
+			<options>#input, bye</options>
+		</topic>
+		
+		<topic name="input_default">
+			<response>"Woah, I've never thought about that. You know you're pretty smart- you should write a %book or something"</response>
+		</topic>
+		
+		<topic name="book">
+			<response>"That's what smart people do, right? Maybe if it's super good you could even get a movie deal for it!"</response>
+		</topic>
+		
+		<topic name="lifting">
+			<response>"Aww! Dude! Do you work out? I'm trying to get %Jacked this summer!"</response>
+			<options>Jacked</options>
+		</topic>
+		
+		<topic name="jacked">
+			<response>"Yeah, it's a rank at the %gym I go to. I mean, obviously I'm already jacked, literally" He strikes a quick pose, "but those assholes at the %gym are giving me shit because I'm not %Jacked, the rank! Whatever. I'll get there soon enough."</response>
+			<options>gym</options>
+		</topic>
+		
+		<topic name="gym">
+			<response>"The gym is called 'Uplift Gym'. I'll send you a bookmark so you can find it. Check it out sometime!"</response>
+			<result>[addlocation gym]</result>
+		</topic>
+		
+		<topic name="name">
+			<response>"Yeah, what's up with that? Ask him about it maybe? I've never seen him talk to anyone though."</response>
+			<options>bye</options>
+		</topic>
+		
+		<topic name="julie">
+			<response>"She's intense, man. All about the points. Every time she gets to the highest rank in Coffee Life she makes a new account. She's done that like three times now."</response>
+		</topic>
+		
+		<topic name="bro_lifting_nag">
+			<response>"Whaoh, I just checked the Gym app and you haven't lifted today? What the heck man? Are you giving up on your routine? Get yer butt to the %gym!"</response>
+			<options>gym|go_to_gym, no|interjection_continue</options>
+		</topic>
+		
+		<topic name="go_to_gym">
+			<response></response>
+			<result>[opendialog smartphone][query gym]</result>
+		</topic>
+		
+		<conditional test="data bro_day == 0">
+			<topic name="greeting">
+				<response>"%Checked %in, yeaheah!"</response>
+				<options>Checked In|checked_in</options>
+				<result>[interject bro_lifting_nag]</result>
+			</topic>
+			
+			<topic name="checked_in">
+				<response>"Yeah dude, don't you know? Fuckin %Foursquare man! It's so tight. You get points just for going to places and checking in, and if you get enough points somewhere you can be the %mayor."</response>
+				<options>foursquare, mayor</options>
+			</topic>
+			
+			<topic name="foursquare">
+				<response>"Here, I'll send you the app."</response>
+				<result>[addapp foursquare][addquest quest_foursquare_pledge_loyalty Pledge Your Loyalty]</result>
+			</topic>
+			
+			<topic name="mayor">
+				<response>"I'll never make mayor here, man. See that chick over there? %Julie? She's been coming here way longer than I have. She has like twice the points I do. I'll never be able to catch up, unless I get some %vassals..."</response>
+				<options>foursquare, Julie, Vassals</options>
+			</topic>
+			
+			<topic name="vassals">
+				<response>"They just added this system into %Foursquare. You can pledge your loyalty to people- I'll get a kickback when you check in, and you'll get bonuses if I'm mayor. What do you say, will you be my vassal?"</response>
+				<options>yes|yes_vassal, no|no_vassal</options>
+			</topic>
+			
+			<conditional test="hasapp foursquare">
+				<topic name="yes_vassal">
+					<response>"Haha, yes. Kiss the ring! Alright, don't forget to check in every day."</response>
+					<result>[foursquare set_mentor bro][data bro_progress = 1]</result>
+				</topic>
+				
+				<topic name="no_vassal">
+					<response>"Eh, fine. Whatever. I'll get someone else to be my vassal."</response>
+					<result>[data bro_progress = 1]</result>
+				</topic>
+			<else>
+				<topic name="yes_vassal">
+					<response>"You need to have the %foursquare app before you can pledge loyalty."</response>
+					<options>foursquare</options>
+				</topic>
+				
+				<topic name="no_vassal">
+					<response>"You need to have the %foursquare app before you can pledge loyalty."</response>
+					<options>foursquare</options>
+				</topic>
+			</else>
+			</conditional>
+		</conditional>
+		
+		<conditional test="data bro_day == 1">
+			<topic name="greeting">
+				<response>"Hey, you're a girl, right? CAn I ask you for some %advice?"</response>
+			</topic>
+			
+			<topic name="advice">
+				<response>"So there's this girl I met on facebook, right? She's great: hot bod, likes all the same things as me, whatever, right? The problem is, I don't know how to ask her out- if this were %OkCupid it would be so easy..."</response>
+				<options>okcupid</options>
+				<result>[interject bro_lifting_nag]</result>
+			</topic>
+			
+			<topic name="okcupid">
+				<response>"OkCupid is so simple- check out their profile a few times, send a wink, get a little flirty, sha bam! People expect to get picked up on OKC, but on face book you need to be more %smooth, right?"</response>
+			</topic>
+			
+			<topic name="smooth">
+				<response>"So here's what I'm thinking, this is fuckin genius: I work it just like the 'Conversation Starter' app- find some page that she 'liked' then start messaging her about it! Common interests, man. Chicks dig common interests, right?"</response>
+				<options>yes|yes_smooth, no|no_smooth</options>
+			</topic>
+			
+			<topic name="yes_smooth">
+				<response>"Sweet, yeah, I'll do that. And if she gets all huffy about it I can just be like, 'Woah, I just wanted to talk about Pop Up Video, the 2010s', right? Ha ha"</response>
+				<result>[data bro_progress = 1]</result>
+			</topic>
+			
+			<topic name="no_smooth">
+				<response>"Shit, really? Well, back to the drawing board I guess."</response>
+			</topic>
+		</conditional>
+		
+		<conditional test="data bro_day == 2">
+			<topic name="greeting">
+				<response>Chad looks despondent. "I think I %screwed up big time, Jeux."</response>
+			</topic>
+			
+			<topic name="screwed">
+				<response>"So I was following your advice, right? About common interests? Fucking primo, by the way, worked like a charm. Anyway, we're hitting it off, chatting it up, and it's getting late, so I tell her I need to log off, I mean, dude's gotta sleep, right? And she tell me 'good night...' Fuckin %ellipses man!"</response>
+				<result>[interject bro_lifting_nag]</result>
+			</topic>
+			
+			<topic name="ellipses">
+				<response>"I know what smiley faces mean, I know what regular periods mean, I know what winkyfaces mean, if you know what I mean (heh heh), but what the heck do ellipses mean? Do you think I blew it?"</response>
+				<options>yes|yes_ellipses, no|no_ellipses</options>
+			</topic>
+			
+			<topic name="yes_ellipses">
+				<response>"Ah, shit. I knew it. I must have come on too strong, or maybe not strong enough..."</response>
+				<result>[data bro_progress = 1]</result>
+			</topic>
+			
+			<topic name="no_ellipses">
+				<response>"You don't think so? Phew. Alright, no more beating around the bush. I'm sick of sitting around worrying about the meaning of some fuckin emoticons or whatever. I'll ask her out tomorrow, straight up."</response>
+				<result>[data bro_progress = 1]</result>
+			</topic>
+		</conditional>
+		
+		<conditional test="data bro_day == 3">
+			<topic name="greeting">
+				<response>"It never fuckin %ends man!"</response>
+			</topic>
+			
+			<topic name="ends">
+				<response>"So I asked this girl out, finally, and we had a good time- no problems so far, right, but she wanted to use this weird %app"</response>
+				<result>[interject bro_lifting_nag]</result>
+			</topic>
+			
+			<topic name="app">
+				<response>"So, here's how this app works: after you hang out with someone it gives you the option to set your 'intention'- whether or not you think you were on a, y'know, Date date or not. If we both say that we were on a date we both get a lot of points, and if we both say it wasn't a date we get some points, but if I say it was a date and she doesn't then she gets a ton of points and I get none. It's completely %unbalanced!" </response>
+			</topic>
+			
+			<topic name="unbalanced">
+				<response>"If you do the math it's obvious that the best option is to say we weren't on a date! I mean, that's the best way to get Fun, right? So what's that supposed to mean? Does she want me to say that we aren't dating? Does she even know that that's the best option? Man, I feel like I'm back to square one. What do you think? Should I say it was a %date or %not?"</response>
+				<options>date|date_unbalanced, not a date|not_unbalanced</options>
+			</topic>
+			
+			<topic name="date_unbalanced">
+				<response>"Yeah, good idea. It was probably a test, like, to see how serious I am about it. Alright, I'll put that in and %wait for her next move."</response>
+				<options>wait</options>
+				<result>[data bro_progress = 1]</result>
+			</topic>
+			
+			<topic name="not_unbalanced">
+				<response>"Hmm, do you think that's right? Maybe she's trying to, like, test my logic. Alright, I'll put that in and %wait for her next move."</response>
+				<options>wait</options>
+				<result>[data bro_progress = 1]</result>
+			</topic>
+			
+			<topic name="wait">
+				<response>"Well, she hasn't put in her response yet. So for now I guess I'll just wait for her."</response>
+			</topic>
+		</conditional>
+		
+		<conditional test="data bro_day == 4">
+			<topic name="greeting">
+				<response>"Welp, I'm still waiting for that chick's response on that app. What's up with you?"</response>
+			</topic>
+		</conditional>
+	</conditional>
+</dialog>

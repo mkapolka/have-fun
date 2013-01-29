@@ -1,0 +1,256 @@
+<level>
+  <entity name="Player" uid="0">
+    <AnimatedFlxSprite uid="63928072">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <unique>False</unique>
+      <frameRate>5</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker</spriteID>
+      <color>4293824656</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>690.6996</x>
+      <y>207.362</y>
+      <depth>10</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="1412307584">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <Anchor uid="527860544">
+      <id>base</id>
+      <xOffset>0.1601996</xOffset>
+      <yOffset>0.9778526</yOffset>
+    </Anchor>
+    <CharacterNavigation uid="425619520">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <Character uid="446460736">
+      <personID>mailman</personID>
+    </Character>
+    <CharacterDialogInitiator uid="720062784" />
+    <ActableObject uid="1792711424">
+      <interactionType>Talk</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Talk To</mouseOverName>
+      <actionPointAnchor>base</actionPointAnchor>
+    </ActableObject>
+  </entity>
+  <entity name="Door" uid="1">
+    <ActableObject uid="1070114432">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Outside</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="907458432">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>392.4845</x>
+      <y>300.4416</y>
+      <width>145.6412</width>
+      <height>295.8447</height>
+      <depth>0.5</depth>
+    </FlxObject>
+    <Button uid="107402256">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="788074816">
+      <id>action</id>
+      <xOffset>0.5054612</xOffset>
+      <yOffset>1.040162</yOffset>
+    </Anchor>
+    <ChangeRoom uid="1270549632">
+      <transitionType>Fade</transitionType>
+      <trigger>action</trigger>
+      <room>room</room>
+    </ChangeRoom>
+  </entity>
+  <entity name="Talkable" uid="2">
+    <ActableObject uid="900556928">
+      <interactionType>Use</interactionType>
+      <walkTo>True</walkTo>
+      <mouseOverName>Scary Dude</mouseOverName>
+      <actionPointAnchor>action</actionPointAnchor>
+    </ActableObject>
+    <FlxObject uid="1343775104">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>957.5478</x>
+      <y>124.5771</y>
+      <width>228.0485</width>
+      <height>483.9636</height>
+      <depth>2</depth>
+    </FlxObject>
+    <Button uid="2015228160">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <Anchor uid="2100819712">
+      <id>action</id>
+      <xOffset>-0.1376829</xOffset>
+      <yOffset>0.9124995</yOffset>
+    </Anchor>
+    <AS2DialogInitiator uid="677007680">
+      <partnerName>Dresser</partnerName>
+      <partnerPortraitID>0</partnerPortraitID>
+      <trigger>action</trigger>
+      <dialogPartnerID>dresser</dialogPartnerID>
+    </AS2DialogInitiator>
+  </entity>
+  <entity name="Walkable" uid="3">
+    <Button uid="821083776">
+      <overMessage>over</overMessage>
+      <outMessage>out</outMessage>
+      <downMessage>down</downMessage>
+      <upMessage>up</upMessage>
+      <enabledMessage>enabled</enabledMessage>
+      <disabledMessage>disabled</disabledMessage>
+    </Button>
+    <WalkableArea uid="1333282432">
+      <walkTrigger>down</walkTrigger>
+    </WalkableArea>
+    <FlxObject uid="644247360">
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <x>6.161682</x>
+      <y>487.1925</y>
+      <width>1589.347</width>
+      <height>117.1135</height>
+      <depth>0.5</depth>
+    </FlxObject>
+  </entity>
+  <entity name="Player" uid="4">
+    <AnimatedFlxSprite uid="1633870080">
+      <animations>
+        <entry>stand 0</entry>
+        <entry>walk 1 2</entry>
+        <entry>use 3 0 noloop fr 1</entry>
+        <entry>phone 4 noloop</entry>
+      </animations>
+      <spriteWidth>200</spriteWidth>
+      <spriteHeight>400</spriteHeight>
+      <reverseSprite>True</reverseSprite>
+      <unique>False</unique>
+      <frameRate>5</frameRate>
+      <loop>True</loop>
+      <drag_x>2000</drag_x>
+      <drag_y>2000</drag_y>
+      <acceleration_x>0</acceleration_x>
+      <acceleration_y>0</acceleration_y>
+      <startingAnimation>
+      </startingAnimation>
+      <spriteID>walker</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>46.39587</x>
+      <y>190.7473</y>
+      <depth>1</depth>
+      <width>200</width>
+      <height>400</height>
+    </AnimatedFlxSprite>
+    <AnimationMessageBridge uid="473258048">
+      <bridges>
+        <entry>walk walk</entry>
+        <entry>stop stand</entry>
+        <entry>action use</entry>
+        <entry>phone phone</entry>
+      </bridges>
+    </AnimationMessageBridge>
+    <CameraFollow uid="1829678336" />
+    <Anchor uid="472371008">
+      <id>base</id>
+      <xOffset>0.5170571</xOffset>
+      <yOffset>0.9778526</yOffset>
+    </Anchor>
+    <TaggedObject uid="504980032">
+      <tagID>Player</tagID>
+    </TaggedObject>
+    <CharacterNavigation uid="886278784">
+      <speed_x>500</speed_x>
+      <speed_y>500</speed_y>
+      <graceDistance>10</graceDistance>
+      <anchor>base</anchor>
+      <walkingMessage>walk</walkingMessage>
+      <stoppedMessage>stop</stoppedMessage>
+      <startWalking>False</startWalking>
+    </CharacterNavigation>
+    <PlayerController uid="818228608" />
+  </entity>
+  <entity name="Background" uid="5">
+    <FlxSprite uid="1291959424">
+      <spriteID>background</spriteID>
+      <color>4294967295</color>
+      <solid>True</solid>
+      <immovable>False</immovable>
+      <visible>True</visible>
+      <scrollfactor_x>1</scrollfactor_x>
+      <scrollfactor_y>1</scrollfactor_y>
+      <velocity_x>0</velocity_x>
+      <velocity_y>0</velocity_y>
+      <x>0</x>
+      <y>0</y>
+      <depth>0</depth>
+      <width>1600</width>
+      <height>600</height>
+    </FlxSprite>
+    <WorldBounds uid="1089603968">
+      <cameraBounds>True</cameraBounds>
+      <worldBounds>True</worldBounds>
+      <x>0</x>
+      <y>0</y>
+      <width>1600</width>
+      <height>600</height>
+    </WorldBounds>
+  </entity>
+</level>
