@@ -156,11 +156,6 @@ package org.flixel
 		protected var _matrix:Matrix;
 		
 		/**
-		 * Added by marek- used for mesh entity
-		 */
-		public var forceAdvancedRender : Boolean = false;
-		
-		/**
 		 * Creates a white 8x8 square <code>FlxSprite</code> at the specified position.
 		 * Optionally can load a simple, one-frame graphic instead.
 		 * 
@@ -451,7 +446,7 @@ package org.flixel
 				_point.y = y - int(camera.scroll.y*scrollFactor.y) - offset.y;
 				_point.x += (_point.x > 0)?0.0000001:-0.0000001;
 				_point.y += (_point.y > 0)?0.0000001:-0.0000001;
-				if(((angle == 0) || (_bakedRotation > 0)) && (scale.x == 1) && (scale.y == 1) && (blend == null) && !forceAdvancedRender)
+				if(((angle == 0) || (_bakedRotation > 0)) && (scale.x == 1) && (scale.y == 1) && (blend == null))
 				{	//Simple render
 					_flashPoint.x = _point.x;
 					_flashPoint.y = _point.y;
