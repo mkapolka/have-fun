@@ -12,6 +12,7 @@ package as2
 	import org.component.flixel.FlixelFactories;
 	import org.component.flixel.FlxObjectComponent;
 	import org.flixel.FlxG;
+	import org.flixel.FlxGame;
 	import org.flixel.FlxState;
 	
 	/**
@@ -76,9 +77,7 @@ package as2
 		}
 		
 		override public function create():void
-		{
-			Mouse.show();
-			
+		{			
 			if (FULLSCREEN)
 			{
 				//Presentation Fullscreen mode
