@@ -72,6 +72,14 @@ package as2.flixel
 			_shader.byteCode = new SHADER();
 			_shaderFilter = new ShaderFilter(_shader);
 			
+			//Force sprite to be unique
+			var spriteSibling : FlxSpriteComponent = getSiblingComponent(FlxSpriteComponent) as FlxSpriteComponent;
+			if (!spriteSibling.spriteUnique)
+			{
+				spriteSibling.spriteUnique = true;
+				spriteSibling.resetSprite();	
+			}
+			
 			syncShaderData();
 		}
 		

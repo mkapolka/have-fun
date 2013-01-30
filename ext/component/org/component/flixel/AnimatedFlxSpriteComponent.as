@@ -8,6 +8,7 @@ package org.component.flixel
 	{
 		protected var _frameRate : int;
 		protected var _loop : Boolean;
+		protected var _startingAnimation : String;
 		
 		public function AnimatedFlxSpriteComponent() 
 		{
@@ -22,6 +23,7 @@ package org.component.flixel
 		override public function resetSprite():void
 		{
 			sprite.loadGraphic(_class, true, _spriteReverse, _spriteWidth, _spriteHeight, _spriteUnique);
+			sprite.play(_startingAnimation, true);
 		}
 		
 		override public function loadContent(xml : XML):void
@@ -110,7 +112,8 @@ package org.component.flixel
 			
 			if (xmlElementExists(xml, "startingAnimation"))
 			{
-				sprite.play(xml.startingAnimation);
+				_startingAnimation = xml.startingAnimation;
+				sprite.play(_startingAnimation);
 			}
 		}
 		

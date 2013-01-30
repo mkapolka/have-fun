@@ -62,7 +62,6 @@ package as2.flixel
 		public function updateClothes():void
 		{
 			var cc : CharacterComponent = characterComponent;
-			
 			if (cc != null)
 			{
 				var clothingTop : Clothing = cc.data.upperClothing;

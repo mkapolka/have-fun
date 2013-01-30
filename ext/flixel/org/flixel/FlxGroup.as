@@ -171,9 +171,6 @@ package org.flixel
 		 */
 		public function add(Object:FlxBasic):FlxBasic
 		{
-			//ADDED BY MAREK
-			Object.parent = this;
-			
 			//Don't bother adding an object twice.
 			if(members.indexOf(Object) >= 0)
 				return Object;
@@ -209,10 +206,7 @@ package org.flixel
 			//If we made it this far, then we successfully grew the group,
 			//and we can go ahead and add the object at the first open slot.
 			members[i] = Object;
-			length = i + 1;
-			
-			
-			
+			length = i+1;
 			return Object;
 		}
 		
@@ -524,11 +518,16 @@ package org.flixel
 		/**
 		 * Returns a member at random from the group.
 		 * 
+		 * @param	StartIndex	Optional offset off the front of the array. Default value is 0, or the beginning of the array.
+		 * @param	Length		Optional restriction on the number of values you want to randomly select from.
+		 * 
 		 * @return	A <code>FlxBasic</code> from the members list.
 		 */
-		public function getRandom():FlxBasic
+		public function getRandom(StartIndex:uint=0,Length:uint=0):FlxBasic
 		{
-			return FlxG.getRandom(members) as FlxBasic;
+			if(Length == 0)
+				Length = length;
+			return FlxG.getRandom(members,StartIndex,Length) as FlxBasic;
 		}
 		
 		/**
