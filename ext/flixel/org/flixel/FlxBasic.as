@@ -46,9 +46,6 @@ package org.flixel
 		 * when the visual debug mode in the debugger overlay is toggled on.
 		 */
 		public var ignoreDrawDebug:Boolean;
-
-		//ADDED BY MAREK
-		public var parent : FlxGroup;
 		
 		/**
 		 * Instantiate the basic flixel object.
