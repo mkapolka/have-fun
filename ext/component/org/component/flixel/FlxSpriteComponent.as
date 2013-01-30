@@ -45,8 +45,6 @@ package org.component.flixel
 		override public function initialize():void
 		{
 			super.initialize();
-			
-			
 		}
 		
 		public function get spriteClass():Class
@@ -72,6 +70,11 @@ package org.component.flixel
 		public function get spriteUnique():Boolean
 		{
 			return _spriteUnique;
+		}
+		
+		public function set spriteUnique(value : Boolean):void
+		{
+			_spriteUnique = value;
 		}
 		
 		public function get spriteAnimated():Boolean
