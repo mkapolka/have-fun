@@ -16,25 +16,37 @@ package as2
 	import org.flixel.FlxState;
 	
 	/**
-	 * ...
+	 * Assignment2State is mostly responsible for calling the initialization methods of the top level systems,
+	 * such as the component framework, the dialog manager, and any sprite or data libraries.
+	 * Game logic is handled mostly by components.
 	 * @author Marek Kapolka
 	 */
 	public class Assignment2State extends FlxState 
 	{
 		public static const FULLSCREEN : Boolean = false;
 		
+		//I ended up going with a serif typeface for the game font
+		//even though i used the term "helvetica" generically to mean "this game's default font".
 		[Embed(source = "../../res/liberation_serif_bold.ttf", fontFamily = "helvetica", embedAsCFF="false")]
 		public var fontHelvetica : String;
 		
+		//These strings are used to identify which entities correspond to the dialog UI elements,
+		//the mouse's UI elements, or the player, respectively.
 		public static const DIALOG_TAG : String = "Dialog";
 		public static const MOUSE_TAG : String = "Mouse";
 		public static const PLAYER_TAG : String = "Player";
 		
+		//The following XML files were generated with the component framework's Unity-based editor.
 		[Embed(source = "../../res/level.xml", mimeType = "application/octet-stream")]
 		public static const LEVEL_XML : Class;
 		
 		[Embed(source = "../../res/ui.xml", mimeType = "application/octet-stream")]
 		public static const UI_XML : Class;
+		
+		[Embed(source = "../../res/templates.xml", mimeType = "application/octet-stream")]
+		public static const TEMPLATES_XML : Class;
+		
+		//The following are XML files that store the dialog data for the game
 		
 		[Embed(source = "../../res/dialog/dialog.xml", mimeType = "application/octet-stream")]
 		public static const DIALOG_XML : Class;
@@ -50,9 +62,6 @@ package as2
 		
 		[Embed(source = "../../res/dialog/cynic.xml", mimeType = "application/octet-stream")]
 		public static const DIALOG_CYNIC_XML : Class;
-		
-		[Embed(source = "../../res/templates.xml", mimeType = "application/octet-stream")]
-		public static const TEMPLATES_XML : Class;
 		
 		//private var _mouseManager : MouseManager = new MouseManager();
 		
@@ -85,8 +94,13 @@ package as2
 				FlxG.stage.fullScreenSourceRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
 			}
 			
+			//All the FlxObjects that are created by FlxObjectComponent and its subclasses
+			//are added to a static FlxGroup that keeps track of them
 			FlxObjectComponent.initializeGroup();
 			
+			//The entity framework builds entities by associating strings
+			//with actionscript classes. These String->Class associations are established
+			//By calling the folowing initialization methods
 			FlixelFactories.initialize();
 			DialogFactories.initialize();
 			EtcComponentLibrary.initialize();
@@ -94,7 +108,9 @@ package as2
 			AS2SpriteLibrary.initialize();
 			AS2ComponentLibrary.initialize();
 			
+			//Set up the initial game data (player relationships, quest status, etc)
 			AS2GameData.initialize();
+			
 			RoomManager.initialize();
 			
 			AS2SoundManager.initialize();
@@ -108,6 +124,7 @@ package as2
 			ContentLoader.loadContent(new XML(new TEMPLATES_XML()));
 			ContentLoader.loadContent(new XML(new UI_XML()));
 			
+			//Start the game off in the starting room
 			RoomManager.loadRoom(RoomManager.DEFAULT_KEY);
 			//RoomManager.loadRoom(RoomManager.HOME_KEY);
 		}
@@ -122,7 +139,7 @@ package as2
 				FlxG.stage.fullScreenSourceRect = new Rectangle(0, 0, FlxG.width, FlxG.height);
 			}
 			
-			//_mouseManager.update();
+			//Ticks the entity logic
 			EntityManager.update();
 		}
 		

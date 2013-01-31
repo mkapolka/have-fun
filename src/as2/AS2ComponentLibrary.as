@@ -42,7 +42,8 @@ package as2
 	import as2.character.PlayerControllerComponent;
 	
 	/**
-	 * ...
+	 * One of the library classes that associates Strings (loaded from level xml files) with Classes (subtypes of Component)
+	 * for use in the entity framework.
 	 * @author Marek Kapolka
 	 */
 	public class AS2ComponentLibrary 

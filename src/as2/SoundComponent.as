@@ -9,7 +9,6 @@ package as2
 	 */
 	public class SoundComponent extends Component 
 	{
-		
 		private var _trigger : String;
 		private var _sound : String;
 		

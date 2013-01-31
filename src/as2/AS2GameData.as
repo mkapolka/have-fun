@@ -9,7 +9,6 @@ package as2
 	import as2.dialog.AS2DialogPartner;
 	import as2.dialog.SmartphoneDialogPartner;
 	import as2.ui.ProgressPopupComponent;
-	import model.Value;
 	import org.component.dialog.ConversationLibrary;
 	import org.component.dialog.DialogMessage;
 	import org.component.Entity;

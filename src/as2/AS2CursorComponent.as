@@ -16,14 +16,23 @@ package as2
 	import as2.character.CharacterNavigationComponent;
 	
 	/**
-	 * ...
+	 * Controls the mouse-driven interactions with the player. Its chief responsibility is to see if
+	 * it's hovering over an interactable object, update the mouse over text, and send instructions
+	 * to the player entity to interact with that object if the user clicks on it.
 	 * @author Marek Kapolka
 	 */
 	public class AS2CursorComponent extends Component 
 	{
+		//States- used to ignore certain objects
+		//when in different situations.
+		
+		//MODE_GAME is for when the player is moving around the screen
 		public static const MODE_GAME : uint = 0;
+		//MODE_DIALOG is for when the player is talking to an NPC
 		public static const MODE_DIALOG : uint = 1;
+		//MODE_SMARTPHONE is for when the player is in a dialog with the smartphone.
 		public static const MODE_SMARTPHONE : uint = 2;
+		//MODE_TRANSITION is used when RoomManager is transitioning between two rooms
 		public static const MODE_TRANSITION : uint = 3;
 		
 		protected var _mode : uint = 0;
@@ -75,6 +84,11 @@ package as2
 			entity.sendMessage(message);
 		}
 		
+		/**
+		 * Sets the mouse over text to the given string. If null or an empty string is passed, it will hide the 
+		 * mouse over text.
+		 * @param	s The mouse over text to be displayed.
+		 */
 		private function showMouseOverText(s : String):void
 		{
 			if (s != null && s != "")
@@ -90,8 +104,11 @@ package as2
 		{
 			super.update();
 			
+			//Player is moving around, not in a conversation
 			if (mode == MODE_GAME)
 			{
+				//Find the components closest to the cursor with the appropriate type
+				
 				var objects : Vector.<FlxObjectComponent> = FlxObjectComponent.getObjectsAt(FlxG.mouse.x, FlxG.mouse.y, true);
 				var nearest : Entity = null;
 				var nearest_d : Number = -Infinity;
