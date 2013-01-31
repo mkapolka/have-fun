@@ -3,4 +3,4 @@ have-fun
 
 "Have Fun" - A game about gamification
 
-Build using [Flashdevelop](flashdevelop.org).
+Build using [Flashdevelop](http://flashdevelop.org).
