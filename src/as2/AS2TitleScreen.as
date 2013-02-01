@@ -9,7 +9,7 @@ package as2
 	import flash.display.StageDisplayState;
 	
 	/**
-	 * ...
+	 * The title screen.
 	 * @author Marek Kapolka
 	 */
 	public class AS2TitleScreen extends FlxState 

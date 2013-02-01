@@ -2,7 +2,8 @@ package as2
 {
 	import org.flixel.FlxG;
 	/**
-	 * ...
+	 * Associates Strings with sound files so they can be referenced in the unity editor
+	 * and loaded in the game.
 	 * @author Marek Kapolka
 	 */
 	public class AS2SoundManager 

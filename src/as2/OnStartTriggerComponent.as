@@ -4,7 +4,8 @@ package as2
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * Sends the given message to the entity during its resolve phase.
+	 * Useful for starting an entity's action when a room loads.
 	 * @author Marek Kapolka
 	 */
 	public class OnStartTriggerComponent extends Component 

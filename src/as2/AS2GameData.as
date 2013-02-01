@@ -20,14 +20,20 @@ package as2
 	 */
 	public class AS2GameData 
 	{
+		//The xml data containing the initial game state.
 		[Embed(source = "../../res/data.xml", mimeType = "application/octet-stream")]
 		public static const DATA_XML : Class;
 		
 		public static const PLAYER_DATA_ID : String = "player";
-		//public static const TIME_IN_DAY : Number = 180; // 5 minutes in seconds
+		
+		/**
+		 * How many seconds a day in game time lasts.
+		 */
 		public static const TIME_IN_DAY : Number = 180;
 		
 		private static var _data : XML;
+		
+		//Current time in game
 		private static var _dayTime : Number = TIME_IN_DAY;
 		
 		private static var _lastUpper : Clothing;
@@ -273,6 +279,9 @@ package as2
 			return _data.packages;
 		}
 		
+		/**
+		 * Is the player waiting for packages?
+		 */
 		public static function get hasPackages():Boolean
 		{
 			for each (var xml : XML in _data.packages[0].clothing)
@@ -284,11 +293,14 @@ package as2
 					return true;
 				}
 			}
-			//return _data.packages["clothing"].length() > 0;
 			
 			return false;
 		}
 		
+		/**
+		 * Adds any packages that the player is waiting for to the player.
+		 * Used by the mailman.
+		 */
 		public static function givePackages():void
 		{
 			var player : PersonData = playerData;

@@ -8,11 +8,13 @@ package as2
 	import org.flixel.FlxPoint;
 	
 	/**
-	 * ...
+	 * A component for handling button-like logic in an entity. Sends messages to the entity
+	 * in response to events such as mouse over, mouse out, mouse in, etc.
 	 * @author Marek Kapolka
 	 */
 	public class ButtonComponent extends Component 
 	{
+		//Default messages to send in response to the various mouse events
 		public static const OVER_MESSAGE : String = "over";
 		public static const OUT_MESSAGE : String = "out";
 		public static const DOWN_MESSAGE : String = "down";
@@ -20,6 +22,7 @@ package as2
 		public static const ENABLED_MESSAGE : String = "enabled";
 		public static const DISABLED_MESSAGE : String = "disabled";
 		
+		//Store the strings so the messages can be overwritten if needed.
 		protected var _overMessage : String;
 		protected var _outMessage : String;
 		protected var _downMessage : String;
@@ -50,6 +53,12 @@ package as2
 			_objectEnabled = _object.active;
 		}
 		
+		/**
+		 * Simple alias to send a message to this component's containing entity. This method
+		 * will create a basic Message object, set this component as the sender, and set the type
+		 * according to the input.
+		 * @param	type The value for the "type" paramter of the Message you want to send.
+		 */
 		protected function sendMessage(type : String):void
 		{
 			var m : Message = new Message();

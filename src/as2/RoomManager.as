@@ -15,11 +15,14 @@ package as2
 	import org.flixel.FlxG;
 	import org.flixel.FlxObject;
 	/**
-	 * ...
+	 * Handles loading and unloading the content of rooms. The entities contained in rooms
+	 * are tracked separately from EntityManager's total list so that some entities (UI elements for instance)
+	 * can be shared.
 	 * @author Marek Kapolka
 	 */
 	public class RoomManager 
 	{
+		//Transition types
 		public static const NONE : uint = 0;
 		public static const FADE : uint = 1;
 		
@@ -58,6 +61,7 @@ package as2
 		
 		public static const DEFAULT_KEY : String = TITLE_KEY;
 		
+		//IDs for the rooms so they can be referenced in the unity editor
 		public static const HOME_KEY : String = "home";
 		public static const CAFE_KEY : String = "starbucks";
 		public static const CAFE_2_KEY : String = "cafe_2";
@@ -68,6 +72,8 @@ package as2
 		public static const TITLE_KEY : String = "title";
 		
 		public static const PLAYER_TEMPLATE_ID : String = "player";	
+		//These messages are sent to all entities (including those not tracked by RoomManager
+		//when a room is loaded or unloaded.
 		public static const ROOM_ENTER_MESSAGE : String = "room_enter";
 		public static const ROOM_LEAVE_MESSAGE : String = "room_leave";
 		
@@ -104,6 +110,11 @@ package as2
 			r[TITLE_KEY] = TITLE_XML;
 		}
 		
+		/**
+		 * Loads the given room. This will automatically unload the currently loaded room.
+		 * @param	key The string name of the room to load. These are given by the static consts
+		 * defined in this class with the names *_KEY .
+		 */
 		public static function loadRoom(key : String):void
 		{	
 			FlxG.camera.follow(null);
@@ -139,7 +150,7 @@ package as2
 			var lrm : Message = new Message;
 			lrm.sender = null;
 			lrm.type = ROOM_ENTER_MESSAGE;
-			//Remaining entities get the "leaving room" message
+			//Remaining entities get the "entering room" message
 			for each (var entity : Entity in EntityManager.getAllEntities())
 			{
 				entity.sendMessage(lrm);
@@ -171,6 +182,12 @@ package as2
 			return _entrance;
 		}
 		
+		/**
+		 * Creates a visual effect (such as fading) before loading the next room.
+		 * @param	roomid The room to load after the effect.
+		 * @param	transitionType The type of transition. Valid values are RoomManager.NONE and RoomManager.FADE
+		 * @param	entranceName Which entrance to move the player to when they arrive in the loaded room.
+		 */
 		public static function transition(roomid : String, transitionType : uint, entranceName : String = null):void
 		{
 			_room = roomid;

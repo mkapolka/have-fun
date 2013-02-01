@@ -143,6 +143,7 @@ package as2
 				
 				if (nearest != null)
 				{
+					//"Actable": Something the game world that can be interacted with, i.e. a person or a door
 					if (nearest_type == "actable")
 					{
 						var actableComponent : ActableComponent = (ActableComponent)(nearest.getComponentByType(ActableComponent));
@@ -151,11 +152,15 @@ package as2
 						
 						if (FlxG.mouse.justPressed())
 						{
+							//Generate the correct actions and push them to the player's action queue
+							
+							//First, clear whatever the player was doing before.
 							var clearMessage : Message = new Message();
 							clearMessage.sender = this;
 							clearMessage.type = PlayerControllerMessage.CLEAR_QUEUE;
 							playerEntity.sendMessage(clearMessage);
 							
+							//Should the player walk to this target to interact with it?
 							if (actableComponent.walkTo)
 							{
 								var walkMessage : PlayerControllerMessage = new PlayerControllerMessage();
@@ -178,7 +183,7 @@ package as2
 								playerEntity.sendMessage(walkMessage);
 							}
 							
-							//Direction
+							//Make sure the player faces the right direction
 							var object : FlxObject = (FlxObjectComponent)(actableComponent.getSiblingComponent(FlxObjectComponent)).object;
 							var facingMessage : Message = new Message();
 							facingMessage.sender = this;
@@ -198,6 +203,7 @@ package as2
 							
 							playerEntity.sendMessage(fqm);
 							
+							//Decide which animation to play once the player gets to the target and interacts with it.
 							switch (actableComponent.interactionType)
 							{
 								case ActableComponent.INTERACTION_USE:
@@ -240,6 +246,7 @@ package as2
 						}
 					}
 					
+					//For walkable areas in the game
 					if (nearest_type == "walkable")
 					{
 						showMouseOverText("Walk here");
@@ -260,6 +267,8 @@ package as2
 						}
 					}
 					
+					//Buttons. Mostly for making sure that we don't show old mouse-over text
+					//when the cursor is over a button.
 					if (nearest_type == "button")
 					{
 						if (nearest.getComponentByType(SmartphoneButtonComponent))
