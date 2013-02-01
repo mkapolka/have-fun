@@ -1,3 +1,6 @@
-[submodule "ext/component2"]
-	path = ext/component2
+[submodule "component"]
+	path = component
+	url = http://github.com/mkapolka/flash-component
+[submodule "ext/component"]
+	path = ext/component
 	url = http://github.com/mkapolka/flash-component
