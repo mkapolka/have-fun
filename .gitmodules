@@ -1,0 +1,3 @@
+[submodule "ext/component2"]
+	path = ext/component2
+	url = http://github.com/mkapolka/flash-component
