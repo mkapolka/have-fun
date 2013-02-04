@@ -7,7 +7,8 @@ package as2
 	import org.flixel.FlxG;
 	
 	/**
-	 * ...
+	 * Defines an area that can be walked on. The dimensions of the walkable area will be taken
+	 * from this components' sibling FlxObjectComponent. 
 	 * @author Marek Kapolka
 	 */
 	public class WalkableAreaComponent extends Component 

@@ -4,7 +4,9 @@ package as2
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * A simple component to play a sound when a given input message is sent.
+	 * The sound to be played is given as a string, and that string is associated
+	 * with an actual sound clip via the AS2SoundManager class.
 	 * @author Marek Kapolka
 	 */
 	public class SoundComponent extends Component 

@@ -10,7 +10,7 @@ package as2
 	import org.flixel.FlxSprite;
 	
 	/**
-	 * ...
+	 * This component is for the HUD button that opens the smartphone interface.
 	 * @author Marek Kapolka
 	 */
 	public class SmartphoneButtonComponent extends Component 
@@ -82,6 +82,7 @@ package as2
 		{
 			super.update();
 			
+			//Only show the button if the player actually has a smartphone
 			if (!AS2GameData.hasSmartphone)
 			{
 				var fo : FlxObject = flxObject;

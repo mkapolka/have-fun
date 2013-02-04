@@ -91,6 +91,11 @@ package as2
 			
 		}
 		
+		/**
+		 * Sets up the array that associates strings with classes (representing
+		 * the XML file that contains the information for a certain room) for use
+		 * in referring to and loading that room.
+		 */
 		public static function initialize():void
 		{
 			_rooms = new Array();
@@ -160,6 +165,10 @@ package as2
 			FlxG.camera.scroll.y = 0;
 		}
 		
+		/**
+		 * Removes all currently loaded entities that are managed by the room manager.
+		 * Sends a message with type RoomManager.ROOM_LEAVE_MESSAGE to all remaining entities.
+		 */
 		public static function unloadRoom():void
 		{
 			for each (var entity : Entity in _currentRoomContents)

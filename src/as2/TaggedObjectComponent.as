@@ -4,7 +4,9 @@ package as2
 	import org.component.Entity;
 	
 	/**
-	 * ...
+	 * Tagged objects can be used to create singleton-like behavior on any entity by assigning that entity a 
+	 * string that other components can use to look up that entity. TaggedObjectComponent only expects one 
+	 * entity to have a particular tag at a time.
 	 * @author Marek Kapolka
 	 */
 	public class TaggedObjectComponent extends Component 

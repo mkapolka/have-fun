@@ -226,6 +226,11 @@ package as2
 			_data.fun_high_score = value;
 		}
 		
+		/**
+		 * Returns true if the player has downloaded this app yet.
+		 * @param	appName The ID of the app to check
+		 * @return True if the player has downloaded this app, false otherwise.
+		 */
 		public static function hasApp(appName : String):Boolean
 		{			
 			for each (var app : XML in _data.apps.app)
@@ -239,6 +244,12 @@ package as2
 			return false;
 		}
 		
+		/**
+		 * Adds an app to the player's current app list. The data for apps that
+		 * are not yet in the player's control is located in the "app_data" tag 
+		 * in the game's data XML.
+		 * @param	appName The id of the app to add.
+		 */
 		public static function addApp(appName : String):void
 		{
 			if (hasApp(appName)) return;
@@ -280,7 +291,7 @@ package as2
 		}
 		
 		/**
-		 * Is the player waiting for packages?
+		 * Returns true if the player has ordered packages but not received them yet.
 		 */
 		public static function get hasPackages():Boolean
 		{
