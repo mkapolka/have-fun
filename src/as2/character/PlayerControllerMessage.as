@@ -4,7 +4,9 @@ package as2.character
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * This message can be used to queue an action in PlayerControllerComponent. See PlayerControllerComponent for
+	 * the meanings of the different parameters in this message, as they are the same as those in the PlayerControllerAction
+	 * class.
 	 * @author Marek Kapolka
 	 */
 	public class PlayerControllerMessage extends Message 

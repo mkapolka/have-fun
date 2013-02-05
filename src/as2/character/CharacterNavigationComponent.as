@@ -10,11 +10,16 @@ package as2.character
 	import org.flixel.FlxSprite;
 	
 	/**
-	 * ...
+	 * Handles moving characters around. Send this component CharacterNavigationMessages to
+	 * tell it where to go. CharacterNavigationComponent responds to two types of CharacterNavigationMessage:
+	 * CharacterNavigationMessage.SET_TARGET and CharacterNavigationMessage.CANCEL_TARGET. The first message
+	 * tells this component where the character should be moved to, the second tells it to stop moving
+	 * towards that target.
 	 * @author Marek Kapolka
 	 */
 	public class CharacterNavigationComponent extends Component 
 	{
+		//Speed measured in flixel's speed units (pixels / second I believe?)
 		private var _speed : Point = new Point();
 		private var _target : Point = new Point();
 		private var _anchor : String = null;

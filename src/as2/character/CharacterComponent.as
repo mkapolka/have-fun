@@ -5,7 +5,7 @@ package as2.character
 	import org.component.Component;
 	
 	/**
-	 * Component frontend for PersonData entities
+	 * Component that binds PersonData entries with entities.
 	 * @author Marek Kapolka
 	 */
 	public class CharacterComponent extends Component 

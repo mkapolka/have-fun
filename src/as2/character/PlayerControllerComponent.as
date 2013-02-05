@@ -10,7 +10,15 @@ package as2.character
 	import org.flixel.FlxObject;
 	
 	/**
-	 * ...
+	 * PlayerControllerComponent establishes a queue of actions to be completed by the entity.
+	 * Each action is represented by a PlayerControllerAction, which has 4 properties: 
+	 * fireMessgae, messageTarget, waitMessage, and cancelMessage. "fireMessage" is the type of 
+	 * message to be sent to the entity when this action is dequeued. "messageTarget" is the entity
+	 * that should receive the message. "waitMessage" is the message that this component will wait for
+	 * in order to trigger the next action in the queue. "cancelMessage" is the message that is sent if this 
+	 * action is canceled before it has a chance to complete. A PlayerControllerAction can be sent to the 
+	 * PlayerControllerComponent via a PlayerControllerMessage.
+	 * 
 	 * @author Marek Kapolka
 	 */
 	public class PlayerControllerComponent extends Component 
@@ -31,6 +39,7 @@ package as2.character
 		{
 			super.resolve();
 			
+			//Move the player to the appropriate entrance in the room when a room is loaded.
 			if (RoomManager.entranceName != null)
 			{
 				var entrance : RoomEntranceComponent = RoomEntranceComponent.getEntrance(RoomManager.entranceName);
