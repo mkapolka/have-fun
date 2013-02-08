@@ -5,7 +5,7 @@ package as2.data
 	import flash.display.InteractiveObject;
 	
 	/**
-	 * ...
+	 * Static class for managing data pertaining to the foursquare app.
 	 * @author Marek Kapolka
 	 */
 	public class FourSquareAppData 

@@ -5,7 +5,8 @@ package as2.data
 	import as2.flixel.MaskMessage;
 	import as2.ui.ProgressPopupComponent;
 	/**
-	 * ...
+	 * Static class for accessing game data pertaining to the Amazon App (ordering clothes, 
+	 * updating the mask in the dialog screen, bringing up the daily deals in the diloag, etc)
 	 * @author Marek Kapolka
 	 */
 	public class AmazonAppData 
@@ -23,6 +24,11 @@ package as2.data
 			
 		}
 		
+		/**
+		 * Same basic format as DialogPartner.doResults(Array)
+		 * @param	result The exploded result string. I.e. if the result that was to be calculated was
+		 * "buy_upper 1" then result[0] == "buy_upper" and result[1] == "1"
+		 */
 		public static function doResults(result : Array):void
 		{
 			switch (result[0])
@@ -52,6 +58,14 @@ package as2.data
 			}
 		}
 		
+		/**
+		 * Processes the string and replaces it with the relevant data.
+		 * Hashes handled by this method: 
+			 * #upper_offer_name: The name of the shirt currently on sale in the Amazon app
+			 * #lower_offer_name: The name of the pants currently on sale in the Amazon app
+		 * @param	value The string that should be checked to see if it matches a hash code handled by this method.
+		 * @return If value == "#upper_offer_name" or "#lower_offer_name" then return the appropriate value, otherwise null.
+		 */
 		public static function filterHashCode(value : String):String
 		{
 			switch (value)
@@ -68,6 +82,9 @@ package as2.data
 			return null;
 		}
 		
+		/**
+		 * Generates some new random offers
+		 */
 		public static function generateOffers():void
 		{			
 			_upperOffer = new Clothing();

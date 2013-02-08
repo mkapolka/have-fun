@@ -3,7 +3,7 @@ package as2.data
 	import as2.AS2GameData;
 	import flash.display.InteractiveObject;
 	/**
-	 * ...
+	 * Code interface for dealing with pieces of clothing data
 	 * @author Marek Kapolka
 	 */
 	public class Clothing 
@@ -13,6 +13,12 @@ package as2.data
 		
 		private var _data : XML;
 		
+		/**
+		 * Default constructor. The input should be a <clothing> tag, formatted like
+		 * the ones in res/data.xml 
+		 * @param	xml The XML object that stores this object's clothing data. If null it will create a
+		 * new XML object.
+		 */
 		public function Clothing(xml : XML = null) 
 		{
 			if (xml == null)
@@ -23,6 +29,10 @@ package as2.data
 			}
 		}
 		
+		/**
+		 * Generates a random shirt name. 
+		 * @return A random shirt name.
+		 */
 		public static function getRandomNameShirt():String
 		{
 			var adjs : Array = (String)(AS2GameData.data.clothing_adjectives).split(", ");
@@ -36,6 +46,10 @@ package as2.data
 			return a + " " + b + " " + s;
 		}
 		
+		/**
+		 * Generates a random name for a pair of pants
+		 * @return A random name for a pair of pants
+		 */
 		public static function getRandomNamePants():String
 		{
 			var adjs : Array = (String)(AS2GameData.data.clothing_adjectives).split(", ");
@@ -49,6 +63,9 @@ package as2.data
 			return a + " " + b + " " + s;
 		}
 		
+		/**
+		 * Returns the underlying XML object that stores the clothing information
+		 */
 		public function get data():XML
 		{
 			return _data;
@@ -84,6 +101,11 @@ package as2.data
 			data.toBeDelivered = value;
 		}
 		
+		/**
+		 * Funkiness is the cleanliness of the article of clothing.
+		 * If you don't change your clothes often enough Siri will get
+		 * on your case about it.
+		 */
 		public function get funkiness():Number
 		{
 			return parseFloat(data.funkiness);
