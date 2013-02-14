@@ -19,16 +19,6 @@ package as2.data
 			_data = data;
 		}
 		
-		public static function generateRandom(type : String):PersonData
-		{
-			var x : XML = new XML("<person></person>");
-			var output : PersonData = new PersonData(x);
-			
-			//var first_names
-			
-			return output;
-		}
-		
 		public function get data():XML
 		{
 			return _data;
