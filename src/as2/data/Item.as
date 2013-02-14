@@ -2,7 +2,9 @@ package as2.data
 {
 	import as2.AS2GameData;
 	/**
-	 * ...
+	 * Class for working with Item data. I'm fairly sure this is deprecated because
+	 * I decided to focus on apps rather than objects, but I'm not sure enough to nuke it
+	 * completely.
 	 * @author Marek Kapolka
 	 */
 	public class Item 

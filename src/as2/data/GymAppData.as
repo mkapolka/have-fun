@@ -4,7 +4,7 @@ package as2.data
 	import as2.ui.ProgressPopupComponent;
 	import org.component.dialog.DialogResponse;
 	/**
-	 * ...
+	 * Static class for accessing and working with data pertaining to the Gym App
 	 * @author Marek Kapolka
 	 */
 	public class GymAppData 
@@ -36,6 +36,10 @@ package as2.data
 			return AS2GameData.getApp(APP_ID);
 		}
 		
+		/**
+		 * See the documentation for component.dialog.ConversationPartner.doResults(Array).
+		 * @param	data The exploded string of results passed in from the DialogManager
+		 */
 		public static function doResults(results : Array):void
 		{
 			switch (results[0])
@@ -50,6 +54,11 @@ package as2.data
 			}
 		}
 		
+		/**
+		 * See the documentation for as2.dialog.AS2DialogPartner.filterHashCode(Array).
+		 * @param	text The hash code string that should be replaced
+		 * @return The resulting string
+		 */
 		public static function filterHashCode(code : String):String
 		{
 			switch (code)
@@ -66,6 +75,11 @@ package as2.data
 			return null;
 		}
 		
+		/**
+		 * See the documentation for component.dialog.ConversationPartner.checkConditional(Array).
+		 * @param	data The exploded conditional as passed in from the DialogManager
+		 * @return The processed conditional.
+		 */
 		public static function checkConditional(conditional : Array):Boolean
 		{
 			switch (conditional[0])
@@ -78,10 +92,16 @@ package as2.data
 			return false;
 		}
 		
+		/**
+		 * See the documentation for org.component.dialog.DialogPartner.expandMetaOptions(DialogResponse)
+		 * @param	response The response to expand the meta options for.
+		 */
 		public static function expandMetaOptions(response : DialogResponse):void
 		{
 			for (var i : int = 0; i < response.options.length; i++)
 			{
+				//Procedurally generate a list of ever-increasing weights and ever-increasing speeds
+				//for the player to lift or run on
 				if (response.options[i] == "#weights")
 				{
 					response.options.splice(i, 1);
@@ -125,17 +145,24 @@ package as2.data
 			return parseInt(data.lastvisited) == AS2GameData.date;
 		}
 		
+		/**
+		 * Does everything pertaining to working out.
+		 * @param	type Which workout to do? Valid values: "tone", "bulk", or "strength",
+		 * which refer to the treadmill, the barbells, and the bench press, respectively
+		 */
 		public static function workOut(type : String):void
 		{
 			var d : XML = data;
 			
 			QuestAppData.completeQuest("quest_gym_work_out");
 			
+			//Streak bonus
 			if (parseInt(d.lastvisited) - AS2GameData.date > 1)
 			{
 				d.streak = 0;
 			}
 			
+			//Consistency bonus for working out every day
 			if (parseInt(d.lastvisited) != AS2GameData.date)
 			{
 				d.streak = parseInt(d.streak) + 1;

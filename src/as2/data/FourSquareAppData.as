@@ -6,6 +6,12 @@ package as2.data
 	
 	/**
 	 * Static class for managing data pertaining to the foursquare app.
+	 * Several functions in this class make use of Strings called "room_id"s.
+	 * These are the same IDs as are used in RoomManager. For example
+	 * RoomManager.HOME_KEY refers to the player's apartment room.
+	 * "date"s are given as integer values representing the number of days
+	 * the player has progressed through in the game. The "date" value of the first
+	 * day is 0, the second day is 1, and so on.
 	 * @author Marek Kapolka
 	 */
 	public class FourSquareAppData 
@@ -26,6 +32,11 @@ package as2.data
 			return AS2GameData.getApp(APP_ID);
 		}
 		
+		/**
+		 * Returns the date that the player last checked into the given location.
+		 * @param	location_id A location ID. 
+		 * @return The date the player last "checked in" at the given location.
+		 */
 		public static function lastCheckIn(location_id : String):int
 		{
 			if (!AS2GameData.hasApp(APP_ID)) return -1;
@@ -59,6 +70,7 @@ package as2.data
 				ProgressPopupComponent.showSimple("Gained " + Math.floor((value - currentPoints) / 2) + " FourSquare points!", ICON_ID);
 				setLocationPoints(AS2GameData.currentLocation, "player", getLocationPoints(AS2GameData.currentLocation, "player") + Math.floor((value - currentPoints) / 2));
 				
+				//Mentor for the pledging system
 				if (mentor != "none")
 				{
 					var person : PersonData = AS2GameData.loadPerson(mentor);
@@ -72,6 +84,12 @@ package as2.data
 			appData.points = value;
 		}
 		
+		/**
+		 * Returns how many points a the given person has earned at a specific location
+		 * @param	location The location ID in question
+		 * @param	who Who should we look up the points for?
+		 * @return The number of points the person has earned checking into this location
+		 */
 		public static function getLocationPoints(location : String, who : String):int
 		{
 			if (appData != null)
@@ -154,6 +172,10 @@ package as2.data
 			return POINT_REWARD;
 		}
 		
+		/**
+		 * See the documentation for component.dialog.ConversationPartner.doResults(Array).
+		 * @param	data The exploded string of results passed in from the DialogManager
+		 */
 		public static function doResults(data : Array):void
 		{
 			switch (data[0])
@@ -178,6 +200,11 @@ package as2.data
 			}
 		}
 		
+		/**
+		 * See the documentation for component.dialog.ConversationPartner.checkConditional(Array).
+		 * @param	data The exploded conditional as passed in from the DialogManager
+		 * @return The processed conditional.
+		 */
 		public static function checkConditional(data : Array):Boolean
 		{
 			switch (data[0])
@@ -193,6 +220,9 @@ package as2.data
 			return false;
 		}
 		
+		/**
+		 * Returns how many points the player has earned for their patron.
+		 */
 		public static function set patronPoints(value : int):void
 		{
 			if (patronPoints > 20)
@@ -208,6 +238,11 @@ package as2.data
 			return parseInt(appData.patron_points);
 		}
 		
+		/**
+		 * See the documentation for as2.dialog.AS2DialogPartner.filterHashCode(Array).
+		 * @param	text The hash code string that should be replaced
+		 * @return The resulting string
+		 */
 		public static function filterHashCode(text : String):String
 		{
 			switch (text)
