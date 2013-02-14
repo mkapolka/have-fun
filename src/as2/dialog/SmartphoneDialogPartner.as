@@ -1,7 +1,6 @@
 package as2.dialog 
 {
 	import as2.AS2GameData;
-	import as2.data.Item;
 	import as2.data.MailAppData;
 	import as2.data.QuestAppData;
 	import org.component.dialog.DialogResponse;
@@ -12,7 +11,6 @@ package as2.dialog
 	public class SmartphoneDialogPartner extends AS2DialogPartner 
 	{
 		public static const APPS_HASHCODE : String = "#apps";
-		public static const INVENTORY_HASHCODE : String = "#items";
 		public static const EMAIL_LIST_HASHCODE : String = "#maillist";
 		public static const EMAIL_OPTIONS_HASHCODE : String = "#mailoptions";
 		public static const QUEST_LIST_HASHCODE : String = "#quest_list";
@@ -85,12 +83,6 @@ package as2.dialog
 					case APPS_HASHCODE:
 						response.options.splice(i, 1);
 						var o : int = addApps(response.options, i);
-						i += o;
-					break;
-					
-					case INVENTORY_HASHCODE:
-						response.options.splice(i, 1);
-						o = addItems(response.options, i);
 						i += o;
 					break;
 					
@@ -209,28 +201,6 @@ package as2.dialog
 					return output;
 				break;
 			}
-		}
-		
-		private function addItems(a : Vector.<String>, startIndex : int):int
-		{
-			var items : Vector.<Item> = AS2GameData.playerData.inventory;
-			var a2 : Vector.<String> = new Vector.<String>();
-			
-			var output : int = 0;
-			
-			for each (var i : Item in items)
-			{
-				var n : String = i.name;
-				var id : String = i.id;
-				if (n == "" || n == " " || n == null) n = id;
-				var s : String = n + "|" + id
-				a2.push(s);
-				output++;
-			}
-			
-			array_join(a, a2, startIndex);
-			
-			return output;
 		}
 		
 		public function get mode():uint

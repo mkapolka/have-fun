@@ -3,7 +3,6 @@ package as2
 	import as2.data.AmazonAppData;
 	import as2.data.Clothing;
 	import as2.data.FourSquareAppData;
-	import as2.data.Item;
 	import as2.data.PersonData;
 	import as2.dialog.AS2DialogManagerComponent;
 	import as2.dialog.AS2DialogPartner;

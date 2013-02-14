@@ -256,40 +256,6 @@ package as2.dialog
 						AS2GameData.playerData.money -= parseInt(a[1]);
 					break;
 					
-					case "additem":
-						if (a.length < 2)
-						{
-							trace("Invalid dialog result: additem");
-							continue;
-						}
-						
-						var item : String = "";
-						for (i = 1; i < a.length; i++)
-						{
-							item += a[i];
-							if (i != a.length - 1) item += " ";
-						}
-						
-						AS2GameData.playerData.addItem(item);
-					break;
-					
-					case "removeitem":
-						if (a.length < 2)
-						{
-							trace("Invalid dialog result: removeitem");
-							continue;
-						}
-						
-						item = "";
-						for (i = 1; i < a.length; i++)
-						{
-							item += a[i];
-							if (i != a.length - 1) item += " ";
-						}
-						AS2GameData.playerData.removeItem(item);
-						rebuildDialog();
-					break;
-					
 					case "addapp":
 						if (a.length < 2)
 						{

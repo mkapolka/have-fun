@@ -29,66 +29,6 @@ package as2.data
 			return output;
 		}
 		
-		public function addItem(id : String):void
-		{
-			var i : Item = getItem(id);
-			
-			if (i == null)
-			{
-				var it : Item = Item.copyItemTemplate(id);
-				items.appendChild(it.data);
-			} else {
-				i.quantity += 1;
-			}
-		}
-		
-		public function removeItem(id : String):void
-		{
-			if (!hasItem(id))
-			{
-				trace("PROBLEM: Tried to remove item " + name + " but person did not have one.");
-				return;
-			}
-			
-			var item : Item = getItem(id);
-			
-			if (item.quantity > 1)
-			{
-				item.quantity -= 1;
-			} else {
-				for each (var x : XML in items.item)
-				{
-					if (x.id == id)
-					{
-						AS2Utils.deleteNode(x);
-					}
-				}
-			}
-		}
-		
-		public function hasItem(item : String):Boolean
-		{
-			var i : Item = getItem(item);
-			
-			if (i == null) return false;
-			if (i.quantity > 0) return true;
-			return false;
-		}
-		
-		public function getItem(name : String):Item
-		{
-			for each (var i : Item in inventory)
-			{
-				var n : String = i.id;
-				if (n == name)
-				{
-					return i;
-				}
-			}
-			
-			return null;
-		}
-		
 		public function get data():XML
 		{
 			return _data;
@@ -360,19 +300,6 @@ package as2.data
 		{
 			_data.suggest_topics = b?"1":"0";
 		}
-		
-		public function get inventory():Vector.<Item>
-		{
-			var out : Vector.<Item> = new Vector.<Item>();
-			
-			for each (var i : XML in items.item)
-			{
-				out.push(new Item(i));
-			}
-			
-			return out;
-		}
-		
 	}
 
 }
