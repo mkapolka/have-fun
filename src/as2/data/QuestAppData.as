@@ -6,7 +6,14 @@ package as2.data
 	import as2.etc.QuestIconComponent;
 	import as2.ui.ProgressPopupComponent;
 	/**
-	 * ...
+	 * QuestAppData is a static class containing methods for handling data pertaining
+	 * to the quest app. The quest interface uses the dialog system to list the player's
+	 * active quests, examine the info regarding them, and complete them. When a method refers
+	 * to a "quest id" that ID will be used as the conversation topic query to get the information
+	 * about that quest. To see the existing quest dialogs, look at res/dialog/smartphone.xml and look
+	 * for conversation topics that begin with "quest_". When the quest is listed as "complete" and
+	 * the user clicks on the "complete" button, it queries the SmartphoneDialogPartner with the
+	 * topic "(quest_id)_complete". 
 	 * @author Marek Kapolka
 	 */
 	public class QuestAppData 
@@ -22,6 +29,10 @@ package as2.data
 			return AS2GameData.getApp(APP_ID);
 		}
 		
+		/**
+		 * Returns the list of currently active quests in the form of a list of dialog options.
+		 * @return A vector of strings, formatted as dialog options, as would be used in a DialogManager class.
+		 */
 		public static function getDialogOptions():Vector.<String>
 		{
 			var output : Vector.<String> = new Vector.<String>();

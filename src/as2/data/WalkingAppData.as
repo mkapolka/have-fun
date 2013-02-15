@@ -4,7 +4,7 @@ package as2.data
 	import as2.ui.ProgressPopupComponent;
 	import flash.display.InteractiveObject;
 	/**
-	 * ...
+	 * Static class containing methods to handle data pertaining to the Walking App.
 	 * @author Marek Kapolka
 	 */
 	public class WalkingAppData 
@@ -113,6 +113,11 @@ package as2.data
 			return false;
 		}
 		
+		/**
+		 * See the documentation for as2.dialog.AS2DialogPartner.filterHashCode(Array).
+		 * @param	text The hash code string that should be replaced
+		 * @return The resulting string
+		 */
 		public static function filterHashCode(s : String):String
 		{
 			switch(s)
@@ -133,6 +138,10 @@ package as2.data
 			return null;
 		}
 		
+		/**
+		 * See the documentation for component.dialog.ConversationPartner.doResults(Array).
+		 * @param	data The exploded string of results passed in from the DialogManager
+		 */
 		public static function doResults(data : Array):void
 		{
 			if (AS2GameData.hasApp(APP_ID))

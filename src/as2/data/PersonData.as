@@ -79,6 +79,11 @@ package as2.data
 			return parseInt(_data.fun);
 		}
 		
+		/**
+		 * Sets the amount of "Fun" this person has. It is assumed that this method will only be
+		 * called on the player's person object, as the other people's "fun" values are not
+		 * calculated.
+		 */
 		public function set fun(n : int):void
 		{			
 			var oldfun : int = parseInt(_data.fun);
@@ -129,6 +134,10 @@ package as2.data
 			_data.fun_tnl = value;
 		}
 		
+		/**
+		 * Returns the difference in fun required to be at this person's current level
+		 * from their next level.
+		 */
 		public function get funGap():int
 		{
 			return parseInt(_data.fun_gap);
@@ -144,6 +153,9 @@ package as2.data
 			return Math.ceil(Math.log(fun));
 		}
 		
+		/**
+		 * The player's familiarity with this person.
+		 */
 		public function get rapport():int
 		{
 			return parseInt(_data.rapport);
@@ -159,6 +171,10 @@ package as2.data
 			return _data.items;
 		}
 		
+		/**
+		 * Returns the default conversation topics that should be included in all of this
+		 * person's conversation branches.
+		 */
 		public function get defaultConversationTopics():Array
 		{
 			if (_data.elements("default_convo").length() > 0)
@@ -169,6 +185,11 @@ package as2.data
 			}
 		}
 		
+		/**
+		 * A person's "wardrobe" is the collection of all the clothing they own.
+		 * NPCs have their clothing randomly generated at the beginning of each day
+		 * so they don't make use of this. This is only for the Player.
+		 */
 		public function get wardrobe():Vector.<Clothing>
 		{
 			var output : Vector.<Clothing> = new Vector.<Clothing>();

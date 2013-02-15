@@ -3,7 +3,8 @@ package as2.data
 	import as2.AS2GameData;
 	import org.component.Component;
 	/**
-	 * ...
+	 * If this component is present in a room then the player will receive credit
+	 * in the Walking App whenever they walk to this room. 
 	 * @author Marek Kapolka
 	 */
 	public class WalkingEntranceComponent extends Component
