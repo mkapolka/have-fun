@@ -8,7 +8,9 @@ package as2.dialog
 	import org.component.dialog.DialogPartner;
 	import org.component.Entity;
 	/**
-	 * ...
+	 * A subclass of DialogInitiatorComponent that is more tailored to the AS2 ("Have Fun") project
+	 * than its superclass. It creates an AS2DialogPartner to pass to the Dialog UI and has more
+	 * settings specific to the features of the AS2DialogParnter class.
 	 * @author Marek Kapolka
 	 */
 	public class AS2DialogInitiatorComponent extends DialogInitiatorComponent 
@@ -26,6 +28,7 @@ package as2.dialog
 		{
 			var partner : AS2DialogPartner;//= new AS2DialogPartner();
 			
+			//Which subclass of DialogPartner should be used?
 			switch (_type)
 			{
 				case "Default":
@@ -56,11 +59,26 @@ package as2.dialog
 			return partner;
 		}
 		
+		/**
+		 * Returns the Entity that is tagged with Assignment2State.DIALOG_TAG. 
+		 * This entity and its children contain all the information for handling the
+		 * dialog system of "Have Fun", most importantly the AS2DialogManagerComponent
+		 * at the top entity.
+		 * @return The Entity responsible for handling dialog messages.
+		 */
 		override protected function getDialogManagerEntity():Entity
 		{
 			return TaggedObjectComponent.getObjectByTag(Assignment2State.DIALOG_TAG);
 		}
 		
+		/**
+		 * Special parameters available to AS2DialogInitiatorComponent:
+			 * "partnerName": The "name" value of the partner, which will be revealed to the player.
+			 * "partnerPortraitID": The index of the portrait to show to the player.
+			 * "partnerType": Which subclass of AS2DialogPartner to send to the dialog manager. Possible values include:
+				 * 	"Default", "Smartphone", "Person", "Dresser".
+		 * @param	xml
+		 */
 		override public function loadContent(xml : XML):void
 		{
 			super.loadContent(xml);

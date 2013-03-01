@@ -22,11 +22,13 @@ package as2.dialog
 	import org.flixel.FlxG;
 	
 	/**
-	 * ...
+	 * Component responsible for handling dialog initialization, queries, etc. specific to
+	 * the AS2 ("Have Fun") project.
 	 * @author Marek Kapolka
 	 */
 	public class AS2DialogManagerComponent extends DialogManagerComponent 
 	{
+		//Message to tell the DialogManager whether or not the player has a smartphone
 		public static const HAS_SMARTPHONE_MESSAGE : String = "smartphone";
 		public static const NO_SMARTPHONE_MESSAGE : String = "nosmartphone";
 		
@@ -46,6 +48,9 @@ package as2.dialog
 			super();
 		}
 		
+		/**
+		 * Sends the message to show the dialog UI.
+		 */
 		public function sendOpenTrigger():void
 		{
 			var message : Message = new Message();
@@ -54,6 +59,9 @@ package as2.dialog
 			entity.sendMessage(message);
 		}
 		
+		/**
+		 * Sends the message to hide the dialog UI.
+		 */
 		public function sendCloseTrigger():void
 		{
 			var message : Message = new Message();
@@ -229,6 +237,7 @@ package as2.dialog
 					continue;
 				}
 				
+				//For annoying nags like when you leave the house without changing your clothes or putting on deodorant
 				if (a[0] == "interject")
 				{
 					if (_interjectionsDone.indexOf(a[1]) == -1)
@@ -246,6 +255,7 @@ package as2.dialog
 					}
 				}
 				
+				//For getting back to the task at hand after being interjected
 				if (a[0] == "interjection_continue")
 				{
 					this.query(_storedInterjection);
@@ -253,6 +263,10 @@ package as2.dialog
 					continue;
 				}
 				
+				//Updates the mask given a particular person.
+				//this function changes the first two mask parameters of the mask filter
+				//(those that filter out the red and blue colors in the sprites)
+				//to match the clothes of the inputted person. 
 				//usage : maskperson person_id
 				if (a[0] == "maskperson")
 				{
@@ -275,6 +289,8 @@ package as2.dialog
 					}
 				}
 				
+				//Changes the dialog skin to look either like a smartphone or like
+				//dialog bubbles. 
 				if (a[0] == "setskin")
 				{
 					var skinMessage : Message = new Message();
@@ -299,6 +315,7 @@ package as2.dialog
 					sendOpenTrigger();
 				}
 				
+				//Move the day clock forward by the given amount.
 				if (a[0] == "advancetime")
 				{
 					AS2GameData.dayTime -= parseInt(a[1]);
@@ -310,11 +327,15 @@ package as2.dialog
 					continue;
 				}
 				
+				//Use this if you don't want the player to be able to leave
+				//this conversation
 				if (a[0] == "hidegoodbye")
 				{
 					hide_goodbye = true;
 				}
 				
+				//Generic way of changing the sprite mask. a[1] is which mask parameter to change
+				//a[2] is what index to change it to.
 				if (a[0] == "setmask")
 				{
 					maskMessage = MaskMessage.makeSetMaskMessage(a[1], a[2]);
@@ -346,6 +367,12 @@ package as2.dialog
 			}
 		}
 		
+		/**
+		 * The various interjections are hardcoded here.
+		 * @param	oldQuery The query that asked to do the inerjection
+		 * @param	array The exploded result that contained the "interject" command
+		 * @return True if the interjection should be displayed, false otherwise.
+		 */
 		public function doInterjection(oldQuery : String, array : Array):Boolean
 		{
 			_storedInterjection = oldQuery;
