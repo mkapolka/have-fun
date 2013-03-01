@@ -11,7 +11,13 @@ package as2.dialog
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * Works essentially like a DialogOptionComponent, but works by taking the text
+	 * that the user has typed into a TextInputComponent instead of taking the values
+	 * from the previous query's options. Also, before it sends its query off to the DialogPartner 
+	 * it does some basic sanity checking, and has some special logic to it. For example, if
+	 * you type a query that the DialogPartner doesn't recognize it will query "input_default" instead
+	 * of "default", and some NPCs have special dialog to reflect the fact that you actually made an effort
+	 * to type something instead of just clicking on options.
 	 * @author Marek Kapolka
 	 */
 	public class DialogInputComponent extends Component 

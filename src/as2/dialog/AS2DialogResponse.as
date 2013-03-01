@@ -3,7 +3,10 @@ package as2.dialog
 	import org.component.dialog.DialogResponse;
 	
 	/**
-	 * ...
+	 * A DialogResponse with options specific to the AS2 ("Have Fun") project.
+	 * Include settings for changing the name and portrait of the currently displayed
+	 * dialogpartner, as well as showing or hiding the "input" field (the text field that
+	 * the player can type repsonses into)
 	 * @author Marek Kapolka
 	 */
 	public class AS2DialogResponse extends DialogResponse 

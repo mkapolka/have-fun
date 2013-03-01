@@ -10,7 +10,8 @@ package as2.dialog
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * Component for handling assigning an offset to DialogOptionComponent components so that
+	 * you can display more dialog options than the number of buttons you add to the UI.
 	 * @author Marek Kapolka
 	 */
 	public class DialogOptionOffsetComponent extends Component 
@@ -57,6 +58,12 @@ package as2.dialog
 			return _offset;
 		}
 		
+		/**
+		 * Spins through the DialogOptionComponents in all the Entities that descend from this
+		 * Entity and change their text value based on this component's offset.
+		 * @param	entity Which Entity we are currently updating
+		 * @param	diff 
+		 */
 		private function updateOffsetsRecursive(entity : Entity, diff : int):void
 		{
 			var option : DialogOptionComponent = entity.getComponentByType(DialogOptionComponent) as DialogOptionComponent;

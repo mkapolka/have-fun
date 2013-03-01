@@ -10,7 +10,7 @@ package as2.dialog
 	import org.flixel.FlxText;
 	
 	/**
-	 * ...
+	 * Displays the current AS2DialogPartner's name.
 	 * @author Marek Kapolka
 	 */
 	public class DialogNameComponent extends Component 

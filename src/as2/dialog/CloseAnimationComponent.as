@@ -8,7 +8,13 @@ package as2.dialog
 	import org.flixel.FlxPoint;
 	
 	/**
-	 * ...
+	 * Component that helps manage UI elements animate moving into or out of the screen.
+	 * The way this is used typically is to have one of these components on every Entity
+	 * that has an FlxObjectComponent and should be moved into or out of the screen at the
+	 * same time. Keep all these Entities in a tree with a common ancestor, and then when the
+	 * time comes to show or hide the entities, send the parent a Message with type == 
+	 * CloseAnimationComponent.CLOSE_TRIGGER or CloseAnimationComponent.OPEN_TRIGGER and let
+	 * that message trickle down into all the Entities that need to show up or get out of the way.
 	 * @author Marek Kapolka
 	 */
 	public class CloseAnimationComponent extends Component 
@@ -16,6 +22,7 @@ package as2.dialog
 		public static const CLOSE_TRIGGER : String = "animated_close";
 		public static const OPEN_TRIGGER : String = "animated_open";
 		
+		//which direction to move
 		public static const LEFT : uint = 0;
 		public static const UP : uint = 1;
 		public static const RIGHT : uint = 2;

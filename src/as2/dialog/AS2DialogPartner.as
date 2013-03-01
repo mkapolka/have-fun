@@ -29,7 +29,12 @@ package as2.dialog
 	import org.flixel.FlxG;
 	
 	/**
-	 * ...
+	 * DialogParnter tailored specifically for the AS2 ("Have Fun") project. 
+	 * Relevant differences include fields for "portraitID" and "name". The former
+	 * is for determining which frame of the portrait sprite to show to the player while
+	 * they're talking to this DialogPartner, and the latter determines what name to
+	 * show the player when they're talking to this DialogPartner (i.e. "Chad Bigmore" or
+	 * "Dresser" when talking to the person with id of "bro" or "dresser" respectively).
 	 * @author Marek Kapolka
 	 */
 	public class AS2DialogPartner extends DialogPartner 
@@ -137,26 +142,33 @@ package as2.dialog
 		{
 			switch (code)
 			{
+				//Returns the player's amount of money
 				case "#money":
 					return "$" + (AS2GameData.playerData.money / 100).toFixed(2);
 				break;
 				
+				//How many points the player needs until they get their next award for being loyal to dove
 				case "#next_dove_award":
 					return DeodorantAppData.nextDoveAward.toString();
 				break;
 				
+				//How many points the player needs until they get their next award for being loyal to secret
 				case "#next_secret_award":
 					return DeodorantAppData.nextSecretAward.toString();
 				break;
 				
+				//How much fun the player has earned today
 				case "#fun_today":
 					return AS2GameData.funToday.toString();
 				break;
 				
+				//The highest amount of fun the player has earned in a day.
 				case "#high_score":
 					return AS2GameData.funHighScore.toString();
 				break;
 				
+				//What clothes the player ordered the previous day. Used by the mailman to tell the player
+				//what he's delivering.
 				case "#clothes_ordered":
 					var output : String = "";
 					
@@ -175,6 +187,8 @@ package as2.dialog
 					return output;
 				break;
 			}
+			
+			//App specific hash codes
 			
 			var cad : String = CoffeeAppData.filterHashCode(code);
 			if (cad != null) return cad;
@@ -223,6 +237,8 @@ package as2.dialog
 						sendCloseDialogMessage();
 					break;
 					
+					//Moves the player to the given room
+					//Syntax: [room room_id transition_type]
 					case "room":
 						if (a.length < 2) continue;
 						var tti : int = RoomManager.NONE;
@@ -266,6 +282,8 @@ package as2.dialog
 						AS2GameData.addApp(a[1]);
 					break;
 					
+					//Sets the id of this dialog partner. Useful for changing who the player is talking to
+					//mid dialog
 					case "setid":
 						if (a.length < 2)
 						{
@@ -277,10 +295,13 @@ package as2.dialog
 						}
 					break;
 					
+					//Rebuilds the dialog. Necessary when updating a value that will cause a dialog
+					//option to change. 
 					case "rebuild":
 						rebuildDialog();
 					break;
 					
+					//Query something else- useful for doubling up on dialog responses without copy/pasting
 					case "query":
 						var dm : DialogManagerComponent = dialogManager.getComponentByType(DialogManagerComponent) as DialogManagerComponent;
 						dm.query(a[1]);
@@ -295,6 +316,7 @@ package as2.dialog
 						sendUpdatePartnerMessage();
 					break;
 					
+					//Adds a location to the player's list of possible locations to visit.
 					case "addlocation":
 						AS2GameData.addLocation(a[1]);
 						ProgressPopupComponent.showSimple("Location Added: " + a[1], 1);
@@ -322,6 +344,8 @@ package as2.dialog
 						dialogManager.sendMessage(fm);
 					break;
 					
+					//Called when the player answers no to Siri's question of whether or not the player
+					//had fun that day
 					case "sleep_nofun":
 						if (parseInt(AS2GameData.data.sleep_fun_streak) > 0)
 						{
@@ -331,6 +355,8 @@ package as2.dialog
 						AS2GameData.data.sleep_fun_streak = 0;
 					break;
 					
+					//Called when the player answers yes to Siri's question of whether or not the player
+					//had fun that day
 					case "sleep_hadfun":	
 						AS2GameData.data.sleep_fun_streak = parseInt(AS2GameData.data.sleep_fun_streak) + 1;
 						if (parseInt(AS2GameData.data.sleep_fun_streak) > 1)
@@ -341,6 +367,9 @@ package as2.dialog
 						AS2GameData.playerData.fun += 50 * parseInt(AS2GameData.data.sleep_fun_streak);
 					break;
 					
+					//Generic data manipulator.
+					//Syntax: [data var_name operand value]
+					//Example: [data money += 100]
 					case "data":
 						var varname : String = a[1];
 						var operand : String = a[2];
@@ -494,6 +523,10 @@ package as2.dialog
 			}
 		}
 		
+		/**
+		 * Re-generates the dialog tree. Useful for when a dialog option changes a value that could result in
+		 * a dialog conditional evaluating differently than it did when the player initiated dialog. 
+		 */
 		protected function rebuildDialog():void
 		{
 			clearKeywords();
@@ -607,6 +640,8 @@ package as2.dialog
 					}
 				break;
 				
+				//Should the mailman appear?
+				//Mailman appears when the player has no smartphone and when the player should receive some packages.
 				case "mailman":
 					return (!AS2GameData.hasSmartphone || AS2GameData.hasPackages);
 				break;
@@ -663,6 +698,11 @@ package as2.dialog
 				
 				for (var i : int = 0; i < as2dr.options.length; i++)
 				{
+					//In most cases the input field (where the user can type) will
+					//be shown or hidden automatically based on the type of DialogPartner
+					//that the player is talking to, but you can add "#input" to the list of options
+					//to force the input field to appear even when the player is talking to
+					//a DialogPartner that doesn't typically have dialog.
 					if (as2dr.options[i] == INPUT_HASHCODE)
 					{
 						as2dr.input = true;
