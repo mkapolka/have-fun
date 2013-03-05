@@ -9,7 +9,9 @@ package as2.dialog
 	import org.component.Entity;
 	import org.component.Message;
 	/**
-	 * ...
+	 * DialogPartner subclass for dealing with dialog actions specific to the dresser
+	 * found in the player's room. I.e. displaying all the clothes the player currently
+	 * owns, changing what the player is currently wearing, etc.
 	 * @author Marek Kapolka
 	 */
 	public class DresserDialogPartner extends AS2DialogPartner 
@@ -29,6 +31,9 @@ package as2.dialog
 		
 		public static const CLOTHING_LIST_HASH : String = "#clothing";
 		
+		//query() remembers when the user looks at an article of clothing and determines
+		//and uses the last examined piece of clothing to determine which to act on
+		//when the user selects on of the actions (i.e. wear, ditch, etc)
 		protected var _currentClothing : Clothing;
 		
 		public function DresserDialogPartner() 
@@ -67,30 +72,6 @@ package as2.dialog
 		
 		override public function peekQuery(topic : String):DialogResponse
 		{
-			/*if (topic.substr(0, CLOTHING_TOPIC_START.length) == CLOTHING_TOPIC_START)
-			{
-				var clothing_id : String = topic.substr(CLOTHING_TOPIC_START.length);
-				
-				var wardrobe : Vector.<Clothing> = AS2GameData.playerData.wardrobe;
-				
-				for each (var c : Clothing in wardrobe)
-				{
-					if (c.id == clothing_id)
-					{
-						_currentClothing = c;
-						
-						//Send a message to the dialog manager to display the texture of the clothing
-						sendUpdateMaskMessage();
-						
-						sendUpdatePartnerMessage();
-					}
-				}
-				
-				return super.peekQuery(CLOTHING_INFO_TOPIC);
-			} else {
-				return super.peekQuery(topic);
-			}*/
-			
 			return super.peekQuery(topic);
 		}
 		

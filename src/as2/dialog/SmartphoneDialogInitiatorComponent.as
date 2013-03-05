@@ -3,7 +3,8 @@ package as2.dialog
 	import org.component.dialog.ConversationLibrary;
 	import org.component.dialog.DialogPartner;
 	/**
-	 * ...
+	 * Like DialogInitiatorComponent, but specifically for initiating dialog
+	 * with a SmartphoneDialogPartner.
 	 * @author Marek Kapolka
 	 */
 	public class SmartphoneDialogInitiatorComponent extends AS2DialogInitiatorComponent 

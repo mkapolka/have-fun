@@ -8,13 +8,14 @@ package as2.dialog
 	import org.flixel.FlxSprite;
 	
 	/**
-	 * ...
+	 * Displays the portrait of the character the player is currently talking to.
+	 * This component should be on an Entity that is in the Dialog UI tree (somewhere 
+	 * underneath an entity with a DialogManager component). It figures out
+	 * what frame index to show based on the AS2DialogPartner.portraitID value.
 	 * @author Marek Kapolka
 	 */
 	public class DialogPortraitComponent extends Component 
-	{
-		public static const SET_MASK_TYPE : String = "dialog_portrait_set_mask";
-		
+	{		
 		public function DialogPortraitComponent() 
 		{
 			super();

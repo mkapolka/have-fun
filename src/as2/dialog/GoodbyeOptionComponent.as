@@ -7,7 +7,13 @@ package as2.dialog
 	import org.component.Message;
 	
 	/**
-	 * ...
+	 * This component handles the logic of the "goodbye" button.
+	 * It acts roughly as a DialogOptionComponent but it specifies
+	 * what text to display (goodbye, leave, etc) for which specific
+	 * circumstances (talking to person, interacting with wardrobe).
+	 * It also ignores any logic pertaining to dialog option offsets,
+	 * as the goodbye button is always visible and does not change value.
+	 * 
 	 * @author Marek Kapolka
 	 */
 	public class GoodbyeOptionComponent extends DialogOptionComponent 
@@ -36,7 +42,7 @@ package as2.dialog
 		
 		override public function setText(s : String):void
 		{
-			//Don't do shit
+			//Don't do anything
 		}
 		
 		override public function receiveMessage(message : Message):void
@@ -46,6 +52,8 @@ package as2.dialog
 				super.receiveMessage(message);
 			}
 			
+			//In some circumstances the goodbye button will be shown or hidden, depending on whether 
+			//or not the player should be able to leave a conversation.
 			if (message.type == SHOW_CLOSE_TEXT)
 			{
 				setHidden(false);

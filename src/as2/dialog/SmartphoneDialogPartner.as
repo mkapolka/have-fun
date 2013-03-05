@@ -5,7 +5,9 @@ package as2.dialog
 	import as2.data.QuestAppData;
 	import org.component.dialog.DialogResponse;
 	/**
-	 * ...
+	 * DialogPartner that handles dialog with the Smartphone.
+	 * The player's method of accessing Apps, the Quest List, and
+	 * moving between zones.
 	 * @author Marek Kapolka
 	 */
 	public class SmartphoneDialogPartner extends AS2DialogPartner 
@@ -23,6 +25,7 @@ package as2.dialog
 		public static const MODE_DEFAULT : uint = 0;
 		public static const MODE_EMAIL : uint = 1;
 		
+		//Slightly different behaviors if the player is in the email app
 		private var _mode : uint = 0;
 		
 		private var _lastReadEmail : String;
@@ -129,6 +132,7 @@ package as2.dialog
 			}
 		}
 		
+		//Inserts a2 into a1 at index i
 		private function array_join(a1 : Vector.<String>, a2 : Vector.<String>, si : int):void
 		{
 			if (a2.length == 0) return;
